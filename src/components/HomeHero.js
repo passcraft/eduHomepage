@@ -27,34 +27,33 @@ export const HomeHero = () => {
   }
 
   return (
-    <section className="bg-gradient-to-b from-purple-25 to-purple-50 px-4 pt-16 sm:px-6 lg:px-8">
+    <section className="px-4 pt-16 bg-gradient-to-b from-purple-25 to-purple-50 sm:px-6 lg:px-8">
       {/* Hero container */}
       <div
-        className="mx-auto max-w-screen-xl lg:grid lg:grid-cols-12 lg:gap-8"
+        className="max-w-screen-xl mx-auto lg:grid lg:grid-cols-12 lg:gap-8"
         x-data="{ modalOpen: false }"
       >
         {/* Hero text content */}
         <div className="flex flex-col items-center justify-center lg:col-span-6 lg:items-start">
           <div>
-            <span className="inline-block -rotate-1 rounded-full bg-purple-200 px-4 py-2 font-medium text-purple-700 shadow-md">
-              Welcome to Bright School
+            <span className="inline-block px-4 py-2 font-medium text-purple-700 bg-purple-200 rounded-full shadow-md -rotate-1">
+              Your Path to Success Starts Here
+
             </span>
           </div>
-          <h1 className="h1 mt-4 max-w-xl text-center text-purple-900 sm:mt-5 lg:max-w-none lg:text-left">
-            Creating a brighter future for your child
+          <h1 className="max-w-xl mt-4 text-center text-purple-900 h1 sm:mt-5 lg:max-w-none lg:text-left">
+            Sarath Chandra Academy - Premier Coaching for UPSC Civil Services 
           </h1>
-          <p className="mt-3 max-w-2xl text-center text-xl leading-loose text-purple-800 lg:text-left">
-            At Bright School, we believe every child deserves a brighter future.
-            and strive to give every student a personalized education that will
-            promote their individual strengths and creativity.
+          <p className="max-w-2xl mt-3 text-xl leading-loose text-center text-purple-800 lg:text-left">
+            Enroll Now to Make Your IAS Dream a Reality
           </p>
           {/* Hero buttons */}
-          <div className="mt-8 flex flex-col items-center overflow-hidden sm:flex-row">
+          <div className="flex flex-col items-center mt-8 overflow-hidden sm:flex-row">
             <Button href="#0">
               Enroll today
               <Icon
                 icon="arrowNarrowRight"
-                className="ml-3 h-6 w-6 group-hover:animate-horizontal-bounce"
+                className="w-6 h-6 ml-3 group-hover:animate-horizontal-bounce"
                 stroke={2}
               />
             </Button>
@@ -65,17 +64,17 @@ export const HomeHero = () => {
             >
               <Icon
                 icon="playFilled"
-                className="mr-3 h-7 w-7 text-purple-600 duration-300 ease-in-out group-hover:text-purple-50"
+                className="mr-3 text-purple-600 duration-300 ease-in-out h-7 w-7 group-hover:text-purple-50"
               />
               Watch video
             </Button>
           </div>
           {/* Social proof */}
-          <p className="mt-14 hidden text-sm font-medium uppercase tracking-wider text-purple-900 sm:block lg:hidden xl:block">
+          <p className="hidden text-sm font-medium tracking-wider text-purple-900 uppercase mt-14 sm:block lg:hidden xl:block">
             Rated 5 stars by over{' '}
             <span className="font-semibold text-purple-600">100 parents</span>
           </p>
-          <div className="mt-8 hidden flex-col divide-y divide-purple-400/20 overflow-hidden sm:mt-5 sm:flex sm:flex-row sm:divide-x sm:divide-y-0 lg:hidden xl:flex">
+          <div className="flex-col hidden mt-8 overflow-hidden divide-y divide-purple-400/20 sm:mt-5 sm:flex sm:flex-row sm:divide-x sm:divide-y-0 lg:hidden xl:flex">
             {ratings.map((rating, index) => (
               <div
                 key={`primary-${rating.label}`}
@@ -86,11 +85,11 @@ export const HomeHero = () => {
                   'flex flex-col items-center',
                 )}
               >
-                <div className="flex w-full justify-center space-x-1">
+                <div className="flex justify-center w-full space-x-1">
                   {[...Array(rating.stars)].map((e, i) => (
                     <Icon
                       icon="starFilled"
-                      className="h-4 w-4 text-yellow-500"
+                      className="w-4 h-4 text-yellow-500"
                       key={`primary-${rating.label}-star-${i}`}
                     />
                   ))}
@@ -103,25 +102,25 @@ export const HomeHero = () => {
           </div>
         </div>
         {/* Hero image & video */}
-        <div className="mx-auto mt-16 flex max-w-3xl flex-col justify-center lg:col-span-6 lg:mt-0 lg:max-w-none">
+        <div className="flex flex-col justify-center max-w-3xl mx-auto mt-16 lg:col-span-6 lg:mt-0 lg:max-w-none">
           <div className="relative">
             <Image
               src={heroImage}
               priority
-              className="h-auto w-full"
+              className="w-full h-auto"
               alt="Bright Photo Collage"
               sizes="(min-width: 1280px) 39rem, (min-width: 1024px) 50vw, (min-width: 768px) 48rem, 100vw"
             />
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="absolute inline-flex h-20 w-20 animate-ping rounded-full bg-purple-400 opacity-60" />
+              <span className="absolute inline-flex w-20 h-20 bg-purple-400 rounded-full animate-ping opacity-60" />
               {/* Video modal button */}
               <button
-                className="group relative z-10 flex h-20 w-20 items-center justify-center rounded-full bg-purple-600/90 outline-none duration-300 ease-in-out hover:bg-purple-600/95"
+                className="relative z-10 flex items-center justify-center w-20 h-20 duration-300 ease-in-out rounded-full outline-none group bg-purple-600/90 hover:bg-purple-600/95"
                 onClick={() => openModal()}
               >
                 <Icon
                   icon="playFilled"
-                  className="h-12 w-12 text-white/90 duration-300 ease-in-out group-hover:text-white/95"
+                  className="w-12 h-12 duration-300 ease-in-out text-white/90 group-hover:text-white/95"
                 />
               </button>
             </div>
@@ -131,7 +130,7 @@ export const HomeHero = () => {
         <Transition appear show={isOpen} as={Fragment}>
           <Dialog
             as="div"
-            className="fixed inset-0 z-10 h-full w-full overflow-hidden px-4 transition duration-150 ease-linear"
+            className="fixed inset-0 z-10 w-full h-full px-4 overflow-hidden transition duration-150 ease-linear"
             aria-modal="true"
             onClose={closeModal}
           >
@@ -145,9 +144,9 @@ export const HomeHero = () => {
               leaveFrom="opacity-50"
               leaveTo="opacity-0"
             >
-              <Dialog.Overlay className="fixed inset-0 h-screen w-screen bg-black opacity-50 transition-opacity duration-300 ease-linear" />
+              <Dialog.Overlay className="fixed inset-0 w-screen h-screen transition-opacity duration-300 ease-linear bg-black opacity-50" />
             </Transition.Child>
-            <div className="mx-auto flex min-h-screen w-auto items-center justify-center">
+            <div className="flex items-center justify-center w-auto min-h-screen mx-auto">
               {/* Modal Content */}
               <Transition.Child
                 as={Fragment}
@@ -158,10 +157,10 @@ export const HomeHero = () => {
                 leaveFrom="opacity-100 scale-100 translate-y-0"
                 leaveTo="opacity-0 scale-95 translate-y-24"
               >
-                <Dialog.Panel className="max-h-full w-full max-w-6xl overflow-auto rounded-2xl bg-white">
-                  <div className="aspect-h-9 aspect-w-16 relative">
+                <Dialog.Panel className="w-full max-w-6xl max-h-full overflow-auto bg-white rounded-2xl">
+                  <div className="relative aspect-h-9 aspect-w-16">
                     <iframe
-                      className="absolute h-full w-full"
+                      className="absolute w-full h-full"
                       src="https://www.youtube.com/embed/oRcNS5CCbnc"
                       title="Video"
                       webkitallowfullscreen
@@ -176,13 +175,13 @@ export const HomeHero = () => {
         </Transition>
       </div>
       {/* Visible only on sm screens ( <= 640px ) and lg screens ( >= 1024px	< 1280px ) */}
-      <div className="mt-20 flex flex-col items-center sm:hidden lg:mt-24 lg:flex xl:hidden">
+      <div className="flex flex-col items-center mt-20 sm:hidden lg:mt-24 lg:flex xl:hidden">
         {/* Social proof */}
-        <p className="text-sm font-semibold uppercase tracking-wider text-purple-900">
+        <p className="text-sm font-semibold tracking-wider text-purple-900 uppercase">
           Rated 5 stars by over{' '}
           <span className="font-semibold text-purple-600">100 parents</span>
         </p>
-        <div className="mt-8 flex flex-col divide-y divide-purple-400/20 overflow-hidden sm:flex-row sm:divide-x sm:divide-y-0">
+        <div className="flex flex-col mt-8 overflow-hidden divide-y divide-purple-400/20 sm:flex-row sm:divide-x sm:divide-y-0">
           {ratings.map((rating, index) => (
             <div
               key={`secondary-${rating.label}`}
@@ -193,7 +192,7 @@ export const HomeHero = () => {
                 'flex flex-col items-center',
               )}
             >
-              <div className="flex w-full justify-center space-x-1">
+              <div className="flex justify-center w-full space-x-1">
                 {[...Array(rating.stars)].map((e, i) => (
                   <Icon
                     icon="starFilled"
