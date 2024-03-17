@@ -14,17 +14,29 @@ export function getItemData(slug, type) {
 }
 
 export function getAllItems(dir) {
-  const files = fs.readdirSync(path.join(`src/data/${dir}`))
+  let files = []
+  let itemsData = []
 
-  const itemsData = files.map((filename) => {
-    const fileContents = fs.readFileSync(
-      path.join(`src/data/${dir}`, filename),
-      'utf8',
-    )
+  try {
+    files = fs.readdirSync(path.join(`src/data/${dir}`))
+  } catch (error) {
+    console.error(`Error reading directory: ${error}`)
+    return itemsData // Return empty array if directory read fails
+  }
 
-    const { data: frontmatter } = matter(fileContents)
-    return { slug: filename.replace('.md', ''), data: frontmatter }
-  })
+  try {
+    itemsData = files.map((filename) => {
+      const fileContents = fs.readFileSync(
+        path.join(`src/data/${dir}`, filename),
+        'utf8',
+      )
+
+      const { data: frontmatter } = matter(fileContents)
+      return { slug: filename.replace('.md', ''), data: frontmatter }
+    })
+  } catch (error) {
+    console.error(`Error processing files: ${error}`)
+  }
 
   return itemsData
 }
