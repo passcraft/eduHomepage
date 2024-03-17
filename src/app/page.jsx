@@ -6,7 +6,7 @@ import { Testimonials } from '@/components/Testimonials'
 import { Faqs } from '@/components/Faqs'
 import { basehub } from 'basehub'
 import { getAllItems } from '@/lib/getItems'
-
+import { unstable_noStore as noStore } from 'next/cache'
 export const metadata = {
   title: 'Bright - Creating a brighter future for your child',
   description:
@@ -14,6 +14,7 @@ export const metadata = {
 }
 
 export default async function HomePage() {
+  noStore()
   const faqs = getAllItems('faqs')
   const heroData = await basehub({ next: { revalidate: 30 }}).query({
     hero: {
