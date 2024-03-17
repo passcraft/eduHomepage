@@ -15,7 +15,7 @@ const ratings = [
   { label: 'Google Reviews', stars: 5 },
 ]
 
-export const HomeHero = () => {
+export const HomeHero = ({title, subtitle}) => {
   let [isOpen, setIsOpen] = useState(false)
 
   function closeModal() {
@@ -37,12 +37,12 @@ export const HomeHero = () => {
         <div className="flex flex-col items-center justify-center lg:col-span-6 lg:items-start">
           <div>
             <span className="inline-block px-4 py-2 font-medium text-purple-700 bg-purple-200 rounded-full shadow-md -rotate-1">
-              Your Path to Success Starts Here
+              {title}
 
             </span>
           </div>
           <h1 className="max-w-xl mt-4 text-center text-purple-900 h1 sm:mt-5 lg:max-w-none lg:text-left">
-            Sarath Chandra Academy - Premier Coaching for UPSC Civil Services 
+            {subtitle}
           </h1>
           <p className="max-w-2xl mt-3 text-xl leading-loose text-center text-purple-800 lg:text-left">
             Enroll Now to Make Your IAS Dream a Reality
