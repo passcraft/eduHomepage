@@ -3,14 +3,19 @@ import path from 'path'
 import matter from 'gray-matter'
 
 export function getItemData(slug, type) {
-  const markdownWithMeta = fs.readFileSync(
-    path.join('src/data', type, slug + '.md'),
-    'utf-8',
-  )
+  let data;
+  try {
+    const markdownWithMeta = fs.readFileSync(
+      path.join('src/data', type, `${slug}.md`),
+      'utf-8',
+    )
+    data = matter(markdownWithMeta).data;
+  } catch (error) {
+    console.error(`Error reading markdown file: ${error}`);
+    data = {}; // Return empty object if file read fails
+  }
 
-  const { data } = matter(markdownWithMeta)
-
-  return data
+  return data;
 }
 
 export function getAllItems(dir) {
