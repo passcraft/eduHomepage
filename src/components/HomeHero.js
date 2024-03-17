@@ -16,6 +16,8 @@ const ratings = [
 ]
 
 export const HomeHero = ({title, subtitle}) => {
+  console.log("🚀 ~ HomeHero ~ subtitle:", subtitle)
+  console.log("🚀 ~ HomeHero ~ title:", title)
   let [isOpen, setIsOpen] = useState(false)
 
   function closeModal() {
