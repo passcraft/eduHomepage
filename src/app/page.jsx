@@ -15,7 +15,7 @@ export const metadata = {
 
 export default async function HomePage() {
   const faqs = getAllItems('faqs')
-  const heroData = await basehub({ cache: 'no-store' }).query({
+  const heroData = await basehub({ next: {tags: ['basehub']} }).query({
     hero: {
       _id: true,
       _slug: true,
