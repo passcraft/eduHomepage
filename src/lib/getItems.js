@@ -6,7 +6,7 @@ export function getItemData(slug, type) {
   let data;
   try {
     const markdownWithMeta = fs.readFileSync(
-      path.join('src/data', type, `${slug}.md`),
+      path.join('public/data/', type, `${slug}.md`),
       'utf-8',
     )
     data = matter(markdownWithMeta).data;
@@ -23,7 +23,7 @@ export function getAllItems(dir) {
   let itemsData = []
 
   try {
-    files = fs.readdirSync(path.join(`src/data/${dir}`))
+    files = fs.readdirSync(path.join(`public/data/${dir}`))
   } catch (error) {
     console.error(`Error reading directory: ${error}`)
     return itemsData // Return empty array if directory read fails
@@ -32,7 +32,7 @@ export function getAllItems(dir) {
   try {
     itemsData = files.map((filename) => {
       const fileContents = fs.readFileSync(
-        path.join(`src/data/${dir}`, filename),
+        path.join(`public/data/${dir}`, filename),
         'utf8',
       )
 
