@@ -15,7 +15,7 @@ const assurances = [
   'A commitment to creating a positive classroom experience for all students, no matter their learning needs',
 ]
 
-export const StaffAssurances = () => {
+export const StaffAssurances = ({title, tagline, body, teacherQualificationTitle}) => {
   const featuredStaff = getAllItems('staff').filter(
     (member) => member.data.featured,
   )
@@ -23,32 +23,29 @@ export const StaffAssurances = () => {
   return (
     <section className="relative w-full px-4 py-16 sm:px-6 sm:py-24 xl:px-8">
       {/* Container */}
-      <div className="mx-auto max-w-xl lg:max-w-screen-xl">
+      <div className="max-w-xl mx-auto lg:max-w-screen-xl">
         <div className="grid gap-16 lg:grid-cols-2 lg:gap-12 xl:grid-cols-11 xl:gap-24">
           {/* Text content */}
           <div className="flex flex-col justify-center lg:order-2 lg:col-span-1 xl:col-span-6">
             <div>
-              <span className="inline-block -rotate-1 rounded-full bg-purple-200 px-4 py-2 font-medium text-purple-700 shadow-md">
-                Your kids are in good hands
+              <span className="inline-block px-4 py-2 font-medium text-purple-700 bg-purple-200 rounded-full shadow-md -rotate-1">
+                {title}
               </span>
             </div>
-            <h2 className="h2 mt-4 text-purple-900 sm:mt-5">
-              Meet the teachers behind Bright School
+            <h2 className="mt-4 text-purple-900 h2 sm:mt-5">
+              {tagline}
             </h2>
-            <p className="mt-4 max-w-xl text-xl leading-relaxed text-purple-800 md:mt-5">
-              Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut
-              libero malesuada feugiat. Curabitur non nulla sit amet nisl tempus
-              convallis quis ac lectus.
+            <p className="max-w-xl mt-4 text-xl leading-relaxed text-purple-800 md:mt-5">
+              {body}
             </p>
             {/* Teacher qualifications box */}
-            <div className="relative mt-16 max-w-4xl rounded-xl bg-yellow-100 sm:mt-14">
-              <span className="absolute -top-7 left-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-600 to-purple-600 shadow-md sm:left-10">
-                <Icon icon="certificate" className="h-8 w-8 text-purple-50" />
+            <div className="relative max-w-4xl mt-16 bg-yellow-100 rounded-xl sm:mt-14">
+              <span className="absolute flex items-center justify-center shadow-md -top-7 left-6 h-14 w-14 rounded-2xl bg-gradient-to-br from-purple-600 to-purple-600 sm:left-10">
+                <Icon icon="certificate" className="w-8 h-8 text-purple-50" />
               </span>
-              <div className="mt-2 px-4 py-10 sm:px-10 sm:py-12">
+              <div className="px-4 py-10 mt-2 sm:px-10 sm:py-12">
                 <p className="text-lg font-semibold text-purple-900 sm:text-xl">
-                  At Bright, we pride ourselves on the quality of our teachers.
-                  You can expect the following from our teachers:
+                 {teacherQualificationTitle}
                 </p>
                 {/* Teacher qualifications list */}
                 <ul className="mt-5 space-y-5 text-lg text-purple-800">
@@ -58,7 +55,7 @@ export const StaffAssurances = () => {
                       className="flex items-center"
                     >
                       <Image
-                        className="mr-3 h-7 w-7 flex-shrink-0"
+                        className="flex-shrink-0 mr-3 h-7 w-7"
                         src={checkmark}
                         alt=""
                       />
@@ -76,7 +73,7 @@ export const StaffAssurances = () => {
                   Meet the rest of the team
                   <Icon
                     icon="arrowNarrowRight"
-                    className="ml-3 h-5 w-5 group-hover:animate-horizontal-bounce"
+                    className="w-5 h-5 ml-3 group-hover:animate-horizontal-bounce"
                     stroke={2}
                   />
                 </Button>
@@ -84,15 +81,15 @@ export const StaffAssurances = () => {
             </div>
           </div>
           {/* Featured teachers section */}
-          <div className="mx-auto grid w-full gap-10 sm:mx-0 sm:max-w-none sm:grid-cols-2 sm:gap-8 lg:order-1 lg:col-span-1 lg:mt-20 lg:gap-4 xl:col-span-5 xl:gap-8">
+          <div className="grid w-full gap-10 mx-auto sm:mx-0 sm:max-w-none sm:grid-cols-2 sm:gap-8 lg:order-1 lg:col-span-1 lg:mt-20 lg:gap-4 xl:col-span-5 xl:gap-8">
             {featuredStaff.map((member, index) => (
               <div
                 key={`featured-member-${index}`}
                 className={clsx(index % 2 == 0 && 'lg:-translate-y-20')}
               >
-                <div className="aspect-h-2 aspect-w-3 relative rounded-3xl bg-yellow-50 sm:aspect-h-4 sm:aspect-w-3">
+                <div className="relative aspect-h-2 aspect-w-3 rounded-3xl bg-yellow-50 sm:aspect-h-4 sm:aspect-w-3">
                   <Image
-                    className="absolute inset-0 h-full w-full rounded-3xl object-cover shadow-md"
+                    className="absolute inset-0 object-cover w-full h-full shadow-md rounded-3xl"
                     fill
                     src={member.data.portraitImage}
                     sizes="(min-width: 1280px) 15.6rem, (min-width: 1024px) 20.8vw, (min-width: 640px) 17rem, 100vw"

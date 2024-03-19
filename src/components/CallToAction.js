@@ -1,39 +1,54 @@
 import Image from 'next/image'
+import { draftMode } from 'next/headers'
+import { basehub } from 'basehub'
 
 import { Icon } from '@/components/Icon'
 import { Button } from '@/components/Button'
 import sunrise from '/public/images/illustrations/sunrise.svg'
 import highlight from '/public/images/illustrations/underline-simple-light-purple.svg'
 
-export const CallToAction = () => {
+export  const CallToAction = async () => {
+  const data = await basehub({
+    next: { tags: ['basehub'] },
+    draft: draftMode().isEnabled,
+  }).query({
+    calltoaction: {
+      _id: true,
+      _slug: true,
+      title: true,
+      spantext: true,
+    },
+    
+  })
+
   return (
-    <section className="bg-white py-24 sm:py-32">
+    <section className="py-24 bg-white sm:py-32">
       {/* Container */}
-      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+      <div className="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
         {/* Sunrise image */}
         <Image className="mx-auto w-72" src={sunrise} alt="" />
         {/* Header */}
-        <h2 className="h1 mx-auto mt-6 max-w-3xl text-center text-purple-900">
-          <span className="block">Give your kid a</span>
+        <h2 className="max-w-3xl mx-auto mt-6 text-center text-purple-900 h1">
+          <span className="block">{data.calltoaction.title}</span>
           {/* Underlined text */}
           <span className="relative block">
             <span className="relative">
               <Image
-                className="absolute inset-0 translate-y-9 transform sm:translate-y-11 xl:translate-y-14"
+                className="absolute inset-0 transform translate-y-9 sm:translate-y-11 xl:translate-y-14"
                 src={highlight}
                 alt=""
               />
-              <span className="relative">brighter future</span>
+              <span className="relative">{data.calltoaction.spantext}</span>
             </span>
           </span>
         </h2>
         {/* CTA button */}
-        <div className="mt-12 flex justify-center xl:mt-14">
+        <div className="flex justify-center mt-12 xl:mt-14">
           <Button href="#0">
             Enroll today
             <Icon
               icon="arrowNarrowRight"
-              className="ml-3 h-6 w-6 group-hover:animate-horizontal-bounce"
+              className="w-6 h-6 ml-3 group-hover:animate-horizontal-bounce"
               stroke={2}
             />
           </Button>

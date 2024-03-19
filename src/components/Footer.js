@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import clsx from 'clsx'
-
+import { basehub } from 'basehub'
+import { draftMode } from 'next/headers'
 import logo from '/public/images/bright-logo.png'
 import { Icon } from '@/components/Icon'
 
@@ -22,21 +23,44 @@ function SocialLink({ className, href, icon }) {
       )}
       href={href}
     >
-      <Icon icon={icon} className="h-5 w-5 text-white" />
+      <Icon icon={icon} className="w-5 h-5 text-white" />
     </Link>
   )
 }
 
-export const Footer = ({ programs, contact }) => {
+export const Footer = async ({ programs, contact }) => {
+  const data = await basehub({
+    next: { tags: ['basehub'] },
+    draft: draftMode().isEnabled,
+  }).query({
+    footer: {
+      _id: true,
+      _slug: true,
+      description: true,
+      logo: {
+        alt: true,
+        aspectRatio: true,
+        fileName: true,
+        fileSize: true,
+        height: true,
+        lastModified: true,
+        mimeType: true,
+        rawUrl: true,
+      },
+      address: true,
+      email: true,
+      phone: true,
+    },
+  })
   return (
-    <footer className="space-y-8 divide-y divide-purple-400/20 bg-yellow-100 px-4 pt-16 sm:px-6 sm:pt-20 lg:px-8">
+    <footer className="px-4 pt-16 space-y-8 bg-yellow-100 divide-y divide-purple-400/20 sm:px-6 sm:pt-20 lg:px-8">
       {/* Top section: blocks */}
-      <div className="mx-auto grid max-w-md gap-y-8 sm:max-w-none sm:grid-cols-2 sm:gap-x-8 sm:gap-y-12 md:gap-x-12 lg:max-w-screen-2xl lg:grid-cols-11 lg:gap-8 xl:gap-12">
+      <div className="grid max-w-md mx-auto gap-y-8 sm:max-w-none sm:grid-cols-2 sm:gap-x-8 sm:gap-y-12 md:gap-x-12 lg:max-w-screen-2xl lg:grid-cols-11 lg:gap-8 xl:gap-12">
         {/* Block 1 */}
         <div className="flex flex-col lg:col-span-4 lg:mx-auto">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="w-60 flex-shrink-0 flex-grow-0">
+            <div className="flex-grow-0 flex-shrink-0 w-60">
               <Link href="/">
                 <Image src={logo} alt="Bright" className="h-auto" />
               </Link>
@@ -44,11 +68,10 @@ export const Footer = ({ programs, contact }) => {
           </div>
           {/* Mission statement */}
           <div className="mt-6 text-lg text-purple-800">
-            Sed porttitor lectus nibh. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit. Diam sit amet quam vehicula elementum sed sit.
+            {data.footer.description}
           </div>
           {/* Social links */}
-          <div className="mt-5 w-full lg:mt-6">
+          <div className="w-full mt-5 lg:mt-6">
             <div className="flex justify-start space-x-4">
               <SocialLink href="#0" icon="instagram" />
               <SocialLink href="#0" icon="facebook" />
@@ -60,10 +83,10 @@ export const Footer = ({ programs, contact }) => {
         <div className="flex-shrink sm:order-3 lg:order-none lg:col-span-2">
           <h6 className="relative text-xl font-bold tracking-wide text-purple-900">
             <span className="relative z-20">Programs</span>
-            <span className="absolute -bottom-1 left-0 z-10 h-1 w-12 rounded-lg bg-gradient-to-r from-yellow-400 to-yellow-500" />
+            <span className="absolute left-0 z-10 w-12 h-1 rounded-lg -bottom-1 bg-gradient-to-r from-yellow-400 to-yellow-500" />
           </h6>
           {/* Program links */}
-          <ul className="mt-6 divide-y divide-purple-400/20 text-lg">
+          <ul className="mt-6 text-lg divide-y divide-purple-400/20">
             {programs.map((program, index) => (
               <li
                 key={`footer-program-link-${program.data.name}`}
@@ -83,10 +106,10 @@ export const Footer = ({ programs, contact }) => {
         <div className="flex-shrink sm:order-4 lg:order-none lg:col-span-2">
           <h6 className="relative text-xl font-bold tracking-wide text-purple-900">
             <span className="relative z-20">Site Links</span>
-            <span className="absolute -bottom-1 left-0 z-10 h-1 w-12 rounded-lg bg-gradient-to-r from-yellow-400 to-yellow-500" />
+            <span className="absolute left-0 z-10 w-12 h-1 rounded-lg -bottom-1 bg-gradient-to-r from-yellow-400 to-yellow-500" />
           </h6>
           {/* Site links */}
-          <ul className="mt-6 divide-y divide-purple-400/20 text-lg">
+          <ul className="mt-6 text-lg divide-y divide-purple-400/20">
             {siteLinks.map((link, index) => (
               <li
                 key={`footer-site-link-${link.label}`}
@@ -106,55 +129,55 @@ export const Footer = ({ programs, contact }) => {
         <div className="sm:order-2 lg:order-none lg:col-span-3 lg:mx-auto ">
           <h6 className="relative text-xl font-bold tracking-wide text-purple-900">
             <span className="relative z-20">Contact us</span>
-            <span className="absolute -bottom-1 left-0 z-10 h-1 w-12 rounded-lg bg-gradient-to-r from-yellow-400 to-yellow-500" />
+            <span className="absolute left-0 z-10 w-12 h-1 rounded-lg -bottom-1 bg-gradient-to-r from-yellow-400 to-yellow-500" />
           </h6>
           {/* Contact information */}
-          <ul className="mt-6 flex flex-col space-y-5">
+          <ul className="flex flex-col mt-6 space-y-5">
             {/* Address */}
-            <li className="flex max-w-xs flex-shrink">
+            <li className="flex flex-shrink max-w-xs">
               <div>
-                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-yellow-400">
-                  <Icon icon="mapPin" className="h-6 w-6 text-purple-700" />
+                <span className="flex items-center justify-center bg-yellow-400 h-11 w-11 rounded-2xl">
+                  <Icon icon="mapPin" className="w-6 h-6 text-purple-700" />
                 </span>
               </div>
-              <div className="ml-3 mt-0 flex-1 xl:ml-4">
+              <div className="flex-1 mt-0 ml-3 xl:ml-4">
                 <h5 className="flex items-center text-base font-semibold text-purple-900">
                   Address
                 </h5>
                 <p className="mt-0.5 text-sm leading-relaxed text-purple-800 text-opacity-90">
-                  {contact.address}
+                  {data.footer.address}
                 </p>
               </div>
             </li>
             {/* Email */}
             <li className="flex flex-shrink-0">
               <div>
-                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-purple-200">
-                  <Icon icon="mail" className="h-6 w-6 text-purple-700" />
+                <span className="flex items-center justify-center bg-purple-200 h-11 w-11 rounded-2xl">
+                  <Icon icon="mail" className="w-6 h-6 text-purple-700" />
                 </span>
               </div>
-              <div className="ml-3 flex-1 xl:ml-4">
+              <div className="flex-1 ml-3 xl:ml-4">
                 <h5 className="flex items-center text-base font-semibold text-purple-900">
                   Email
                 </h5>
                 <p className="mt-0.5 text-sm leading-relaxed text-purple-800 text-opacity-90">
-                  {contact.email}
+                  {data.footer.email}
                 </p>
               </div>
             </li>
             {/* Phone number */}
             <li className="flex flex-shrink-0">
               <div>
-                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-rose-200">
-                  <Icon icon="phone" className="h-6 w-6 text-purple-700" />
+                <span className="flex items-center justify-center h-11 w-11 rounded-2xl bg-rose-200">
+                  <Icon icon="phone" className="w-6 h-6 text-purple-700" />
                 </span>
               </div>
-              <div className="ml-3 flex-1 xl:ml-4">
+              <div className="flex-1 ml-3 xl:ml-4">
                 <h5 className="flex items-center text-base font-semibold text-purple-900">
                   Phone
                 </h5>
                 <p className="mt-0.5 text-sm leading-relaxed text-purple-800 text-opacity-90">
-                  {contact.phone}
+                  {data.footer.phone}
                 </p>
               </div>
             </li>
@@ -162,14 +185,14 @@ export const Footer = ({ programs, contact }) => {
         </div>
       </div>
       {/* Bottom section */}
-      <div className="mx-auto flex max-w-md flex-col justify-between py-8 sm:max-w-none sm:flex-row lg:max-w-screen-2xl">
+      <div className="flex flex-col justify-between max-w-md py-8 mx-auto sm:max-w-none sm:flex-row lg:max-w-screen-2xl">
         {/* Copyright note */}
         <span className="text-base text-purple-800/90">
-          © {new Date().getFullYear()} Bright School. All rights reserved.
+          © {new Date().getFullYear()} SCA Academny. All rights reserved.
         </span>
-        <p className="mt-0.5 flex items-center text-purple-800/90">
+        {/* <p className="mt-0.5 flex items-center text-purple-800/90">
           Made with
-          <Icon icon="coffee" className="mx-1 h-5 w-5" />
+          <Icon icon="coffee" className="w-5 h-5 mx-1" />
           <span>
             by{' '}
             <Link
@@ -180,7 +203,7 @@ export const Footer = ({ programs, contact }) => {
               Tailwind Awesome
             </Link>
           </span>
-        </p>
+        </p> */}
       </div>
     </footer>
   )

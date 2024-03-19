@@ -9,15 +9,15 @@ import squareImage1 from '/public/images/stock/home-blocks-02.jpg'
 import portraitImage2 from '/public/images/stock/home-blocks-03.jpg'
 import squareImage2 from '/public/images/stock/home-blocks-04.jpg'
 
-const features = [
-  'Personalized',
-  'Small classes',
-  'Montessori',
-  'STEM focused',
-  'Hands-on approach',
-  'Diverse teachers & students',
-  'Experienced staff',
-]
+// const features = [
+//   'Personalized',
+//   'Small classes',
+//   'Montessori',
+//   'STEM focused',
+//   'Hands-on approach',
+//   'Diverse teachers & students',
+//   'Experienced staff',
+// ]
 
 const blocks = [
   {
@@ -38,7 +38,8 @@ const blocks = [
   },
 ]
 
-export const HomeFeatureBlocks = () => {
+export const HomeFeatureBlocks = ({title, subtitle, features}) => {
+  console.log("🚀 ~ HomeFeatureBlocks ~ features:", features)
   return (
     <section className="px-4 pb-16 overflow-hidden bg-yellow-100 sm:px-6 sm:pb-24 lg:px-8">
       {/* Container */}
@@ -47,17 +48,15 @@ export const HomeFeatureBlocks = () => {
         <div className="relative">
           {/* Block title and subtext */}
           <h2 className="max-w-4xl mx-auto text-center text-purple-900 h2">
-            Academy overview, key differentiators
+            {title}
           </h2>
           <p className="max-w-3xl mx-auto mt-4 text-xl leading-relaxed text-center text-purple-800">
-            Vestibulum ac diam sit amet quam vehicula elementum sed sit amet
-            dui. Curabitur arcu erat, accumsan id imperdiet et, porttitor at
-            sem. Quisque velit nisi, pretium ut lacinia in, elementum id enim.
+            {subtitle}
           </p>
           {/* Feature list */}
           <div className="max-w-3xl mx-auto mt-12">
             <ul className="flex flex-wrap items-center justify-center -mx-3 -my-2 text-lg text-purple-800">
-              {features.map((feature, index) => (
+              {features.items && features.items?.map((feature, index) => (
                 <li
                   key={`home-feature-${index}`}
                   className="flex items-center mx-3 my-2"
@@ -67,7 +66,7 @@ export const HomeFeatureBlocks = () => {
                     src={checkmark}
                     alt=""
                   />
-                  <span>{feature}</span>
+                  <span>{feature.name}</span>
                 </li>
               ))}
             </ul>

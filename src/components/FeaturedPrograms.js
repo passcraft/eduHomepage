@@ -20,7 +20,7 @@ const ProgramCard = ({ program, index }) => (
     {index == 0 && (
       <Image
         src={curvedDottedLine}
-        className="absolute left-1/2 top-0 hidden -translate-y-1/2 md:block"
+        className="absolute top-0 hidden -translate-y-1/2 left-1/2 md:block"
         style={{ width: 'calc(50% + 4rem)' }}
         alt=""
       />
@@ -33,13 +33,13 @@ const ProgramCard = ({ program, index }) => (
     >
       <div className="flex flex-col justify-between">
         <div className="flex-1">
-          <h3 className="h3 text-purple-900">{program.data.name}</h3>
-          <p className="mt-3 max-w-2xl text-lg leading-loose text-purple-800">
+          <h3 className="text-purple-900 h3">{program.data.name}</h3>
+          <p className="max-w-2xl mt-3 text-lg leading-loose text-purple-800">
             {program.data.hero.text}
           </p>
-          <div className="aspect-h-2 aspect-w-3 relative mt-8">
+          <div className="relative mt-8 aspect-h-2 aspect-w-3">
             <Image
-              className="absolute inset-0 rounded-2xl object-cover"
+              className="absolute inset-0 object-cover rounded-2xl"
               fill
               src={program.data.hero.image.src}
               alt={program.data.name}
@@ -52,7 +52,7 @@ const ProgramCard = ({ program, index }) => (
             Learn more
             <Icon
               icon="arrowNarrowRight"
-              className="ml-3 h-5 w-5 group-hover:animate-horizontal-bounce"
+              className="w-5 h-5 ml-3 group-hover:animate-horizontal-bounce"
               stroke={2}
             />
           </Button>
@@ -70,25 +70,23 @@ const ProgramCard = ({ program, index }) => (
   </div>
 )
 
-export const FeaturedPrograms = () => {
+export const FeaturedPrograms = ({title,subtitle}) => {
   const featuredPrograms = getAllItems('programs')
     .filter((program) => program.data.featured)
     .slice(0, 3)
 
   return (
-    <section className="overflow-hidden px-4 pb-24 pt-16 sm:px-6 sm:pb-28 sm:pt-24 md:pb-0 lg:px-8">
+    <section className="px-4 pt-16 pb-24 overflow-hidden sm:px-6 sm:pb-28 sm:pt-24 md:pb-0 lg:px-8">
       {/* Container */}
-      <div className="mx-auto max-w-xl md:max-w-screen-xl">
+      <div className="max-w-xl mx-auto md:max-w-screen-xl">
         {/* Section header title and subtext  */}
         <div className="md:grid md:grid-cols-2 md:gap-12 lg:gap-16">
           <div>
-            <h2 className="h2 max-w-4xl text-purple-900">
-              The best early education programs for your child
+            <h2 className="max-w-4xl text-purple-900 h2">
+              {title}
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-xl leading-relaxed text-purple-800 sm:mt-5 lg:text-left">
-              Vestibulum ac diam sit amet quam vehicula elementum sed sit amet
-              dui. Curabitur arcu erat, accumsan id imperdiet et, porttitor at
-              sem.
+            <p className="max-w-2xl mx-auto mt-4 text-xl leading-relaxed text-purple-800 sm:mt-5 lg:text-left">
+              {subtitle}
             </p>
           </div>
         </div>

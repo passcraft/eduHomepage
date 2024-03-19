@@ -15,9 +15,9 @@ const ratings = [
   { label: 'Google Reviews', stars: 5 },
 ]
 
-export const HomeHero = ({title, subtitle}) => {
+export const HomeHero = ({title, subtitle, rating, tagline, videoLink, heroImage, ratingLabelOne, ratingLabelTwo, ratingLabelThree, ratingStarOne, ratingStarTwo, ratingStarThree}) => {
   console.log("🚀 ~ HomeHero ~ subtitle:", subtitle)
-  console.log("🚀 ~ HomeHero ~ title:", title)
+  console.log("🚀 ~ HomeHero ~ tagline:", tagline)
   let [isOpen, setIsOpen] = useState(false)
 
   function closeModal() {
@@ -40,14 +40,13 @@ export const HomeHero = ({title, subtitle}) => {
           <div>
             <span className="inline-block px-4 py-2 font-medium text-purple-700 bg-purple-200 rounded-full shadow-md -rotate-1">
               {title}
-
             </span>
           </div>
           <h1 className="max-w-xl mt-4 text-center text-purple-900 h1 sm:mt-5 lg:max-w-none lg:text-left">
             {subtitle}
           </h1>
           <p className="max-w-2xl mt-3 text-xl leading-loose text-center text-purple-800 lg:text-left">
-            Enroll Now to Make Your IAS Dream a Reality
+            {tagline}
           </p>
           {/* Hero buttons */}
           <div className="flex flex-col items-center mt-8 overflow-hidden sm:flex-row">
@@ -73,11 +72,15 @@ export const HomeHero = ({title, subtitle}) => {
           </div>
           {/* Social proof */}
           <p className="hidden text-sm font-medium tracking-wider text-purple-900 uppercase mt-14 sm:block lg:hidden xl:block">
-            Rated 5 stars by over{' '}
-            <span className="font-semibold text-purple-600">100 parents</span>
+            {rating}
+            {/* <span className="font-semibold text-purple-600">100 parents</span> */}
           </p>
           <div className="flex-col hidden mt-8 overflow-hidden divide-y divide-purple-400/20 sm:mt-5 sm:flex sm:flex-row sm:divide-x sm:divide-y-0 lg:hidden xl:flex">
-            {ratings.map((rating, index) => (
+            {[
+              { label: ratingLabelOne, stars: ratingStarOne },
+              { label: ratingLabelTwo, stars: ratingStarTwo },
+              { label: ratingLabelThree, stars: ratingStarThree },
+            ].map((rating, index) => (
               <div
                 key={`primary-${rating.label}`}
                 className={clsx(
@@ -88,7 +91,7 @@ export const HomeHero = ({title, subtitle}) => {
                 )}
               >
                 <div className="flex justify-center w-full space-x-1">
-                  {[...Array(rating.stars)].map((e, i) => (
+                  {[...Array(parseInt(rating.stars))].map((e, i) => (
                     <Icon
                       icon="starFilled"
                       className="w-4 h-4 text-yellow-500"
@@ -107,11 +110,13 @@ export const HomeHero = ({title, subtitle}) => {
         <div className="flex flex-col justify-center max-w-3xl mx-auto mt-16 lg:col-span-6 lg:mt-0 lg:max-w-none">
           <div className="relative">
             <Image
-              src={heroImage}
+              src={heroImage.rawUrl}
               priority
               className="w-full h-auto"
-              alt="Bright Photo Collage"
+              alt={heroImage.alt}
               sizes="(min-width: 1280px) 39rem, (min-width: 1024px) 50vw, (min-width: 768px) 48rem, 100vw"
+              width={1920}
+              height={1080}
             />
             <div className="absolute inset-0 flex items-center justify-center">
               <span className="absolute inline-flex w-20 h-20 bg-purple-400 rounded-full animate-ping opacity-60" />
@@ -163,7 +168,7 @@ export const HomeHero = ({title, subtitle}) => {
                   <div className="relative aspect-h-9 aspect-w-16">
                     <iframe
                       className="absolute w-full h-full"
-                      src="https://www.youtube.com/embed/oRcNS5CCbnc"
+                      src={videoLink}
                       title="Video"
                       webkitallowfullscreen
                       mozallowfullscreen
@@ -180,11 +185,14 @@ export const HomeHero = ({title, subtitle}) => {
       <div className="flex flex-col items-center mt-20 sm:hidden lg:mt-24 lg:flex xl:hidden">
         {/* Social proof */}
         <p className="text-sm font-semibold tracking-wider text-purple-900 uppercase">
-          Rated 5 stars by over{' '}
-          <span className="font-semibold text-purple-600">100 parents</span>
+          {rating}
         </p>
         <div className="flex flex-col mt-8 overflow-hidden divide-y divide-purple-400/20 sm:flex-row sm:divide-x sm:divide-y-0">
-          {ratings.map((rating, index) => (
+          {[
+            { label: 'ratingLabelOne', stars: 'ratingStarOne' },
+            { label: 'ratingLabelTwo', stars: 'ratingStarTwo' },
+            { label: 'ratingLabelThree', stars: 'ratingStarThree' },
+          ].map((rating, index) => (
             <div
               key={`secondary-${rating.label}`}
               className={clsx(
