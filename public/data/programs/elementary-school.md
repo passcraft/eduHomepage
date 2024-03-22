@@ -11,7 +11,7 @@ hero:
     href: "#"
     icon: true
   image:
-    src: "/data/programs/img_1.jpeg"
+    src: "/images/img_1.jpeg"
 infoSection:
   headline: The Academy dedicated to your child's success
   text: At Sarat Chandra IIT Academy, we believe in nurturing talent and helping students realize their full potential. Our unique approach to education, combined with a supportive learning environment, enables our students to excel in their chosen fields.
@@ -49,9 +49,9 @@ descriptionSection:
     * Recorded classes for missed sessions
 
     Our material, assignments, and exam papers are prepared by IITians, ensuring the highest quality of education. We strive to create an environment that fosters learning, growth, and success.
-  portraitImage: "/data/programs/img_2.jpeg"
-  squareImage1: "/data/programs/img_3.jpeg"
-  squareImage2: "/data/programs/img_4.jpeg"
+  portraitImage: "/images/img_2.jpeg"
+  squareImage1: "/images/img_3.jpeg"
+  squareImage2: "/images/img_4.jpeg"
 pricingSection:
   tagline: Our Courses
   headline: A program for every aspiring engineer
