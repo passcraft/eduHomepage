@@ -15,9 +15,9 @@ const InfoCard = ({ icon, title, gradientColors, text }) => {
           gradientColors.iconBgColor,
         )}
       >
-        <Icon icon={icon} className="h-8 w-8 text-purple-700" />
+        <Icon icon={icon} className="w-8 h-8 text-purple-700" />
       </span>
-      <h4 className="mt-4 text-center text-xl font-semibold text-purple-900">
+      <h4 className="mt-4 text-xl font-semibold text-center text-purple-900">
         {title}
       </h4>
       <div
@@ -27,7 +27,7 @@ const InfoCard = ({ icon, title, gradientColors, text }) => {
           gradientColors.endColor,
         )}
       />
-      <p className="text-center text-lg text-purple-800">{text}</p>
+      <p className="text-lg text-center text-purple-800">{text}</p>
     </div>
   )
 }
@@ -36,20 +36,20 @@ export const ProgramInformation = ({ data }) => {
   return (
     <section className="relative w-full px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
       {/* Container */}
-      <div className="mx-auto max-w-xl lg:max-w-screen-xl">
+      <div className="max-w-xl mx-auto lg:max-w-screen-xl">
         {/* Section header text */}
         <div className="lg:grid lg:grid-cols-2 lg:gap-16 xl:gap-32">
           <div className="flex items-center">
-            <h2 className="h2 max-w-4xl text-purple-900">{data.headline}</h2>
+            <h2 className="max-w-4xl text-purple-900 h2">{data.headline}</h2>
           </div>
-          <div className="mt-6 flex items-center lg:mt-0">
+          <div className="flex items-center mt-6 lg:mt-0">
             <p className="text-xl leading-relaxed text-purple-800">
               {data.text}
             </p>
           </div>
         </div>
         {/* Class info */}
-        <div className="mt-12 grid gap-8 sm:mt-14 sm:max-w-none sm:grid-cols-2 sm:gap-6 lg:mt-24 lg:grid-cols-4 xl:gap-12">
+        {/* <div className="grid gap-8 mt-12 sm:mt-14 sm:max-w-none sm:grid-cols-2 sm:gap-6 lg:mt-24 lg:grid-cols-4 xl:gap-12">
           <InfoCard
             icon="moodKid"
             title="Ages"
@@ -97,7 +97,7 @@ export const ProgramInformation = ({ data }) => {
             }}
             text={data.classSize}
           />
-        </div>
+        </div> */}
       </div>
     </section>
   )

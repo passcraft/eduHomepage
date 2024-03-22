@@ -1,73 +1,83 @@
 ---
-name: Elementary School
-dropdownDescription: Curabitur non nulla sit amet nisl tempu convallis quis ac lectus.
+name: Sarat Chandra IIT Academy
+dropdownDescription: Premier coaching institute for IIT JEE, EAPCET, and other competitive exams.
 featured: true
 hero:
-  tagline: Where great kids grow
-  headline: Bright's Elementary School Program
-  text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aenean et tortor at risus viverra adipiscing at in.
+  tagline: Where dreams become reality
+  headline: Sarat Chandra IIT Academy
+  text: Sarat Chandra IIT Academy is a premier coaching institute that provides comprehensive training for IIT JEE, EAPCET, and other competitive exams. Our experienced faculty, state-of-the-art facilities, and personalized attention ensure that our students achieve their goals and secure admissions to top engineering colleges.
   action:
-    label: Enroll today
+    label: Enroll now
     href: "#"
     icon: true
   image:
-    src: "/images/stock/elementary-school.jpg"
+    src: "/data/programs/img_1.jpeg"
 infoSection:
-  headline: The Elementary School dedicated to your child's success
-  text: Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque tristique pellentesque. Blandit amet, sed aenean erat arcu morbi.
-  ages: 4 - 5 years old
-  dates: Jan. 13 - Jun. 31
-  schedule: M-F from 8AM - 5 PM
-  classSize: Student to teacher ratio of 10:1
+  headline: The Academy dedicated to your child's success
+  text: At Sarat Chandra IIT Academy, we believe in nurturing talent and helping students realize their full potential. Our unique approach to education, combined with a supportive learning environment, enables our students to excel in their chosen fields.
+  
 descriptionSection:
   text: >
     ## Our unique approach to education
             
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl pretium fusce id velit ut. Id porta nibh venenatis cras sed felis eget velit. Ut morbi tincidunt augue interdum velit. Ipsum faucibus vitae aliquet nec ullamcorper sit amet. Viverra orci sagittis eu volutpat odio facilisis mauris. Diam quis enim lobortis scelerisque fermentum. Viverra mauris in aliquam sem fringilla. 
+    At Sarat Chandra IIT Academy, we follow a dynamic, interactive, and joyful teaching methodology to ensure stress-free education. Our experienced faculty, including IIT alumni and retired professors, provide personalized attention to each student, focusing on high-scoring topics and fundamentals.
         
-    ### What they will learn
+    ### What sets us apart
           
-    * Vivamus suscipit tortor eget felis porttitor volutpat.
+    * IIT Madras alumnus as Managing Director
+  
+    * Only IIT Academy run by IIT B.Tech graduates
+  
+    * Experienced faculty with proven track records
+    
+    * AI-powered customized assignments and exams
+    
+    * Separate campuses for boys and girls with hostels and hygienic food
+    
+    * AC classrooms with digital boards for interactive learning
+    
+    * Yoga, meditation, and sports facilities for stress-free learning
+    
+    * Personal mentors for every student
+    
+    * Limited class sizes for personalized attention
+    
+    * Motivation lectures and guest lectures by IIT top rankers and engineers
+    
+    * Extra-curricular activities for all-round development
+   
+    * Recorded classes for missed sessions
 
-    * Nulla porttitor accumsan tincidunt.
-
-    * Vivamus magna justo, lacinia eget consectetur sed.
-
-    * Lorem ipsum dolor sit amet
-
-    * Ut enim ad minim veniam
-
-
-    Elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl. Viverra vitae congue eu consequat ac felis donec et odio. Euismod nisi porta lorem mollis aliquam ut porttitor. Sed nisi lacus sed viverra tellus. Augue lacus viverra vitae congue eu consequat ac felis donec. Elementum pulvinar etiam non quam lacus. Ut venenatis tellus in metus vulputate. Ultrices dui sapien eget mi proin sed libero enim. Id velit ut tortor pretium viverra suspendisse.
-  portraitImage: "/images/stock/program-description-01.jpg"
-  squareImage1: "/images/stock/program-description-02.jpg"
-  squareImage2: "/images/stock/program-description-03.jpg"
+    Our material, assignments, and exam papers are prepared by IITians, ensuring the highest quality of education. We strive to create an environment that fosters learning, growth, and success.
+  portraitImage: "/data/programs/img_2.jpeg"
+  squareImage1: "/data/programs/img_3.jpeg"
+  squareImage2: "/data/programs/img_4.jpeg"
 pricingSection:
-  tagline: Our Elementary School Plans
-  headline: A program for every parent and child
-  text: We know you care about your child's future. That’s why we offer you the freedom to choose the right program for them.
+  tagline: Our Courses
+  headline: A program for every aspiring engineer
+  text: We offer a wide range of courses to cater to the diverse needs of students aspiring to become successful engineers. Choose the program that best suits your goals and aspirations.
   pricing1:
-    name: Regular
-    price: $1.2k
-    interval: per month
-    shortDescription: M-F from 8 AM to 3:00 PM
+    name: Inter + JEE Mains and Advanced
+    price: ₹10,000
+    interval: Advance Fee
+    shortDescription: Comprehensive coaching for IIT JEE
     features:
-      - feature: Nulla quis lorem ut libero
-      - feature: Lorem ipsum dolor sit
+      - feature: Expert faculty
+      - feature: Personalized attention
     action:
-      label: Enroll today
+      label: Enroll now
       href: "#"
       icon: true
   pricing2:
-    name: Extended
-    price: $1.5k
-    interval: per month
-    shortDescription: M-F from 8 AM to 5:00 PM
+    name: Inter + EAPCET
+    price: ₹8,000
+    interval: Advance Fee
+    shortDescription: Coaching for AP and Telangana engineering entrance
     features:
-      - feature: Nulla quis lorem ut libero
-      - feature: Lorem ipsum dolor sit
+      - feature: 45-day crash course available
+      - feature: Experienced faculty
     action:
-      label: Enroll today
+      label: Enroll now
       href: "#"
       icon: true
 ---

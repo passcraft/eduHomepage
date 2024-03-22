@@ -1,6 +1,6 @@
-*
 # featureBlocks
 
+```
 featureBlocks = [
   {
     tagline: 'An eclectic approach to education',
@@ -19,9 +19,10 @@ featureBlocks = [
     squareImage: { src: squareImage2, alt: 'Children eating' },
   },
 ]
-
+```
 # staffassurances
 
+```
 assurances = [
   'A minimum of 3 years of experience',
   'An advanced degree',
@@ -29,8 +30,10 @@ assurances = [
   'A love and passion for teaching and helping children grow and succeed',
   'A commitment to creating a positive classroom experience for all students, no matter their learning needs',
 ]
-
+```
 staff details like this
+
+```
 ---
 name: Tecia Torres
 role: Executive Director
@@ -44,8 +47,9 @@ social:
     href: "#"
 ---
 
+```
 # programs like this
-
+```
 ---
 name: Elementary School
 dropdownDescription: Curabitur non nulla sit amet nisl tempu convallis quis ac lectus.
@@ -119,27 +123,27 @@ pricingSection:
       href: "#"
       icon: true
 ---
-
+```
 
 # testimonials
-
+```
 ---
 name: Alexa Grasso
 testimonial: Donec sollicitudin molestie malesuada. Donec rutrum congue leo eget malesuada. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.
 stars: 5
 image: "/images/stock/testimonials/testimonial-03.jpg"
 ---
-
+```
 # faq
-
+```
 ---
 question: What are your hours and schedules?
 answer: Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla quis lorem ut libero malesuada feugiat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec sollicitudin molestie malesuada.
 ---
-
+```
 
 # sitelinks
-
+```
 const siteLinks = [
   { label: 'Home', href: '/' },
   { label: 'About us', href: '/about' },
@@ -147,3 +151,4 @@ const siteLinks = [
   { label: 'Parents', href: '/gallery' },
   { label: 'Contact us', href: '/contact' },
 ]
+```
