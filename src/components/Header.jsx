@@ -13,7 +13,6 @@ export function Header({ programs, contact }) {
       className={clsx(pathname === '/parents' ? 'bg-white' : 'bg-purple-25')}
     >
       <ContactHeader contact={contact} />
-      <Navbar programs={programs} />
     </header>
   )
 }

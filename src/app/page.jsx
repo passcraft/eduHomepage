@@ -1,115 +1,46 @@
-import { HomeHero } from '@/components/HomeHero'
-import { HomeFeatureBlocks } from '@/components/HomeFeatureBlocks'
-import { FeaturedPrograms } from '@/components/FeaturedPrograms'
-import { StaffAssurances } from '@/components/StaffAssurances'
-import { Testimonials } from '@/components/Testimonials'
-import { Faqs } from '@/components/Faqs'
-import { basehub } from 'basehub'
-import { getAllItems } from '@/lib/getItems'
-import { draftMode } from 'next/headers'
+import { ProgramHero } from '@/components/ProgramHero'
+import { ProgramInformation } from '@/components/ProgramInformation'
+import { ProgramDescription } from '@/components/ProgramDescription'
+import { ProgramPricing } from '@/components/ProgramPricing'
 
-export const metadata = {
-  title: 'Bright - Creating a brighter future for your child',
-  description:
-    'At Bright School, we believe every child deserves a brighter future. and strive to give every student a personalized education that will promote their individual strengths and creativity.',
+import { getItemData, getAllItems } from '@/lib/getItems'
+
+export async function generateMetadata() {
+  const program = getItemData('elementary-school', 'programs')
+
+  return {
+    title: `${program.name} - Bright School`,
+    description: program.hero.description,
+  }
 }
 
-export default async function HomePage() {
-  const faqs = getAllItems('faqs')
-  const heroData = await basehub({
-    next: { tags: ['basehub'] },
-    draft: draftMode().isEnabled,
-  }).query({
-    hero: {
-      _id: true,
-      _slug: true,
-      _title: true,
-      rating: true,
-      subtitle: true,
-      tagline: true,
-      title: true,
-      videoLink: true,
-      heroImage: {
-        alt: true,
-        aspectRatio: true,
-        fileName: true,
-        fileSize: true,
-        height: true,
-        lastModified: true,
-        mimeType: true,
-        rawUrl: true,
-      },
-      rating: true,
-      ratingLabelOne: true,
-      ratingLabelThree: true,
-      ratingLabelTwo: true,
-      ratingStarOne: true,
-      ratingStarTwo: true,
-      ratingStarThree: true,
-      
-    },
-  })
-  
-  const fetaureBlocks = await basehub({
-    next: { tags: ['basehub'] },
-    draft: draftMode().isEnabled,
-  }).query({
-    heroFeatures: {
-      _id: true,
-      _slug: true,
-      title: true,
-      subtitle: true,
-      features: {
-       
-        items: {
-          name: true,
-        },
-      },
-    },
-  })
-
-  const staffAssurance = await basehub({
-    next: { tags: ['basehub'] },
-    draft: draftMode().isEnabled,
-  }).query({
-    staffAssurances: {
-      _id: true,
-      _slug: true,
-      title: true,
-      tagline: true,
-      body: true,
-      teacherQualificationTitle: true
-    },
-  })
-
-  const data = await basehub({
-    next: { tags: ['basehub'] },
-    draft: draftMode().isEnabled,
-  }).query({
-    featuredPrograms: {
-      _id: true,
-      _slug: true,
-      title: true,
-      subtitle: true,
-    },
-    testimonials: {
-      title: true,
-      subtitle: true
-    }
-  })
-
+export default function ProgramPage() {
+  const program = getItemData('elementary-school', 'programs')
 
   return (
     <>
-      <HomeHero {...heroData.hero} />
-      {/* Gradient background transition */}
-      <div className="w-full h-40 bg-gradient-to-b from-purple-50 to-yellow-100 sm:h-48 xl:h-52" />
-
-      <HomeFeatureBlocks {...fetaureBlocks.heroFeatures} />
-      <StaffAssurances {...staffAssurance.staffAssurances}/>
-      <FeaturedPrograms {...data.featuredPrograms}/>
-      <Testimonials {...data.testimonials}/>
-      <Faqs faqs={faqs} />
+      {program?.hero && <ProgramHero hero={program.hero} />}
+      {program?.infoSection && (
+        <ProgramInformation data={program.infoSection} />
+      )}
+      {program?.descriptionSection && (
+        <ProgramDescription data={program.descriptionSection} />
+      )}
+      {program?.pricingSection && (
+        <ProgramPricing data={program.pricingSection} />
+      )}
     </>
   )
 }
+
+export async function generateStaticParams() {
+  const programs = getAllItems('programs')
+
+  const paths = programs.map((program) => ({
+    slug: program.slug,
+  }))
+
+  return paths
+}
+
+export const dynamicParams = false

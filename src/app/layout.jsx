@@ -29,7 +29,6 @@ export default function RootLayout({ children }) {
         <Header programs={programs} contact={contact} />
         {children}
         <CallToAction />
-        <Footer programs={programs} contact={contact} />
       </body>
     </html>
   )
