@@ -5,7 +5,7 @@ featured: true
 hero:
   tagline: Where dreams become reality
   headline: Sarat Chandra IIT Academy
-  text: Sarat Chandra IIT Academy is a premier coaching institute that provides comprehensive training for IIT JEE, EAPCET, and other competitive exams. Our experienced faculty, state-of-the-art facilities, and personalized attention ensure that our students achieve their goals and secure admissions to top engineering colleges.
+  text: Sarat Chandra IIT Academy is a premier coaching institute that provides comprehensive training for IIT JEE, premier coaching institute that provides comprehensive training for IIT JEE, EAPCET, and other competitive exams.
   action:
     label: Enroll now
     href: "#"
