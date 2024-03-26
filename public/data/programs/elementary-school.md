@@ -11,7 +11,7 @@ hero:
     href: "#"
     icon: true
   image:
-    src: "/images/img_1.jpeg"
+    src: "/images/sca/6.jpg"
 infoSection:
   headline: The Academy dedicated to your child's success
   text: At Sarat Chandra IIT Academy, we believe in nurturing talent and helping students realize their full potential. Our unique approach to education, combined with a supportive learning environment, enables our students to excel in their chosen fields.
@@ -24,34 +24,42 @@ descriptionSection:
         
     ### What sets us apart
           
-    * IIT Madras alumnus as Managing Director
+    - 🎓 IIT Madras alumnus as Managing Director
   
-    * Only IIT Academy run by IIT B.Tech graduates
+    - 🏫 Only IIT Academy run by IIT B.Tech graduates
   
-    * Experienced faculty with proven track records
-    
-    * AI-powered customized assignments and exams
-    
-    * Separate campuses for boys and girls with hostels and hygienic food
-    
-    * AC classrooms with digital boards for interactive learning
-    
-    * Yoga, meditation, and sports facilities for stress-free learning
-    
-    * Personal mentors for every student
-    
-    * Limited class sizes for personalized attention
-    
-    * Motivation lectures and guest lectures by IIT top rankers and engineers
-    
-    * Extra-curricular activities for all-round development
-   
-    * Recorded classes for missed sessions
+    - 👨‍🏫 Experienced faculty with proven track records
+
+    - 🤖 AI-powered customized assignments and exams
+
+    - 🏘️ Separate campuses for boys and girls with hostels and hygienic food
+
+    - 🌟 AC classrooms with digital boards for interactive learning
+
+    - 🧘‍♀️ Yoga, meditation, and sports facilities for stress-free learning
+
+    - 👨‍🎓 Personal mentors for every student
+
+    - 👥 Limited class sizes for personalized attention
+
+    - 🎤 Motivation lectures and guest lectures by IIT top rankers and engineers
+
+    - 🎨 Extra-curricular activities for all-round development
+
+    - 📹 Recorded classes for missed sessions
+
+    - 📚 Study materials, assignments, and exam papers prepared by IITians
+
+    - 🌱 Dynamic, interactive, and joyful teaching methodology for stress-free education
+
+    - 🎯 Focus on high-scoring topics and fundamentals
+
+    - 🏆 Striving to create an environment that fosters learning, growth, and success
 
     Our material, assignments, and exam papers are prepared by IITians, ensuring the highest quality of education. We strive to create an environment that fosters learning, growth, and success.
-  portraitImage: "/images/img_2.jpeg"
-  squareImage1: "/images/img_3.jpeg"
-  squareImage2: "/images/img_4.jpeg"
+  portraitImage: "/images/sca/6.jpg"
+  squareImage1: "/images/img_3.jpg"
+  squareImage2: "/images/img_4.jpg"
 pricingSection:
   tagline: Our Courses
   headline: A program for every aspiring engineer

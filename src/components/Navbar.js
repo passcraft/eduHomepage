@@ -7,7 +7,7 @@ import { Fragment } from 'react'
 import { Menu, Transition, Popover } from '@headlessui/react'
 import clsx from 'clsx'
 
-import logo from '/public/images/bright-logo.png'
+import logo from '/public/images/logo/Color logo with background.svg'
 import { Button } from '@/components/Button'
 import { Icon } from '@/components/Icon'
 
@@ -64,10 +64,10 @@ export function Navbar({ programs }) {
 
   function MobileNav() {
     return (
-      <div className="block lg:hidden">
+      <div className="hidden lg:hidden">
         <Popover>
           <Popover.Button
-            className="group relative z-50 h-5 w-6 rotate-0 transform cursor-pointer transition duration-500 ease-in-out focus:outline-none"
+            className="relative z-50 w-6 h-5 transition duration-500 ease-in-out transform rotate-0 cursor-pointer group focus:outline-none"
             aria-label="Toggle Navigation"
           >
             {({ open }) => <MenuIcon open={open} />}
@@ -84,16 +84,16 @@ export function Navbar({ programs }) {
           >
             <Popover.Panel
               as="div"
-              className="absolute inset-x-0 top-0 z-40 w-screen overflow-y-scroll bg-gradient-to-tr from-purple-600 to-purple-600 px-4 py-16 sm:px-8"
+              className="absolute inset-x-0 top-0 z-40 w-screen px-4 py-16 overflow-y-scroll bg-gradient-to-tr from-purple-600 to-purple-600 sm:px-8"
             >
-              <div className="flex h-full w-full flex-col items-center justify-center">
-                <div className="mx-auto flex w-full flex-col items-center justify-evenly space-y-6">
+              <div className="flex flex-col items-center justify-center w-full h-full">
+                <div className="flex flex-col items-center w-full mx-auto space-y-6 justify-evenly">
                   {navigation.map((link) => (
                     <Fragment key={`mobile-link-${link.label}`}>
                       {link.label !== 'Programs' && (
                         <Link href={link.href}>
                           <div className="group relative p-0.5">
-                            <span className="relative z-10 text-2xl font-medium text-purple-50 duration-300 ease-in-out group-hover:text-white">
+                            <span className="relative z-10 text-2xl font-medium duration-300 ease-in-out text-purple-50 group-hover:text-white">
                               {link.label}
                             </span>
                             <span className="absolute -left-1 -right-1 bottom-0 h-1.5 origin-bottom scale-x-0 transform rounded-lg bg-yellow-400 duration-300 ease-in-out group-hover:scale-x-100" />
@@ -103,16 +103,18 @@ export function Navbar({ programs }) {
                     </Fragment>
                   ))}
 
-                  <Button href="#">Enroll today</Button>
+                  <Button href="https://forms.gle/dazdMQSYr1KWuGudA">
+                    Enroll today
+                  </Button>
                 </div>
 
-                <hr className="my-8 w-full border-purple-200 border-opacity-30 sm:my-10" />
+                <hr className="w-full my-8 border-purple-200 border-opacity-30 sm:my-10" />
 
-                <div className="mx-auto w-full max-w-md">
-                  <p className="text-center text-lg font-semibold uppercase tracking-wider text-purple-200 sm:text-left">
+                <div className="w-full max-w-md mx-auto">
+                  <p className="text-lg font-semibold tracking-wider text-center text-purple-200 uppercase sm:text-left">
                     Programs
                   </p>
-                  <div className="mt-4 grid justify-items-center gap-4 sm:grid-cols-2 sm:justify-items-start sm:gap-x-8">
+                  <div className="grid gap-4 mt-4 justify-items-center sm:grid-cols-2 sm:justify-items-start sm:gap-x-8">
                     {programs.map((program, index) => (
                       <Link
                         href={`/programs/${program.slug}`}
@@ -122,7 +124,7 @@ export function Navbar({ programs }) {
                         )}
                       >
                         <div className="group relative p-0.5">
-                          <span className="relative z-10 text-xl font-medium text-purple-50 duration-300 ease-in-out group-hover:text-white">
+                          <span className="relative z-10 text-xl font-medium duration-300 ease-in-out text-purple-50 group-hover:text-white">
                             {program.data.name}
                           </span>
                           <span className="absolute -left-1 -right-1 bottom-0 h-1.5 origin-bottom scale-x-0 transform rounded-lg bg-yellow-400 duration-300 ease-in-out group-hover:scale-x-100" />
@@ -140,11 +142,11 @@ export function Navbar({ programs }) {
   }
 
   return (
-    <div className="px-4 sm:px-6">
-      <nav className="mx-auto flex max-w-screen-xl items-center pt-5">
-        <div className="flex w-full items-center justify-between">
+    <div className="px-4 lg:hidden sm:px-6">
+      <nav className="flex items-center max-w-screen-xl pt-5 mx-auto">
+        <div className="flex items-center justify-between w-full">
           {/* Main navigation menu for large screens */}
-          <div className="hidden items-center justify-between md:space-x-6 lg:flex lg:space-x-10">
+          <div className="items-center justify-between hidden md:space-x-6 lg:flex lg:space-x-10">
             {navigation.map((link) => (
               <Fragment key={`desktop-link-${link.label}`}>
                 {link.label == 'Programs' ? (
@@ -184,7 +186,7 @@ export function Navbar({ programs }) {
                           leaveFrom="transform opacity-100 scale-100"
                           leaveTo="transform opacity-0 scale-95"
                         >
-                          <Menu.Items className="absolute left-1/2 z-20 mt-3 w-screen max-w-xs -translate-x-1/2 rounded-2xl border border-gray-50 bg-white p-4 shadow-lg outline-none focus:outline-none">
+                          <Menu.Items className="absolute z-20 w-screen max-w-xs p-4 mt-3 -translate-x-1/2 bg-white border shadow-lg outline-none left-1/2 rounded-2xl border-gray-50 focus:outline-none">
                             {programs.map((program, index) => (
                               <Menu.Item
                                 key={`desktop-dropdown-link-${program.data.name}`}
@@ -253,10 +255,10 @@ export function Navbar({ programs }) {
 
           {/* Call to action button */}
           <div className="hidden lg:block">
-            <Button href="#">Enroll today</Button>
+            <Button href="https://forms.gle/dazdMQSYr1KWuGudA">Enroll today</Button>
           </div>
           {/* Logo on smaller screens: < lg */}
-          <div className="block w-48 flex-shrink-0 flex-grow-0 sm:w-52 lg:hidden">
+          <div className="flex-grow-0 flex-shrink-0 block w-48 sm:w-52 lg:hidden">
             <Link href="/">
               <Image src={logo} alt="Bright" className="h-auto" />
             </Link>
