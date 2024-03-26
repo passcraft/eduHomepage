@@ -1,72 +1,151 @@
 import Image from 'next/image'
 import { marked } from 'marked'
-
+import clsx from 'clsx'
+import { Icon } from '@/components/Icon'
 import dotsChaos from '/public/images/illustrations/dots-chaos.svg'
 import dotsStrip from '/public/images/illustrations/dots-strip.svg'
 import dotsPurpleMess from '/public/images/illustrations/dots-purple-mess.svg'
+
+const InfoCard = ({ icon, title, gradientColors, text }) => {
+  return (
+    <div
+      className={clsx(
+        'flex flex-col items-center justify-center rounded-2xl px-4 py-6 sm:p-8 sm:py-10 min-w-72 max-w-72',
+        gradientColors.bgColor,
+      )}
+    >
+      <span
+        className={clsx(
+          'flex h-14 w-14 items-center justify-center rounded-2xl shadow-md',
+          gradientColors.iconBgColor,
+        )}
+      >
+        <Icon icon={icon} className="w-8 h-8 text-purple-700" />
+      </span>
+      <h4 className="mt-4 text-xl font-semibold text-center text-purple-900">
+        {title}
+      </h4>
+      <div
+        className={clsx(
+          'my-2 h-1.5 w-8 rounded-2xl bg-gradient-to-r',
+          gradientColors.startColor,
+          gradientColors.endColor,
+        )}
+      />
+      <p className="text-lg text-center text-purple-800">{text}</p>
+    </div>
+  )
+}
+
 
 export const ProgramDescription = ({ data }) => {
   return (
     <section className="relative overflow-hidden">
       {/* Purple background to fill in right gap */}
-      <div className="absolute inset-y-0 right-0 ml-auto w-full max-w-screen-xl rounded-l-5xl bg-purple-600" />
+      <div className="absolute inset-y-0 right-0 w-full max-w-screen-xl ml-auto bg-purple-600 rounded-l-5xl" />
       {/* Background dots decorations */}
       <Image
         src={dotsChaos}
-        className="absolute bottom-0 right-0 z-10 hidden h-auto w-80 transform 2xl:block"
+        className="absolute bottom-0 right-0 z-10 hidden h-auto transform w-80 2xl:block"
         alt=""
       />
       <Image
         src={dotsStrip}
-        className="absolute right-20 top-1 z-10 hidden h-auto w-36 transform 2xl:block"
+        className="absolute z-10 hidden h-auto transform right-20 top-1 w-36 2xl:block"
         alt=""
       />
       {/* Main Section */}
-      <div className="relative w-full bg-purple-600 px-4 py-16 sm:px-6 sm:py-24 lg:py-0 lg:pr-0 2xl:mx-auto 2xl:max-w-screen-xl 2xl:rounded-l-5xl">
+      <div className="relative w-full px-4 py-16 bg-purple-600 sm:px-6 sm:py-24 lg:py-0 lg:pr-0 2xl:mx-auto 2xl:max-w-screen-xl 2xl:rounded-l-5xl">
         <div className="relative grid gap-12 lg:grid-cols-2 lg:pr-10 2xl:gap-4 2xl:pr-0">
-          <div className="relative order-2 mx-auto grid w-full max-w-2xl grid-cols-2 gap-3 sm:gap-6 lg:order-1 lg:max-w-none lg:py-32">
+          <div className="relative grid order-2 w-full max-w-2xl grid-cols-2 gap-3 mx-auto sm:gap-6 lg:order-1 lg:max-w-none lg:py-32">
             <Image
               src={dotsPurpleMess}
-              className="absolute -right-16 top-12 hidden transform lg:block 2xl:right-0 "
+              className="absolute hidden transform -right-16 top-12 lg:block 2xl:right-0 "
               alt=""
             />
-            <div className="aspect-h-4 aspect-w-3 relative col-span-2 transform 2xl:-translate-x-16">
+            <div className="relative col-span-2 transform aspect-h-4 aspect-w-3 2xl:-translate-x-16">
               <Image
                 src={data.portraitImage}
                 fill
-                className="absolute inset-0 h-full w-full rounded-3xl object-cover 2xl:rounded-4xl"
+                className="absolute inset-0 object-cover w-full h-full rounded-3xl 2xl:rounded-4xl"
                 alt="Program description 01"
                 sizes="(min-width: 1536px) 38.75rem, (min-width: 1024px) calc(50vw - 3rem), (min-width: 640px) 42rem, calc(100vw - 2rem)"
               />
             </div>
             <div className="transform 2xl:-translate-x-16">
-              <div className="aspect-h-1 aspect-w-1 relative">
+              <div className="relative aspect-h-1 aspect-w-1">
                 <Image
                   src={data.squareImage1}
                   fill
-                  className="absolute inset-0 h-full w-full rounded-3xl object-cover 2xl:rounded-4xl"
+                  className="absolute inset-0 object-cover w-full h-full rounded-3xl 2xl:rounded-4xl"
                   alt="Program description 02"
                   sizes="(min-width: 1536px) 18.625rem, (min-width: 1024px) 25vw, (min-width: 640px) 20.25rem, calc(100vw - 2rem)"
                 />
               </div>
             </div>
             <div className="transform 2xl:-translate-x-16">
-              <div className="aspect-h-1 aspect-w-1 relative">
+              <div className="relative aspect-h-1 aspect-w-1">
                 <Image
                   src={data.squareImage2}
                   fill
-                  className="absolute inset-0 h-full w-full rounded-3xl object-cover 2xl:rounded-4xl"
+                  className="absolute inset-0 object-cover w-full h-full rounded-3xl 2xl:rounded-4xl"
                   alt="Program description 03"
                   sizes="(min-width: 1536px) 18.625rem, (min-width: 1024px) 25vw, (min-width: 640px) 20.25rem, calc(50vw - 1.75rem)"
                 />
               </div>
             </div>
           </div>
-          <div className="order-1 flex flex-col justify-center lg:order-2 lg:py-36">
+          <div className="flex flex-col justify-center order-1 lg:order-2 lg:py-36">
             <div
-              className="prose prose-lg prose-invert relative z-20 mx-auto sm:prose-xl"
+              className="relative z-20 mx-auto prose prose-lg prose-invert sm:prose-xl"
               dangerouslySetInnerHTML={{ __html: marked.parse(data.text) }}
             ></div>
+            <div className="flex flex-wrap gap-4">
+              <InfoCard
+                icon="moodKid"
+                gradientColors={{
+                  bgColor: 'bg-yellow-200',
+                  iconBgColor: 'bg-yellow-400',
+                  startColor: 'from-yellow-400',
+                  endColor: 'to-yellow-500',
+                }}
+                text={'🎓 IIT Madras alumnus as Managing Director'}
+              />
+
+              <InfoCard
+                icon="calendar"
+                gradientColors={{
+                  bgColor: 'bg-purple-50',
+                  iconBgColor: 'bg-purple-200',
+                  startColor: 'from-purple-200',
+                  endColor: 'to-purple-300',
+                }}
+                text={'🏫 Only IIT Academy run by IIT B.Tech graduates'}
+              />
+
+              <InfoCard
+                icon="clock"
+                gradientColors={{
+                  bgColor: 'bg-rose-50',
+                  iconBgColor: 'bg-rose-200',
+                  startColor: 'from-rose-100',
+                  endColor: 'to-rose-300',
+                }}
+                text={'👨‍🏫 Experienced faculty with proven track records'}
+              />
+
+              <InfoCard
+                icon="home"
+                gradientColors={{
+                  bgColor: 'bg-green-50',
+                  iconBgColor: 'bg-green-200',
+                  startColor: 'from-green-100',
+                  endColor: 'to-green-300',
+                }}
+                text={'🏘️ Separate campuses for boys and girls with hostels and hygienic food'}
+              />
+              
+            </div>
           </div>
         </div>
       </div>

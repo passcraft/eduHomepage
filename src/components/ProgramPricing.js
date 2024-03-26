@@ -44,7 +44,7 @@ export const ProgramPricing = ({ data }) => {
                 Want to learn more about our programs?
               </p>
               <a
-                href="contact.html"
+                href="https://forms.gle/dazdMQSYr1KWuGudA"
                 className="group mt-1.5 flex w-[126px] max-w-full cursor-pointer items-center border-b-2 border-solid border-purple-600 bg-transparent px-0 py-0.5 text-left leading-6 text-purple-600 no-underline transition duration-300 ease-in-out hover:border-purple-400 hover:text-purple-500"
               >
                 <span className="text-base font-bold text-left">
@@ -107,7 +107,7 @@ export const ProgramPricing = ({ data }) => {
                     </ul>
                     {/* CTA button */}
                     <Button
-                      href={data[`pricing${i + 1}`].action.href}
+                      href={'https://rzp.io/l/IkUXWfLWyU'}
                       className="mt-6"
                       variant="accent"
                       size="sm"
