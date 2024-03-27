@@ -13,11 +13,11 @@ const roboto = Roboto_Flex({
   variable: '--font-roboto',
 })
 
-export const metadata = {
-  title: 'Bright School - Creating a brighter future for your child',
-  description:
-    'At Bright School, we believe every child deserves a brighter future. and strive to give every student a personalized education that will promote their individual strengths and creativity.',
-}
+// export const metadata = {
+//   title: 'Bright School - Creating a brighter future for your child',
+//   description:
+//     'At Bright School, we believe every child deserves a brighter future. and strive to give every student a personalized education that will promote their individual strengths and creativity.',
+// }
 
 export default function RootLayout({ children }) {
   const programs = getAllItems('programs')
