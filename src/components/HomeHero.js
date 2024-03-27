@@ -170,8 +170,8 @@ export const HomeHero = ({title, subtitle, rating, tagline, videoLink, heroImage
                       className="absolute w-full h-full"
                       src={videoLink}
                       title="Video"
-                      webkitallowfullscreen
-                      mozallowfullscreen
+                      webkitallowFullScreen
+                      mozallowFullScreen
                       allowFullScreen
                     />
                   </div>

@@ -54,10 +54,9 @@ export const ProgramHero = ({ hero }) => {
               height="315"
               src="https://www.youtube.com/embed/rrk4ciPSPVw?si=LCRIFiHheOZ4DwbZ"
               title="YouTube video player"
-              frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
               className="absolute inset-0 w-full h-full shadow-xl rounded-3xl"
             ></iframe>
           </div>
