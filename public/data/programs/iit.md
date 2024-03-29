@@ -5,7 +5,7 @@ featured: true
 hero:
   tagline: Where dreams become reality
   headline: Sarat Chandra IIT Academy
-  text: Sarat Chandra IIT Academy is a premier coaching institute that provides comprehensive training for IIT JEE, premier coaching institute that provides comprehensive training for IIT JEE, EAPCET, and other competitive exams.
+  text: Sarat Chandra IIT Academy is a premier coaching institute that provides comprehensive training for IIT JEE, EAPCET, and other competitive exams.
   action:
     label: Enroll now
     href: "#"
@@ -13,8 +13,8 @@ hero:
   image:
     src: "/images/sca/6.jpg"
 infoSection:
-  headline: The Academy dedicated to your child's success
-  text: At Sarat Chandra IIT Academy, we believe in nurturing talent and helping students realize their full potential. Our unique approach to education, combined with a supportive learning environment, enables our students to excel in their chosen fields.
+  headline: Unlock Your Potential
+  text: Through our innovative curriculum, expert faculty, and supportive learning environment, we help students unlock their full potential and pave the way for a bright future.
   ages: 5-15
   
 descriptionSection:
@@ -44,16 +44,5 @@ pricingSection:
       label: Enroll now
       href: "#"
       icon: true
-  pricing2:
-    name: Inter + EAPCET
-    price: ₹8,000
-    interval: Advance Fee
-    shortDescription: Coaching for AP and Telangana engineering entrance
-    features:
-      - feature: 45-day crash course available
-      - feature: Experienced faculty
-    action:
-      label: Enroll now
-      href: "#"
-      icon: true
+  
 ---

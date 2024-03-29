@@ -40,34 +40,34 @@ const InfoCard = ({ icon, title, gradientColors, text }) => {
 
 export const ProgramDescription = ({ data }) => {
   return (
-    <section className="relative overflow-hidden">
+    <section className="overflow-hidden relative">
       {/* Purple background to fill in right gap */}
-      <div className="absolute inset-y-0 right-0 w-full max-w-screen-xl ml-auto bg-purple-600 rounded-l-5xl" />
+      <div className="absolute inset-y-0 right-0 ml-auto w-full max-w-screen-xl bg-purple-600 rounded-l-5xl" />
       {/* Background dots decorations */}
       <Image
         src={dotsChaos}
-        className="absolute bottom-0 right-0 z-10 hidden h-auto transform w-80 2xl:block"
+        className="hidden absolute right-0 bottom-0 z-10 w-80 h-auto transform 2xl:block"
         alt=""
       />
       <Image
         src={dotsStrip}
-        className="absolute z-10 hidden h-auto transform right-20 top-1 w-36 2xl:block"
+        className="hidden absolute top-1 right-20 z-10 w-36 h-auto transform 2xl:block"
         alt=""
       />
       {/* Main Section */}
-      <div className="relative w-full px-4 py-16 bg-purple-600 sm:px-6 sm:py-24 lg:py-0 lg:pr-0 2xl:mx-auto 2xl:max-w-screen-xl 2xl:rounded-l-5xl">
-        <div className="relative grid gap-12 lg:grid-cols-2 lg:pr-10 2xl:gap-4 2xl:pr-0">
-          <div className="relative grid order-2 w-full max-w-2xl grid-cols-2 gap-3 mx-auto sm:gap-6 lg:order-1 lg:max-w-none lg:py-32">
+      <div className="relative px-4 py-16 w-full bg-purple-600 sm:px-6 sm:py-24 lg:py-0 lg:pr-0 2xl:mx-auto 2xl:max-w-screen-xl 2xl:rounded-l-5xl">
+        <div className="grid relative gap-12 lg:grid-cols-2 lg:pr-10 2xl:gap-4 2xl:pr-0">
+          <div className="grid relative order-2 grid-cols-2 gap-3 mx-auto w-full max-w-2xl sm:gap-6 lg:order-1 lg:max-w-none lg:py-32">
             <Image
               src={dotsPurpleMess}
-              className="absolute hidden transform -right-16 top-12 lg:block 2xl:right-0 "
+              className="hidden absolute top-12 -right-16 transform lg:block 2xl:right-0"
               alt=""
             />
             <div className="relative col-span-2 transform aspect-h-4 aspect-w-3 2xl:-translate-x-16">
               <Image
                 src={data.portraitImage}
                 fill
-                className="absolute inset-0 object-cover w-full h-full rounded-3xl 2xl:rounded-4xl"
+                className="object-cover absolute inset-0 w-full h-full rounded-3xl 2xl:rounded-4xl"
                 alt="Program description 01"
                 sizes="(min-width: 1536px) 38.75rem, (min-width: 1024px) calc(50vw - 3rem), (min-width: 640px) 42rem, calc(100vw - 2rem)"
               />
@@ -77,7 +77,7 @@ export const ProgramDescription = ({ data }) => {
                 <Image
                   src={data.squareImage1}
                   fill
-                  className="absolute inset-0 object-cover w-full h-full rounded-3xl 2xl:rounded-4xl"
+                  className="object-cover absolute inset-0 w-full h-full rounded-3xl 2xl:rounded-4xl"
                   alt="Program description 02"
                   sizes="(min-width: 1536px) 18.625rem, (min-width: 1024px) 25vw, (min-width: 640px) 20.25rem, calc(100vw - 2rem)"
                 />
@@ -88,19 +88,19 @@ export const ProgramDescription = ({ data }) => {
                 <Image
                   src={data.squareImage2}
                   fill
-                  className="absolute inset-0 object-cover w-full h-full rounded-3xl 2xl:rounded-4xl"
+                  className="object-cover absolute inset-0 w-full h-full rounded-3xl 2xl:rounded-4xl"
                   alt="Program description 03"
                   sizes="(min-width: 1536px) 18.625rem, (min-width: 1024px) 25vw, (min-width: 640px) 20.25rem, calc(50vw - 1.75rem)"
                 />
               </div>
             </div>
           </div>
-          <div className="flex flex-col justify-center order-1 lg:order-2 lg:py-36">
+          <div className="flex flex-col order-1 justify-center lg:order-2 lg:py-36">
             <div
               className="relative z-20 mx-auto prose prose-lg prose-invert sm:prose-xl"
               dangerouslySetInnerHTML={{ __html: marked.parse(data.text) }}
             ></div>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 justify-center my-8">
               <InfoCard
                 icon="moodKid"
                 gradientColors={{
@@ -122,6 +122,16 @@ export const ProgramDescription = ({ data }) => {
                 }}
                 text={'🏫 Only IIT Academy run by IIT B.Tech graduates'}
               />
+              <InfoCard
+                icon="calendar"
+                gradientColors={{
+                  bgColor: 'bg-purple-50',
+                  iconBgColor: 'bg-purple-200',
+                  startColor: 'from-purple-200',
+                  endColor: 'to-purple-300',
+                }}
+                text={'🎯 Focus on high-scoring topics and fundamentals'}
+              />
 
               <InfoCard
                 icon="clock"
@@ -133,6 +143,18 @@ export const ProgramDescription = ({ data }) => {
                 }}
                 text={'👨‍🏫 Experienced faculty with proven track records'}
               />
+              <InfoCard
+                icon="moodKid"
+                gradientColors={{
+                  bgColor: 'bg-yellow-200',
+                  iconBgColor: 'bg-yellow-400',
+                  startColor: 'from-yellow-400',
+                  endColor: 'to-yellow-500',
+                }}
+                text={
+                  '📚 Study materials, assignments, and exam papers prepared by IITians'
+                }
+              />
 
               <InfoCard
                 icon="home"
@@ -142,9 +164,10 @@ export const ProgramDescription = ({ data }) => {
                   startColor: 'from-green-100',
                   endColor: 'to-green-300',
                 }}
-                text={'🏘️ Separate campuses for boys and girls with hostels and hygienic food'}
+                text={
+                  '🏘️ Separate campuses for boys and girls with hostels and hygienic food'
+                }
               />
-              
             </div>
           </div>
         </div>

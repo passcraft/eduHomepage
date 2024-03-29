@@ -5,9 +5,9 @@ import { Button } from '@/components/Button'
 
 export const ProgramPricing = ({ data }) => {
   return (
-    <section className="relative w-full px-4 py-16 sm:px-6 sm:py-24 xl:px-8">
+    <section className="relative px-4 py-16 w-full sm:px-6 sm:py-24 xl:px-8">
       {/* Container */}
-      <div className="max-w-xl mx-auto lg:max-w-screen-xl">
+      <div className="mx-auto max-w-xl lg:max-w-screen-xl">
         <div className="relative z-10 my-14 sm:my-16">
           <div className="relative aspect-h-2 aspect-w-3 sm:aspect-h-9 sm:aspect-w-16">
             <iframe
@@ -18,7 +18,7 @@ export const ProgramPricing = ({ data }) => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
-              className="absolute inset-0 w-full h-full shadow-xl rounded-3xl"
+              className="absolute inset-0 w-full h-full rounded-3xl shadow-xl"
             ></iframe>
           </div>
         </div>
@@ -31,10 +31,10 @@ export const ProgramPricing = ({ data }) => {
                 {data.tagline}
               </span>
             </div>
-            <h2 className="h2 mt-3.5 max-w-xl text-purple-900 sm:mt-4">
+            <h2 className="mt-3.5 max-w-xl text-purple-900 h2 sm:mt-4">
               {data.headline}
             </h2>
-            <p className="max-w-lg mt-3 text-lg leading-relaxed text-purple-800">
+            <p className="mt-3 max-w-lg text-lg leading-relaxed text-purple-800">
               {data.text}
             </p>
             {/* Contact link */}
@@ -51,15 +51,15 @@ export const ProgramPricing = ({ data }) => {
                 </span>
                 <Icon
                   icon="arrowNarrowRight"
-                  className="w-6 h-6 ml-3 group-hover:animate-horizontal-bounce"
+                  className="ml-3 w-6 h-6 group-hover:animate-horizontal-bounce"
                   stroke={2}
                 />
               </a>
             </div>
           </div>
           {/* Pricing cards */}
-          <div className="grid gap-8 mt-14 md:grid-cols-2 lg:mt-20 lg:gap-4 xl:gap-8">
-            {[...Array(2)].map((e, i) => (
+          <div className="grid gap-8 items-center mt-14 lg:mt-20 lg:gap-4 xl:gap-8">
+            {[...Array(1)].map((e, i) => (
               <div
                 key={`pricing-card-${i}`}
                 className={clsx(
@@ -68,7 +68,7 @@ export const ProgramPricing = ({ data }) => {
                 )}
               >
                 <div className="relative">
-                  <div className="relative inline-block w-full text-left">
+                  <div className="inline-block relative w-full text-left">
                     <h3 className="relative text-xl font-bold tracking-normal text-purple-900">
                       {data[`pricing${i + 1}`].name}
                     </h3>
@@ -77,11 +77,11 @@ export const ProgramPricing = ({ data }) => {
                         {data[`pricing${i + 1}`].price}
                       </h2>
                       <div className="mt-3">
-                        <div className="inline-block h-6 px-3 text-sm font-medium leading-6 text-purple-700 align-top bg-purple-200 -rotate-1 rounded-xl">
+                        <div className="inline-block px-3 h-6 text-sm font-medium leading-6 text-purple-700 align-top bg-purple-200 rounded-xl -rotate-1">
                           {data[`pricing${i + 1}`].interval}
                         </div>
                       </div>
-                      <p className="block w-full mt-6 font-medium text-purple-900">
+                      <p className="block mt-6 w-full font-medium text-purple-900">
                         {data[`pricing${i + 1}`].shortDescription}
                       </p>
                     </div>
@@ -115,7 +115,7 @@ export const ProgramPricing = ({ data }) => {
                       {data[`pricing${i + 1}`].action.icon && (
                         <Icon
                           icon="arrowNarrowRight"
-                          className="w-5 h-5 ml-3 group-hover:animate-horizontal-bounce"
+                          className="ml-3 w-5 h-5 group-hover:animate-horizontal-bounce"
                           stroke={2}
                         />
                       )}
