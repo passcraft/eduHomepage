@@ -26,12 +26,12 @@ descriptionSection:
     ### What sets us apart
 
   portraitImage: "/images/sca/10.jpeg"
-  squareImage1: "/images/img_3.jpg"
-  squareImage2: "/images/img_4.jpg"
+  squareImage1: "/images/img_3.jpeg"
+  squareImage2: "/images/img_4.jpeg"
 pricingSection:
   tagline: Our Courses
   headline: A program for every aspiring engineer
-  text: We offer a wide range of courses to cater to the diverse needs of students aspiring to become successful engineers. Choose the program that best suits your goals and aspirations.
+  text:  Fuel your dreams at Sarat Chandra Academy!! We offer Intermediate courses in MPC, MEC, HEC, and CEC, plus top-notch prep for exams like JEE, EAPCET, SAT, NDA, BITSAT, CLAT, and IPMAT. Our rockstar teachers and cutting edge AI-driven teaching methods create a space where you can grow, unleash your potential, and achieve your goals.
   pricing1:
     name: Inter + JEE Mains and Advanced
     price: ₹10,000
