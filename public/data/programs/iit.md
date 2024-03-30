@@ -26,8 +26,8 @@ descriptionSection:
     ### What sets us apart
 
   portraitImage: "/images/sca/10.jpeg"
-  squareImage1: "/images/img_3.jpeg"
-  squareImage2: "/images/img_4.jpeg"
+  squareImage1: "/images/img_8.jpeg"
+  squareImage2: "/images/img_9.jpeg"
 pricingSection:
   tagline: Our Courses
   headline: A program for every aspiring engineer
