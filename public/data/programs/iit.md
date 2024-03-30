@@ -25,7 +25,7 @@ descriptionSection:
         
     ### What sets us apart
 
-  portraitImage: "/images/sca/10.jpeg"
+  portraitImage: "/images/sca/5.jpg"
   squareImage1: "/images/img_8.jpeg"
   squareImage2: "/images/img_9.jpeg"
 pricingSection:
