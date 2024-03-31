@@ -1,8 +1,8 @@
-"use client"
+'use client'
 import clsx from 'clsx'
 import { Icon } from '@/components/Icon'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 
 const InfoCard = ({ icon, title, gradientColors, text }) => {
   return (
@@ -41,51 +41,60 @@ export const ProgramInformation = ({ data }) => {
   const slides = [
     {
       id: 0,
-      title: "Slide 1 Title",
-      description: "Description of Slide 1",
-      image: "/images/img_6.jpg",
+      title: 'Slide 1 Title',
+      description: 'Description of Slide 1',
+      image: '/images/img_6.jpg',
       active: currentSlide === 0,
     },
     {
       id: 1,
-      title: "Slide 2 Title",
-      description: "Description of Slide 2",
-      image: "/images/img_1.jpeg",
+      title: 'Slide 2 Title',
+      description: 'Description of Slide 2',
+      image: '/images/img_1.jpeg',
       active: currentSlide === 1,
     },
     {
       id: 2,
-      title: "Slide 3 Title",
-      description: "Description of Slide 3",
-      image: "/images/img_5.jpg",
+      title: 'Slide 3 Title',
+      description: 'Description of Slide 3',
+      image: '/images/img_5.jpg',
       active: currentSlide === 2,
     },
-  ];
+  ]
 
   // Function to navigate to a specific slide
   const handleCarouselSlide = (index) => {
     if (index < 0 || index >= data.slides.length) {
-      console.error("Invalid slide index");
-      return;
+      console.error('Invalid slide index')
+      return
     }
-    setCurrentSlide(index);
+    setCurrentSlide(index)
   }
 
   // Function to go to the next slide
   const handleNextSlide = () => {
     setCurrentSlide((prevSlide) => {
-      const nextSlide = prevSlide + 1;
-      return nextSlide % slides.length;
-    });
+      const nextSlide = prevSlide + 1
+      return nextSlide % slides.length
+    })
   }
 
   // Function to go to the previous slide
   const handlePrevSlide = () => {
     setCurrentSlide((prevSlide) => {
-      const prevIndex = prevSlide - 1;
-      return prevIndex < 0 ? slides.length - 1 : prevIndex;
-    });
+      const prevIndex = prevSlide - 1
+      return prevIndex < 0 ? slides.length - 1 : prevIndex
+    })
   }
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNextSlide() // Call handleNextSlide to move to the next slide
+    }, 3000) // Change slide every 3000 milliseconds (3 seconds)
+
+    return () => clearInterval(interval) // Clear interval on component unmount
+  }, [currentSlide, slides.length])
+
   return (
     <section className="relative px-4 py-16 w-full sm:px-6 sm:py-24 lg:px-8 lg:py-32">
       {/* Container */}

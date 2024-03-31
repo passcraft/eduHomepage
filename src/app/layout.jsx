@@ -1,7 +1,7 @@
 import '@/styles/tailwind.css'
 import clsx from 'clsx'
 import { Roboto_Flex } from 'next/font/google'
-
+import { Navbar } from '@/components/Navbar'
 import { Header } from '@/components/Header'
 import { CallToAction } from '@/components/CallToAction'
 import { Footer } from '@/components/Footer'
@@ -27,6 +27,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={clsx('font-sans', roboto.variable)}>
         <Header programs={programs} contact={contact} />
+        {/* <Navbar programs={programs} /> */}
         {children}
         <CallToAction />
       </body>
