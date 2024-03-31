@@ -121,7 +121,9 @@ export function Navbar({ programs }) {
                     </Fragment>
                   ))} */}
 
-                  <Button href="#">Enroll today</Button>
+                  <Button href="https://forms.gle/dazdMQSYr1KWuGudA">
+                    Enroll today
+                  </Button>
                 </div>
 
                 <hr className="my-8 w-full border-purple-200 border-opacity-30 sm:my-10" />
