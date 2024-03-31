@@ -32,6 +32,7 @@ export default function RootLayout({ children }) {
         <CallToAction />
       </body>
       <Script
+      id='kiwi-script'
         dangerouslySetInnerHTML={{
           __html: `
     (function(w,d,s,c,r,a,m){
