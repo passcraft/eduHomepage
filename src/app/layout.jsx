@@ -30,6 +30,7 @@ export default function RootLayout({ children }) {
         {/* <Navbar programs={programs} /> */}
         {children}
         <CallToAction />
+        <Footer/>
       </body>
       <Script
       id='kiwi-script'
