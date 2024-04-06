@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
         <CallToAction />
         <Footer/>
       </body>
-    <Script strategy="lazyOnload">
+    <Script strategy="lazyOnload" id='whatsapp-script'>
       {`
         (function() {
           var whatsappIcon = document.createElement('a');
@@ -50,7 +50,7 @@ export default function RootLayout({ children }) {
           document.body.appendChild(whatsappIcon);
         })();
       `}
-    </Script>
+   //</Script>
     </html>
   )
 }
