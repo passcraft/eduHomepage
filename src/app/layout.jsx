@@ -50,7 +50,7 @@ export default function RootLayout({ children }) {
           document.body.appendChild(whatsappIcon);
         })();
       `}
-   //</Script>
+   </Script>
     </html>
   )
 }
