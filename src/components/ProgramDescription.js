@@ -109,7 +109,7 @@ export const ProgramDescription = ({ data }) => {
                   startColor: 'from-yellow-400',
                   endColor: 'to-yellow-500',
                 }}
-                text={'🎓 IIT Madras alumnus as Managing Director'}
+                text={data.card_1}
               />
 
               <InfoCard
@@ -120,7 +120,7 @@ export const ProgramDescription = ({ data }) => {
                   startColor: 'from-purple-200',
                   endColor: 'to-purple-300',
                 }}
-                text={'🏫 Only IIT Academy run by IIT B.Tech graduates'}
+                text={data.card_2}
               />
               <InfoCard
                 icon="calendar"

@@ -37,7 +37,7 @@ export function ContactHeader({ contact,pathname }) {
                   Address
                 </h5>
                 <p className="mt-0.5 text-sm leading-relaxed text-purple-800 text-opacity-90">
-                  {contact.address}
+                  Benz Circle, Vijayawada ; Ashoknagar, Hyderabad
                 </p>
               </div>
             </li>
@@ -54,7 +54,7 @@ export function ContactHeader({ contact,pathname }) {
                   Email
                 </h5>
                 <p className="mt-0.5 text-sm leading-relaxed text-purple-800 text-opacity-90">
-                  {contact.email}
+                  saratchandraiitacademy@gmail.com
                 </p>
               </div>
             </li>
@@ -71,7 +71,7 @@ export function ContactHeader({ contact,pathname }) {
                   Phone
                 </h5>
                 <p className="mt-0.5 text-sm leading-relaxed text-purple-800 text-opacity-90">
-                  {contact.phone}
+                  9494188688 and 9494688188
                 </p>
               </div>
             </li>

@@ -148,7 +148,7 @@ export const Footer = async ({ programs, contact }) => {
       <div className="flex flex-col justify-between py-8 mx-auto max-w-md sm:max-w-none sm:flex-row lg:max-w-screen-2xl">
         {/* Copyright note */}
         <span className="text-base text-purple-800/90">
-          © {new Date().getFullYear()} SCA Academny. All rights reserved.
+          © {new Date().getFullYear()} SCA Academy. All rights reserved.
         </span>
         {/* <p className="flex items-center mt-0.5 text-purple-800/90">
           Made with
