@@ -1,11 +1,11 @@
 import '@/styles/tailwind.css'
 import clsx from 'clsx'
 import { Roboto_Flex } from 'next/font/google'
-
+import { Navbar } from '@/components/Navbar'
 import { Header } from '@/components/Header'
 import { CallToAction } from '@/components/CallToAction'
 import { Footer } from '@/components/Footer'
-
+import Script from 'next/script'
 import { getAllItems, getItemData } from '@/lib/getItems'
 
 const roboto = Roboto_Flex({
@@ -13,11 +13,11 @@ const roboto = Roboto_Flex({
   variable: '--font-roboto',
 })
 
-export const metadata = {
-  title: 'Bright School - Creating a brighter future for your child',
-  description:
-    'At Bright School, we believe every child deserves a brighter future. and strive to give every student a personalized education that will promote their individual strengths and creativity.',
-}
+// export const metadata = {
+//   title: 'Bright School - Creating a brighter future for your child',
+//   description:
+//     'At Bright School, we believe every child deserves a brighter future. and strive to give every student a personalized education that will promote their individual strengths and creativity.',
+// }
 
 export default function RootLayout({ children }) {
   const programs = getAllItems('programs')
@@ -27,10 +27,30 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={clsx('font-sans', roboto.variable)}>
         <Header programs={programs} contact={contact} />
+        {/* <Navbar programs={programs} /> */}
         {children}
         <CallToAction />
-        <Footer programs={programs} contact={contact} />
+        <Footer/>
       </body>
+    <Script strategy="lazyOnload" id='whatsapp-script'>
+      {`
+        (function() {
+          var whatsappIcon = document.createElement('a');
+          whatsappIcon.href = 'https://wa.me/9494188688';
+          whatsappIcon.target = '_blank';
+          whatsappIcon.style.position = 'fixed';
+          whatsappIcon.style.bottom = '20px';
+          whatsappIcon.style.right = '20px';
+          whatsappIcon.style.zIndex = '1000';
+          var whatsappImg = document.createElement('img');
+          whatsappImg.src = 'https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg';
+          whatsappImg.style.width = '50px';
+          whatsappImg.style.height = '50px';
+          whatsappIcon.appendChild(whatsappImg);
+          document.body.appendChild(whatsappIcon);
+        })();
+      `}
+   </Script>
     </html>
   )
 }

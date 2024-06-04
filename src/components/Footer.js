@@ -2,10 +2,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 import clsx from 'clsx'
 import { basehub } from 'basehub'
-import { draftMode } from 'next/headers'
-import logo from '/public/images/bright-logo.png'
-import { Icon } from '@/components/Icon'
+import { draftMode,headers } from 'next/headers'
 
+import { Icon } from '@/components/Icon'
+import FooterImage from './FooterImage'
 const siteLinks = [
   { label: 'Home', href: '/' },
   { label: 'About us', href: '/about' },
@@ -18,7 +18,7 @@ function SocialLink({ className, href, icon }) {
   return (
     <Link
       className={clsx(
-        'flex h-10 w-10 items-center justify-center rounded-full bg-purple-500 duration-300 ease-in-out hover:bg-purple-600',
+        'flex justify-center items-center w-10 h-10 bg-purple-500 rounded-full duration-300 ease-in-out hover:bg-purple-600',
         className,
       )}
       href={href}
@@ -52,91 +52,51 @@ export const Footer = async ({ programs, contact }) => {
       phone: true,
     },
   })
+  const header = headers()
+  const pathname = header.get('x-invoke-path') || ''
+  console.log('pathName:', pathname)
   return (
     <footer className="px-4 pt-16 space-y-8 bg-yellow-100 divide-y divide-purple-400/20 sm:px-6 sm:pt-20 lg:px-8">
       {/* Top section: blocks */}
-      <div className="grid max-w-md mx-auto gap-y-8 sm:max-w-none sm:grid-cols-2 sm:gap-x-8 sm:gap-y-12 md:gap-x-12 lg:max-w-screen-2xl lg:grid-cols-11 lg:gap-8 xl:gap-12">
+      <div className="flex flex-wrap gap-8 justify-center mx-auto max-w-md sm:max-w-none lg:max-w-screen-2xl">
         {/* Block 1 */}
-        <div className="flex flex-col lg:col-span-4 lg:mx-auto">
+        <div className="flex flex-col lg:mx-auto lg:flex-1">
           {/* Logo */}
-          <div className="flex items-center">
-            <div className="flex-grow-0 flex-shrink-0 w-60">
-              <Link href="/">
-                <Image src={logo} alt="Bright" className="h-auto" />
-              </Link>
+          <div className="flex justify-center lg:justify-start">
+            <div className="w-60">
+              <FooterImage />
             </div>
           </div>
           {/* Mission statement */}
-          <div className="mt-6 text-lg text-purple-800">
-            {data.footer.description}
+          <div className="mt-6 text-lg text-center text-purple-800 lg:text-left">
+            Sarat Chandra IIT Academy is a premier coaching institute that
+            provides comprehensive training for IIT JEE, EAPCET, and other
+            competitive exams.
           </div>
           {/* Social links */}
-          <div className="w-full mt-5 lg:mt-6">
-            <div className="flex justify-start space-x-4">
+          {/* <div className="mt-5 w-full lg:mt-6">
+            <div className="flex justify-center space-x-4 lg:justify-start">
               <SocialLink href="#0" icon="instagram" />
               <SocialLink href="#0" icon="facebook" />
               <SocialLink href="#0" icon="twitter" />
             </div>
-          </div>
+          </div> */}
         </div>
         {/* Block 2 */}
-        <div className="flex-shrink sm:order-3 lg:order-none lg:col-span-2">
-          <h6 className="relative text-xl font-bold tracking-wide text-purple-900">
-            <span className="relative z-20">Programs</span>
-            <span className="absolute left-0 z-10 w-12 h-1 rounded-lg -bottom-1 bg-gradient-to-r from-yellow-400 to-yellow-500" />
-          </h6>
-          {/* Program links */}
-          <ul className="mt-6 text-lg divide-y divide-purple-400/20">
-            {programs.map((program, index) => (
-              <li
-                key={`footer-program-link-${program.data.name}`}
-                className={clsx(
-                  'font-medium text-purple-700 duration-300 ease-in-out hover:text-purple-600',
-                  index == 0 && 'pb-2',
-                  index == programs.length && 'pt-2',
-                  index > 0 && index < programs.length && 'py-2',
-                )}
-              >
-                <Link href={program.slug}>{program.data.name}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+
         {/* Block 3 */}
-        <div className="flex-shrink sm:order-4 lg:order-none lg:col-span-2">
-          <h6 className="relative text-xl font-bold tracking-wide text-purple-900">
-            <span className="relative z-20">Site Links</span>
-            <span className="absolute left-0 z-10 w-12 h-1 rounded-lg -bottom-1 bg-gradient-to-r from-yellow-400 to-yellow-500" />
-          </h6>
-          {/* Site links */}
-          <ul className="mt-6 text-lg divide-y divide-purple-400/20">
-            {siteLinks.map((link, index) => (
-              <li
-                key={`footer-site-link-${link.label}`}
-                className={clsx(
-                  'font-medium text-purple-700 duration-300 ease-in-out hover:text-purple-600',
-                  index == 0 && 'pb-2',
-                  index == siteLinks.length && 'pt-2',
-                  index > 0 && index < siteLinks.length && 'py-2',
-                )}
-              >
-                <Link href={link.href}>{link.label}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
         {/* Block 4 */}
-        <div className="sm:order-2 lg:order-none lg:col-span-3 lg:mx-auto ">
-          <h6 className="relative text-xl font-bold tracking-wide text-purple-900">
+        <div className="flex flex-col lg:mx-auto lg:flex-1">
+          <h6 className="relative text-xl font-bold tracking-wide text-center text-purple-900 lg:text-left">
             <span className="relative z-20">Contact us</span>
-            <span className="absolute left-0 z-10 w-12 h-1 rounded-lg -bottom-1 bg-gradient-to-r from-yellow-400 to-yellow-500" />
+            <span className="absolute left-0 -bottom-1 z-10 w-12 h-1 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-lg" />
           </h6>
           {/* Contact information */}
           <ul className="flex flex-col mt-6 space-y-5">
             {/* Address */}
-            <li className="flex flex-shrink max-w-xs">
+            <li className="flex">
               <div>
-                <span className="flex items-center justify-center bg-yellow-400 h-11 w-11 rounded-2xl">
+                <span className="flex justify-center items-center w-11 h-11 bg-yellow-400 rounded-2xl">
                   <Icon icon="mapPin" className="w-6 h-6 text-purple-700" />
                 </span>
               </div>
@@ -145,14 +105,14 @@ export const Footer = async ({ programs, contact }) => {
                   Address
                 </h5>
                 <p className="mt-0.5 text-sm leading-relaxed text-purple-800 text-opacity-90">
-                  {data.footer.address}
+                  Benz Circle, Vijayawada; Ashoknagar, Hyderabad
                 </p>
               </div>
             </li>
             {/* Email */}
-            <li className="flex flex-shrink-0">
+            <li className="flex">
               <div>
-                <span className="flex items-center justify-center bg-purple-200 h-11 w-11 rounded-2xl">
+                <span className="flex justify-center items-center w-11 h-11 bg-purple-200 rounded-2xl">
                   <Icon icon="mail" className="w-6 h-6 text-purple-700" />
                 </span>
               </div>
@@ -161,14 +121,14 @@ export const Footer = async ({ programs, contact }) => {
                   Email
                 </h5>
                 <p className="mt-0.5 text-sm leading-relaxed text-purple-800 text-opacity-90">
-                  {data.footer.email}
+                  saratchandraiitacademy@gmail.com
                 </p>
               </div>
             </li>
             {/* Phone number */}
-            <li className="flex flex-shrink-0">
+            <li className="flex">
               <div>
-                <span className="flex items-center justify-center h-11 w-11 rounded-2xl bg-rose-200">
+                <span className="flex justify-center items-center w-11 h-11 bg-rose-200 rounded-2xl">
                   <Icon icon="phone" className="w-6 h-6 text-purple-700" />
                 </span>
               </div>
@@ -177,7 +137,7 @@ export const Footer = async ({ programs, contact }) => {
                   Phone
                 </h5>
                 <p className="mt-0.5 text-sm leading-relaxed text-purple-800 text-opacity-90">
-                  {data.footer.phone}
+                  9494188688 and 9494688188
                 </p>
               </div>
             </li>
@@ -185,14 +145,14 @@ export const Footer = async ({ programs, contact }) => {
         </div>
       </div>
       {/* Bottom section */}
-      <div className="flex flex-col justify-between max-w-md py-8 mx-auto sm:max-w-none sm:flex-row lg:max-w-screen-2xl">
+      <div className="flex flex-col justify-between py-8 mx-auto max-w-md sm:max-w-none sm:flex-row lg:max-w-screen-2xl">
         {/* Copyright note */}
         <span className="text-base text-purple-800/90">
           © {new Date().getFullYear()} SCA Academny. All rights reserved.
         </span>
-        {/* <p className="mt-0.5 flex items-center text-purple-800/90">
+        {/* <p className="flex items-center mt-0.5 text-purple-800/90">
           Made with
-          <Icon icon="coffee" className="w-5 h-5 mx-1" />
+          <Icon icon="coffee" className="mx-1 w-5 h-5" />
           <span>
             by{' '}
             <Link

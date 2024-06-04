@@ -50,7 +50,7 @@ export const HomeHero = ({title, subtitle, rating, tagline, videoLink, heroImage
           </p>
           {/* Hero buttons */}
           <div className="flex flex-col items-center mt-8 overflow-hidden sm:flex-row">
-            <Button href="#0">
+            <Button href="https://forms.gle/dazdMQSYr1KWuGudA">
               Enroll today
               <Icon
                 icon="arrowNarrowRight"
@@ -170,8 +170,8 @@ export const HomeHero = ({title, subtitle, rating, tagline, videoLink, heroImage
                       className="absolute w-full h-full"
                       src={videoLink}
                       title="Video"
-                      webkitallowfullscreen
-                      mozallowfullscreen
+                      webkitallowFullScreen
+                      mozallowFullScreen
                       allowFullScreen
                     />
                   </div>

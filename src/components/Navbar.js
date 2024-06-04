@@ -8,6 +8,7 @@ import { Menu, Transition, Popover } from '@headlessui/react'
 import clsx from 'clsx'
 
 import logo from '/public/images/bright-logo.png'
+import logo_ias from '/public/images/ias/logo_ias.jpg'
 import { Button } from '@/components/Button'
 import { Icon } from '@/components/Icon'
 
@@ -21,40 +22,39 @@ const navigation = [
 ]
 
 export function Navbar({ programs }) {
-  const pathname = usePathname()
 
   function MenuIcon({ open }) {
     return (
       <>
         <span
           className={clsx(
-            'absolute block h-1 rotate-0 transform rounded-full opacity-100 transition-all duration-300 ease-in-out',
+            'block absolute h-1 rounded-full opacity-100 transition-all duration-300 ease-in-out transform rotate-0',
             open
-              ? 'left-1/2 top-2 w-0 bg-purple-50 group-hover:bg-white'
-              : 'left-0 top-0 w-full bg-purple-900 group-hover:bg-purple-600',
+              ? 'top-2 left-1/2 w-0 bg-purple-50 group-hover:bg-white'
+              : 'top-0 left-0 w-full bg-purple-900 group-hover:bg-purple-600',
           )}
         />
         <span
           className={clsx(
-            'absolute left-0 top-2 block h-1 w-full transform rounded-full opacity-100 transition-all duration-300 ease-in-out group-hover:bg-purple-600',
+            'block absolute left-0 top-2 w-full h-1 rounded-full opacity-100 transition-all duration-300 ease-in-out transform group-hover:bg-purple-600',
             open
-              ? 'rotate-45 bg-purple-50 group-hover:bg-white'
-              : 'rotate-0 bg-purple-900 group-hover:bg-purple-600',
+              ? 'bg-purple-50 rotate-45 group-hover:bg-white'
+              : 'bg-purple-900 rotate-0 group-hover:bg-purple-600',
           )}
         />
         <span
           className={clsx(
-            'absolute left-0 top-2 block h-1 w-full transform rounded-full opacity-100 transition-all duration-300 ease-in-out group-hover:bg-purple-600',
+            'block absolute left-0 top-2 w-full h-1 rounded-full opacity-100 transition-all duration-300 ease-in-out transform group-hover:bg-purple-600',
             open
-              ? '-rotate-45 bg-purple-50 group-hover:bg-white'
-              : 'rotate-0 bg-purple-900 group-hover:bg-purple-600',
+              ? 'bg-purple-50 -rotate-45 group-hover:bg-white'
+              : 'bg-purple-900 rotate-0 group-hover:bg-purple-600',
           )}
         />
         <span
           className={clsx(
-            'absolute block h-1 rotate-0 transform rounded-full opacity-100 transition-all duration-300 ease-in-out group-hover:bg-purple-600',
+            'block absolute h-1 rounded-full opacity-100 transition-all duration-300 ease-in-out transform rotate-0 group-hover:bg-purple-600',
             open
-              ? 'left-1/2 top-2 w-0 bg-purple-50 group-hover:bg-white'
+              ? 'top-2 left-1/2 w-0 bg-purple-50 group-hover:bg-white'
               : 'left-0 top-4 w-full bg-purple-900 group-hover:bg-purple-600',
           )}
         />
@@ -67,7 +67,7 @@ export function Navbar({ programs }) {
       <div className="block lg:hidden">
         <Popover>
           <Popover.Button
-            className="group relative z-50 h-5 w-6 rotate-0 transform cursor-pointer transition duration-500 ease-in-out focus:outline-none"
+            className="relative z-50 w-6 h-5 transition duration-500 ease-in-out transform rotate-0 cursor-pointer group focus:outline-none"
             aria-label="Toggle Navigation"
           >
             {({ open }) => <MenuIcon open={open} />}
@@ -84,53 +84,48 @@ export function Navbar({ programs }) {
           >
             <Popover.Panel
               as="div"
-              className="absolute inset-x-0 top-0 z-40 w-screen overflow-y-scroll bg-gradient-to-tr from-purple-600 to-purple-600 px-4 py-16 sm:px-8"
+              className="overflow-y-scroll absolute inset-x-0 top-0 z-40 px-4 py-16 w-screen bg-gradient-to-tr from-purple-600 to-purple-600 sm:px-8"
             >
-              <div className="flex h-full w-full flex-col items-center justify-center">
-                <div className="mx-auto flex w-full flex-col items-center justify-evenly space-y-6">
-                  {navigation.map((link) => (
+              <div className="flex flex-col justify-center items-center w-full h-full">
+                <div className="mx-auto w-full max-w-md">
+                  <p className="text-lg font-semibold tracking-wider text-center text-purple-200 uppercase sm:text-left">
+                    Contact Details
+                  </p>
+                  <div className="text-center sm:text-left">
+                    <p className="mb-4 text-base text-purple-50">
+                      Benz Circle, Vijayawada; Ashoknagar, Hyderabad
+                    </p>
+                    <p className="mb-4 text-base text-purple-50">
+                      Phone: 9494188688 and 9494688188
+                    </p>
+                    <p className="mb-4 text-base text-purple-50">
+                      Email: saratchandraiitacademy@gmail.com
+                    </p>
+                  </div>
+                  <hr className="my-8 w-full border-purple-200 border-opacity-30 sm:my-10" />
+                </div>
+                <div className="flex flex-col justify-evenly items-center mx-auto space-y-6 w-full">
+                  {/* {navigation.map((link) => (
                     <Fragment key={`mobile-link-${link.label}`}>
                       {link.label !== 'Programs' && (
                         <Link href={link.href}>
-                          <div className="group relative p-0.5">
+                          <div className="relative p-0.5 group">
                             <span className="relative z-10 text-2xl font-medium text-purple-50 duration-300 ease-in-out group-hover:text-white">
                               {link.label}
                             </span>
-                            <span className="absolute -left-1 -right-1 bottom-0 h-1.5 origin-bottom scale-x-0 transform rounded-lg bg-yellow-400 duration-300 ease-in-out group-hover:scale-x-100" />
+                            <span className="absolute bottom-0 -right-1 -left-1 h-1.5 bg-yellow-400 rounded-lg duration-300 ease-in-out transform origin-bottom scale-x-0 group-hover:scale-x-100" />
                           </div>
                         </Link>
                       )}
                     </Fragment>
-                  ))}
+                  ))} */}
 
-                  <Button href="#">Enroll today</Button>
+                  <Button href="https://forms.gle/dazdMQSYr1KWuGudA">
+                    Enroll today
+                  </Button>
                 </div>
 
                 <hr className="my-8 w-full border-purple-200 border-opacity-30 sm:my-10" />
-
-                <div className="mx-auto w-full max-w-md">
-                  <p className="text-center text-lg font-semibold uppercase tracking-wider text-purple-200 sm:text-left">
-                    Programs
-                  </p>
-                  <div className="mt-4 grid justify-items-center gap-4 sm:grid-cols-2 sm:justify-items-start sm:gap-x-8">
-                    {programs.map((program, index) => (
-                      <Link
-                        href={`/programs/${program.slug}`}
-                        key={`mobile-dropdown-${program.data.name}`}
-                        className={clsx(
-                          index % 2 == 1 && 'sm:justify-self-end',
-                        )}
-                      >
-                        <div className="group relative p-0.5">
-                          <span className="relative z-10 text-xl font-medium text-purple-50 duration-300 ease-in-out group-hover:text-white">
-                            {program.data.name}
-                          </span>
-                          <span className="absolute -left-1 -right-1 bottom-0 h-1.5 origin-bottom scale-x-0 transform rounded-lg bg-yellow-400 duration-300 ease-in-out group-hover:scale-x-100" />
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
               </div>
             </Popover.Panel>
           </Transition>
@@ -138,127 +133,26 @@ export function Navbar({ programs }) {
       </div>
     )
   }
+  const pathname = usePathname()
+  console.log("🚀 ~ Navbar ~ pathname:", pathname)
+
 
   return (
     <div className="px-4 sm:px-6">
-      <nav className="mx-auto flex max-w-screen-xl items-center pt-5">
-        <div className="flex w-full items-center justify-between">
+      <nav className="flex items-center pt-5 mx-auto max-w-screen-xl">
+        <div className="flex justify-between items-center w-full">
           {/* Main navigation menu for large screens */}
-          <div className="hidden items-center justify-between md:space-x-6 lg:flex lg:space-x-10">
-            {navigation.map((link) => (
-              <Fragment key={`desktop-link-${link.label}`}>
-                {link.label == 'Programs' ? (
-                  <Menu as="div" className="relative">
-                    {({ open }) => (
-                      <>
-                        <Menu.Button className="outline-none focus:outline-none">
-                          <div className="group relative p-0.5">
-                            <span
-                              className={clsx(
-                                'relative z-10 flex items-center text-lg font-medium duration-300 ease-in-out group-hover:text-purple-600',
-                                open ? 'text-purple-600' : 'text-purple-700',
-                              )}
-                            >
-                              Programs
-                              {/* Heroicon name: solid/chevron-down */}
-                              {/* Toggle class 'rotate-180' on dropdown open and close */}
-                              <Icon
-                                icon="chevronDown"
-                                className={clsx(
-                                  'h-4.5 ml-1.5 w-4.5 transform duration-300 ease-in-out',
-                                  open && 'rotate-180',
-                                )}
-                                stroke={2}
-                              />
-                            </span>
-                            <span className="absolute -left-1 -right-1 bottom-0 h-1.5 origin-bottom scale-x-0 transform rounded-lg bg-yellow-400 duration-300 ease-in-out group-hover:scale-x-100" />
-                          </div>
-                        </Menu.Button>
-
-                        <Transition
-                          as={Fragment}
-                          enter="transition ease-out duration-300"
-                          enterFrom="transform opacity-0 scale-95"
-                          enterTo="transform opacity-100 scale-100"
-                          leave="transition ease-in duration-200"
-                          leaveFrom="transform opacity-100 scale-100"
-                          leaveTo="transform opacity-0 scale-95"
-                        >
-                          <Menu.Items className="absolute left-1/2 z-20 mt-3 w-screen max-w-xs -translate-x-1/2 rounded-2xl border border-gray-50 bg-white p-4 shadow-lg outline-none focus:outline-none">
-                            {programs.map((program, index) => (
-                              <Menu.Item
-                                key={`desktop-dropdown-link-${program.data.name}`}
-                                as="div"
-                              >
-                                {({ close }) => (
-                                  <>
-                                    <Link
-                                      href={`/programs/${program.slug}`}
-                                      className={clsx(
-                                        'group block w-full rounded-xl py-4 sm:p-5',
-                                        pathname === `/programs/${program.slug}`
-                                          ? 'bg-purple-25'
-                                          : 'transition duration-200 ease-in-out hover:bg-purple-25/60',
-                                      )}
-                                      onClick={close}
-                                    >
-                                      <h5 className="text-lg font-semibold text-purple-600">
-                                        {program.data.name}
-                                      </h5>
-                                      <p className="mt-1 text-sm text-purple-800 opacity-90">
-                                        {program.data.dropdownDescription}
-                                      </p>
-                                    </Link>
-                                    {index != programs.length - 1 && (
-                                      <>
-                                        <hr className="my-1 border-purple-200/30 sm:my-2" />
-                                      </>
-                                    )}
-                                  </>
-                                )}
-                              </Menu.Item>
-                            ))}
-                          </Menu.Items>
-                        </Transition>
-                      </>
-                    )}
-                  </Menu>
-                ) : (
-                  <Link href={link.href}>
-                    <div className="group relative p-0.5">
-                      <span
-                        className={clsx(
-                          'relative z-10 text-lg font-medium',
-                          pathname === link.href
-                            ? 'text-purple-600'
-                            : 'text-purple-700 duration-300 ease-in-out group-hover:text-purple-600',
-                        )}
-                      >
-                        {link.label}
-                      </span>
-                      <span
-                        className={clsx(
-                          'absolute -left-1 -right-1 bottom-0 h-1.5 origin-bottom scale-x-0 transform rounded-lg bg-yellow-400',
-                          pathname == link.href
-                            ? 'scale-x-100'
-                            : 'duration-300 ease-in-out group-hover:scale-x-100',
-                        )}
-                      />
-                    </div>
-                  </Link>
-                )}
-              </Fragment>
-            ))}
-          </div>
 
           {/* Call to action button */}
-          <div className="hidden lg:block">
-            <Button href="#">Enroll today</Button>
-          </div>
+
           {/* Logo on smaller screens: < lg */}
-          <div className="block w-48 flex-shrink-0 flex-grow-0 sm:w-52 lg:hidden">
+          <div className="block flex-grow-0 flex-shrink-0 w-48 sm:w-52 lg:hidden">
             <Link href="/">
-              <Image src={logo} alt="Bright" className="h-auto" />
+              <Image
+                src={pathname === '/programs/iit' ? logo : logo_ias}
+                alt="Bright"
+                className="h-auto"
+              />
             </Link>
           </div>
 
