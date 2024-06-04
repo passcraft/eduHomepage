@@ -10,7 +10,7 @@ export default function FooterImage() {
   return (
     <Link href="/">
       <Image
-        src={pathname === '/programs/iit' ? logo : logo_ias}
+        src={pathname === '/iit' ? logo : logo_ias}
         alt="Bright"
         className="h-auto"
       />

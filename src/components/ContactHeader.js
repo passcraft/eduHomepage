@@ -17,7 +17,7 @@ export function ContactHeader({ contact,pathname }) {
           <div className="flex-grow-0 flex-shrink-0 w-60">
             <Link href="/">
               <Image
-                src={pathname === '/programs/iit' ? logo : logo_ias}
+                src={pathname === '/iit' ? logo : logo_ias}
                 alt="Bright"
                 className="h-auto"
               />

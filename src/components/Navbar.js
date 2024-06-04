@@ -149,7 +149,7 @@ export function Navbar({ programs }) {
           <div className="block flex-grow-0 flex-shrink-0 w-48 sm:w-52 lg:hidden">
             <Link href="/">
               <Image
-                src={pathname === '/programs/iit' ? logo : logo_ias}
+                src={pathname === '/iit' ? logo : logo_ias}
                 alt="Bright"
                 className="h-auto"
               />
