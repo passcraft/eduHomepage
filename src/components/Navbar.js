@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 import { Fragment } from 'react'
 import { Menu, Transition, Popover } from '@headlessui/react'
 import clsx from 'clsx'
-
+import FooterMail from './FooterMail'
 import logo from '/public/images/bright-logo.png'
 import logo_ias from '/public/images/ias/logo_ias.jpg'
 import { Button } from '@/components/Button'
@@ -99,7 +99,7 @@ export function Navbar() {
                       Phone: 9494188688 and 9494688188
                     </p>
                     <p className="mb-4 text-base text-purple-50">
-                      Email: saratchandraiitacademy@gmail.com
+                      Email: <FooterMail/>
                     </p>
                   </div>
                   <hr className="my-8 w-full border-purple-200 border-opacity-30 sm:my-10" />

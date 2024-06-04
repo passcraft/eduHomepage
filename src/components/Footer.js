@@ -3,7 +3,7 @@ import Image from 'next/image'
 import clsx from 'clsx'
 import { basehub } from 'basehub'
 import { draftMode,headers } from 'next/headers'
-
+import FooterMail from './FooterMail'
 import { Icon } from '@/components/Icon'
 import FooterImage from './FooterImage'
 const siteLinks = [
@@ -62,17 +62,17 @@ export const Footer = async ({ programs, contact }) => {
         {/* Block 1 */}
         <div className="flex flex-col lg:mx-auto lg:flex-1">
           {/* Logo */}
+          <FooterImage />
+{/* 
           <div className="flex justify-center lg:justify-start">
-            <div className="w-60">
-              <FooterImage />
-            </div>
-          </div>
+            <div className="w-60"></div>
+          </div> */}
           {/* Mission statement */}
-          <div className="mt-6 text-lg text-center text-purple-800 lg:text-left">
+          {/* <div className="mt-6 text-lg text-center text-purple-800 lg:text-left">
             Sarat Chandra IIT Academy is a premier coaching institute that
             provides comprehensive training for IIT JEE, EAPCET, and other
             competitive exams.
-          </div>
+          </div> */}
           {/* Social links */}
           {/* <div className="mt-5 w-full lg:mt-6">
             <div className="flex justify-center space-x-4 lg:justify-start">
@@ -121,7 +121,7 @@ export const Footer = async ({ programs, contact }) => {
                   Email
                 </h5>
                 <p className="mt-0.5 text-sm leading-relaxed text-purple-800 text-opacity-90">
-                  saratchandraiitacademy@gmail.com
+                  <FooterMail />
                 </p>
               </div>
             </li>
