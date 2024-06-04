@@ -54,7 +54,7 @@ export function ContactHeader({ contact,pathname }) {
                   Email
                 </h5>
                 <p className="mt-0.5 text-sm leading-relaxed text-purple-800 text-opacity-90">
-                  saratchandraiitacademy@gmail.com
+                  {pathname === '/iit' ? 'saratchandraiitacademy@gmail.com' : 'saratchandraiasacademy@gmail.com'}
                 </p>
               </div>
             </li>
