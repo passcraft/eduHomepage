@@ -118,7 +118,7 @@ export const ProgramInformation = ({ data }) => {
         >
           <div className="overflow-hidden relative rounded-lg aspect-h-2 aspect-w-3 sm:aspect-h-9 sm:aspect-w-16">
             {/* Carousel items */}
-            {slides.map((slide, index) => (
+            {data.slides.map((slide, index) => (
               <div
                 key={index}
                 className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${

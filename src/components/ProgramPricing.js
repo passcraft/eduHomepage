@@ -13,7 +13,7 @@ export const ProgramPricing = ({ data }) => {
             <iframe
               width="560"
               height="315"
-              src="https://www.youtube.com/embed/yA7D_odbfv4?si=1SmSL3Ewmt33Amv1"
+              src={data.video}
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
@@ -22,7 +22,7 @@ export const ProgramPricing = ({ data }) => {
             ></iframe>
           </div>
         </div>
-        <div className="md:gap-16 lg:grid lg:grid-cols-2 lg:gap-0">
+        <div className="flex flex-col gap-8">
           {/* Section content */}
 
           <div className="flex flex-col justify-center pr-10 xl:pr-0">
@@ -58,36 +58,36 @@ export const ProgramPricing = ({ data }) => {
             </div>
           </div>
           {/* Pricing cards */}
-          <div className="grid gap-8 items-center mt-14 lg:mt-20 lg:gap-4 xl:gap-8">
-            {[...Array(1)].map((e, i) => (
+          <div className="flex flex-row gap-4 justify-center items-center">
+            {data.courses.map((e, i) => (
               <div
                 key={`pricing-card-${i}`}
                 className={clsx(
-                  i == 0 ? 'bg-purple-25' : 'bg-yellow-200 lg:-translate-y-20',
-                  'w-full rounded-xl px-6 py-10 lg:px-5 xl:px-10',
+                  i == 0 ? 'bg-purple-25' : 'bg-yellow-200',
+                  'rounded-xl px-6 py-10 lg:px-5 xl:px-10',
                 )}
               >
                 <div className="relative">
                   <div className="inline-block relative w-full text-left">
                     <h3 className="relative text-xl font-bold tracking-normal text-purple-900">
-                      {data[`pricing${i + 1}`].name}
+                      {e.name}
                     </h3>
                     <div className="mt-2">
-                      <h2 className="text-purple-900 h1">
-                        {data[`pricing${i + 1}`].price}
-                      </h2>
-                      <div className="mt-3">
+                      {/* <h2 className="text-purple-900 h1">
+                        {e.price}
+                      </h2> */}
+                      {/* <div className="mt-3">
                         <div className="inline-block px-3 h-6 text-sm font-medium leading-6 text-purple-700 align-top bg-purple-200 rounded-xl -rotate-1">
-                          {data[`pricing${i + 1}`].interval}
+                          {e.interval}
                         </div>
-                      </div>
+                      </div> */}
                       <p className="block mt-6 w-full font-medium text-purple-900">
-                        {data[`pricing${i + 1}`].shortDescription}
+                        {e.shortDescription}
                       </p>
                     </div>
                     {/* Features */}
                     <ul className="mt-4 space-y-2 text-base">
-                      {data[`pricing${i + 1}`].features.map((item, index) => (
+                      {e.features.map((item, index) => (
                         <li
                           key={`pricing-1-feature-${index}`}
                           className="flex items-center"
@@ -104,6 +104,7 @@ export const ProgramPricing = ({ data }) => {
                         </li>
                       ))}
                     </ul>
+
                     {/* CTA button */}
                     <Button
                       href={'https://rzp.io/l/IkUXWfLWyU'}
@@ -111,8 +112,8 @@ export const ProgramPricing = ({ data }) => {
                       variant="accent"
                       size="sm"
                     >
-                      {data[`pricing${i + 1}`].action.label}
-                      {data[`pricing${i + 1}`].action.icon && (
+                      {e.action.label}
+                      {e.action.icon && (
                         <Icon
                           icon="arrowNarrowRight"
                           className="ml-3 w-5 h-5 group-hover:animate-horizontal-bounce"
@@ -125,6 +126,22 @@ export const ProgramPricing = ({ data }) => {
               </div>
             ))}
           </div>
+          {data.video_end && (
+            <div className="relative z-10 my-14 sm:my-16">
+              <div className="relative aspect-h-2 aspect-w-3 sm:aspect-h-9 sm:aspect-w-16">
+                <iframe
+                  width="560"
+                  height="315"
+                  src={data.video_end}
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full rounded-3xl shadow-xl"
+                ></iframe>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>

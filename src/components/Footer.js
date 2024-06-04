@@ -2,10 +2,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 import clsx from 'clsx'
 import { basehub } from 'basehub'
-import { draftMode } from 'next/headers'
-import logo from '/public/images/logo/Image.png'
-import { Icon } from '@/components/Icon'
+import { draftMode,headers } from 'next/headers'
 
+import { Icon } from '@/components/Icon'
+import FooterImage from './FooterImage'
 const siteLinks = [
   { label: 'Home', href: '/' },
   { label: 'About us', href: '/about' },
@@ -52,18 +52,19 @@ export const Footer = async ({ programs, contact }) => {
       phone: true,
     },
   })
+  const header = headers()
+  const pathname = header.get('x-invoke-path') || ''
+  console.log('pathName:', pathname)
   return (
     <footer className="px-4 pt-16 space-y-8 bg-yellow-100 divide-y divide-purple-400/20 sm:px-6 sm:pt-20 lg:px-8">
       {/* Top section: blocks */}
       <div className="flex flex-wrap gap-8 justify-center mx-auto max-w-md sm:max-w-none lg:max-w-screen-2xl">
         {/* Block 1 */}
-        <div className="flex flex-col lg:flex-1 lg:mx-auto">
+        <div className="flex flex-col lg:mx-auto lg:flex-1">
           {/* Logo */}
           <div className="flex justify-center lg:justify-start">
             <div className="w-60">
-              <Link href="/">
-                <Image src={logo} alt="Bright" className="h-auto" />
-              </Link>
+              <FooterImage />
             </div>
           </div>
           {/* Mission statement */}
@@ -82,11 +83,10 @@ export const Footer = async ({ programs, contact }) => {
           </div> */}
         </div>
         {/* Block 2 */}
-        
-        
+
         {/* Block 3 */}
         {/* Block 4 */}
-        <div className="flex flex-col lg:flex-1 lg:mx-auto">
+        <div className="flex flex-col lg:mx-auto lg:flex-1">
           <h6 className="relative text-xl font-bold tracking-wide text-center text-purple-900 lg:text-left">
             <span className="relative z-20">Contact us</span>
             <span className="absolute left-0 -bottom-1 z-10 w-12 h-1 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-lg" />
@@ -105,8 +105,7 @@ export const Footer = async ({ programs, contact }) => {
                   Address
                 </h5>
                 <p className="mt-0.5 text-sm leading-relaxed text-purple-800 text-opacity-90">
-                  Superwizz Rd, Chalasani Nagar, Kanuru, Vijayawada, Andhra
-                  Pradesh 520007
+                  Benz Circle, Vijayawada; Ashoknagar, Hyderabad
                 </p>
               </div>
             </li>

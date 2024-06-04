@@ -3,17 +3,24 @@ import Link from 'next/link'
 
 import { Icon } from '@/components/Icon'
 import logo from '/public/images/logo/Image.png'
+import logo_ias from '/public/images/ias/logo_ias.jpg'
 
-export function ContactHeader({ contact }) {
+
+export function ContactHeader({ contact,pathname }) {
+
   return (
     <div className="hidden px-4 sm:px-6 lg:block">
       {/* Container */}
-      <div className="relative max-w-screen-xl py-5 mx-auto border-b border-purple-200/30">
-        <div className="flex items-center justify-between">
+      <div className="relative py-5 mx-auto max-w-screen-xl border-b border-purple-200/30">
+        <div className="flex justify-between items-center">
           {/* Site branding */}
           <div className="flex-grow-0 flex-shrink-0 w-60">
             <Link href="/">
-              <Image src={logo} alt="Bright" className="h-auto" />
+              <Image
+                src={pathname === '/programs/iit' ? logo : logo_ias}
+                alt="Bright"
+                className="h-auto"
+              />
             </Link>
           </div>
           {/* Contact information */}
@@ -21,7 +28,7 @@ export function ContactHeader({ contact }) {
             {/* Address */}
             <li className="flex flex-shrink max-w-xs">
               <div>
-                <span className="flex items-center justify-center bg-yellow-400 h-11 w-11 rounded-2xl">
+                <span className="flex justify-center items-center w-11 h-11 bg-yellow-400 rounded-2xl">
                   <Icon icon="mapPin" className="w-6 h-6 text-purple-700" />
                 </span>
               </div>
@@ -38,7 +45,7 @@ export function ContactHeader({ contact }) {
             {/* Email */}
             <li className="flex flex-shrink-0">
               <div>
-                <span className="flex items-center justify-center bg-purple-200 h-11 w-11 rounded-2xl">
+                <span className="flex justify-center items-center w-11 h-11 bg-purple-200 rounded-2xl">
                   <Icon icon="mail" className="w-6 h-6 text-purple-700" />
                 </span>
               </div>
@@ -55,7 +62,7 @@ export function ContactHeader({ contact }) {
             {/* Phone number */}
             <li className="flex flex-shrink-0">
               <div>
-                <span className="flex items-center justify-center h-11 w-11 rounded-2xl bg-rose-200">
+                <span className="flex justify-center items-center w-11 h-11 bg-rose-200 rounded-2xl">
                   <Icon icon="phone" className="w-6 h-6 text-purple-700" />
                 </span>
               </div>

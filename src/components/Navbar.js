@@ -8,6 +8,7 @@ import { Menu, Transition, Popover } from '@headlessui/react'
 import clsx from 'clsx'
 
 import logo from '/public/images/bright-logo.png'
+import logo_ias from '/public/images/ias/logo_ias.jpg'
 import { Button } from '@/components/Button'
 import { Icon } from '@/components/Icon'
 
@@ -21,7 +22,6 @@ const navigation = [
 ]
 
 export function Navbar({ programs }) {
-  const pathname = usePathname()
 
   function MenuIcon({ open }) {
     return (
@@ -93,8 +93,7 @@ export function Navbar({ programs }) {
                   </p>
                   <div className="text-center sm:text-left">
                     <p className="mb-4 text-base text-purple-50">
-                      Address: Superwizz Rd, Chalasani Nagar, Kanuru,
-                      Vijayawada, Andhra Pradesh 520007
+                      Benz Circle, Vijayawada; Ashoknagar, Hyderabad
                     </p>
                     <p className="mb-4 text-base text-purple-50">
                       Phone: 9494188688 and 9494688188
@@ -134,19 +133,26 @@ export function Navbar({ programs }) {
       </div>
     )
   }
+  const pathname = usePathname()
+  console.log("🚀 ~ Navbar ~ pathname:", pathname)
+
 
   return (
     <div className="px-4 sm:px-6">
       <nav className="flex items-center pt-5 mx-auto max-w-screen-xl">
         <div className="flex justify-between items-center w-full">
           {/* Main navigation menu for large screens */}
-          
+
           {/* Call to action button */}
-          
+
           {/* Logo on smaller screens: < lg */}
           <div className="block flex-grow-0 flex-shrink-0 w-48 sm:w-52 lg:hidden">
             <Link href="/">
-              <Image src={logo} alt="Bright" className="h-auto" />
+              <Image
+                src={pathname === '/programs/iit' ? logo : logo_ias}
+                alt="Bright"
+                className="h-auto"
+              />
             </Link>
           </div>
 

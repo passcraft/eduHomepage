@@ -5,8 +5,8 @@ import { Button } from '@/components/Button'
 
 export const ProgramHero = ({ hero }) => {
   return (
-    <section className="relative px-4 pt-16 bg-gradient-to-b from-purple-25 to-purple-50 sm:px-6 lg:px-8">
-      <div className="max-w-screen-xl mx-auto">
+    <section className="relative px-4 pt-16 bg-gradient-to-b to-purple-50 from-purple-25 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-screen-xl">
         {/* Header */}
         <div className="relative">
           <div className="flex justify-center">
@@ -14,10 +14,10 @@ export const ProgramHero = ({ hero }) => {
               {hero.tagline}
             </span>
           </div>
-          <h2 className="max-w-3xl mx-auto mt-4 text-center text-purple-900 h1">
+          <h2 className="mx-auto mt-4 max-w-3xl text-center text-purple-900 h1">
             {hero.headline}
           </h2>
-          <p className="max-w-2xl mx-auto mt-4 text-xl leading-relaxed text-center text-purple-800 sm:mt-5">
+          <p className="mx-auto mt-4 max-w-2xl text-xl leading-relaxed text-center text-purple-800 sm:mt-5">
             {hero.text}
           </p>
           {/* CTA button */}
@@ -27,7 +27,7 @@ export const ProgramHero = ({ hero }) => {
               {hero.action.icon && (
                 <Icon
                   icon="arrowNarrowRight"
-                  className="w-6 h-6 ml-3 group-hover:animate-horizontal-bounce"
+                  className="ml-3 w-6 h-6 group-hover:animate-horizontal-bounce"
                   stroke={2}
                 />
               )}
@@ -38,7 +38,7 @@ export const ProgramHero = ({ hero }) => {
         {/* <div className="relative z-10 mt-14 sm:mt-16">
           <div className="relative aspect-h-2 aspect-w-3 sm:aspect-h-9 sm:aspect-w-16">
             <Image
-              className="absolute inset-0 object-cover w-full h-full shadow-xl rounded-3xl"
+              className="object-cover absolute inset-0 w-full h-full rounded-3xl shadow-xl"
               src={hero.image.src}
               fill
               priority
@@ -52,18 +52,18 @@ export const ProgramHero = ({ hero }) => {
             <iframe
               width="560"
               height="315"
-              src="https://www.youtube.com/embed/rrk4ciPSPVw?si=LCRIFiHheOZ4DwbZ"
+              src={hero.video}
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
-              className="absolute inset-0 w-full h-full shadow-xl rounded-3xl"
+              className="absolute inset-0 w-full h-full rounded-3xl shadow-xl"
             ></iframe>
           </div>
         </div>
       </div>
       {/* Background overlay effect */}
-      <div className="absolute inset-x-0 bottom-0 top-auto z-0 hidden h-64 bg-white sm:block" />
+      <div className="hidden absolute inset-x-0 bottom-0 top-auto z-0 h-64 bg-white sm:block" />
     </section>
   )
 }
