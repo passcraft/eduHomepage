@@ -64,7 +64,7 @@ export const ProgramPricing = ({ data }) => {
                 key={`pricing-card-${i}`}
                 className={clsx(
                   i == 0 ? 'bg-purple-25' : 'bg-yellow-200',
-                  'rounded-xl px-6 py-10 lg:px-5 xl:px-10',
+                  'rounded-xl px-6 py-10 lg:px-5 xl:px-10 lg:max-w-[360px]',
                 )}
               >
                 <div className="relative">
