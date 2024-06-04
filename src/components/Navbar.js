@@ -21,7 +21,7 @@ const navigation = [
   { label: 'Contact', href: '/contact' },
 ]
 
-export function Navbar({ programs }) {
+export function Navbar() {
 
   function MenuIcon({ open }) {
     return (

@@ -37,7 +37,7 @@ export const ContactInformation = () => {
                   Address
                 </h5>
                 <p className="mt-1.5 text-base leading-relaxed text-purple-800">
-                  {contact.address}
+                  Benz Circle, Vijayawada ; Ashoknagar, Hyderabad
                 </p>
               </div>
             </div>
@@ -55,7 +55,7 @@ export const ContactInformation = () => {
                   Email us
                 </h5>
                 <p className="mt-1.5 text-base leading-relaxed text-purple-800">
-                  {contact.email}
+                  saratchandraiitacademy@gmail.com
                 </p>
               </div>
             </div>
@@ -73,7 +73,7 @@ export const ContactInformation = () => {
                   Call us
                 </h5>
                 <p className="mt-1.5 text-base leading-relaxed text-purple-800">
-                  {contact.phone}
+                  9494188688 and 9494688188
                 </p>
               </div>
             </div>

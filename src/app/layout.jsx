@@ -6,7 +6,7 @@ import { Header } from '@/components/Header'
 import { CallToAction } from '@/components/CallToAction'
 import { Footer } from '@/components/Footer'
 import Script from 'next/script'
-import { getAllItems, getItemData } from '@/lib/getItems'
+import matter from 'gray-matter'
 
 const roboto = Roboto_Flex({
   subsets: ['latin'],
@@ -20,13 +20,12 @@ const roboto = Roboto_Flex({
 // }
 
 export default function RootLayout({ children }) {
-  const programs = getAllItems('programs')
-  const contact = getItemData('contact', 'global')
 
+  
   return (
     <html lang="en">
       <body className={clsx('font-sans', roboto.variable)}>
-        <Header programs={programs} contact={contact} />
+        <Header/>
         {/* <Navbar programs={programs} /> */}
         {children}
         <CallToAction />

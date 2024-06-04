@@ -58,7 +58,7 @@ export const ProgramPricing = ({ data }) => {
             </div>
           </div>
           {/* Pricing cards */}
-          <div className="flex flex-row gap-4 justify-center items-center">
+          <div className="flex flex-row flex-wrap gap-4 justify-center items-center">
             {data.courses.map((e, i) => (
               <div
                 key={`pricing-card-${i}`}

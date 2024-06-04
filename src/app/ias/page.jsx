@@ -38,7 +38,7 @@ infoSection:
     - id: 0
       title: "Empowering Future Innovators"
       description: "Discover how our tailored coaching helps students excel in competitive exams."
-      image: "/images/ias/ias_1.jpg"
+      image: "/images/ias/ias_4.jpg"
       active: currentSlide === 0
     - id: 1
       title: "Expert Faculty"
@@ -50,7 +50,14 @@ infoSection:
       description: "Our modern facilities create the perfect learning environment for our students."
       image: "/images/ias/ias_3.jpg"
       active: currentSlide === 2
+    - id: 3
+      title: "Top Rankers"
+      description: "Our top-notch faculty and mentorship program helps students excel in IAS and IPS."
+      image: "/images/ias/ias_1.jpg"
+      active: currentSlide === 3
 descriptionSection:
+  card_1: 🎓 Managing Director guided 160+ IAS Rankers
+  card_2: 🏫 Only IAS Academy guided by IAS and IPS officers
   text: >
     ## Our unique approach to education
  
@@ -71,7 +78,7 @@ pricingSection:
   headline: A program for every aspiring civil servant
   text: Fuel your dreams at Sarat Chandra IAS Academy! We offer a range of courses designed to cater to the diverse needs of UPSC aspirants. Our top-notch faculty and cutting-edge teaching methods create a supportive environment where you can grow, excel, and achieve your dreams.
   video: https://www.youtube.com/embed/vnmhCEdPQmQ?si=dQ2G_GuFwdmKW21h
-  video_end: https://www.youtube.com/embed/vnmhCEdPQmQ?si=dQ2G_GuFwdmKW21h
+  video_end: https://www.youtube.com/embed/nlvMJI6rGY8?si=DGEr3rVjVsE7ZFod
   courses:
     - id: 1
       name: UPSC Civil Services Coaching

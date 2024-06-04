@@ -50,6 +50,8 @@ infoSection:
       image: "/images/sca/3.jpg"
       active: currentSlide === 2
 descriptionSection:
+  card_1: 🎓 IIT Madras alumnus as Managing Director
+  card_2: 🏫 Only IIT Academy run by IIT B.Tech graduates
   text: >
     ## Our unique approach to education
             
@@ -82,6 +84,7 @@ pricingSection:
 ---
 `
   const program = matter(markdownWithMeta).data
+  console.log("🚀 ~ ProgramPage ~ program:", program)
 
   return (
     <>
@@ -90,7 +93,8 @@ pricingSection:
         <ProgramInformation data={program.infoSection} />
       )}
       {program?.descriptionSection && (
-        <ProgramDescription data={program.descriptionSection} />
+        <ProgramDescription data={program.descriptionSection}
+           />
       )}
       {program?.pricingSection && (
         <ProgramPricing data={program.pricingSection} />
