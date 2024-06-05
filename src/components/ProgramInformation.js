@@ -38,29 +38,7 @@ const InfoCard = ({ icon, title, gradientColors, text }) => {
 export const ProgramInformation = ({ data }) => {
   const [currentSlide, setCurrentSlide] = useState(0)
 
-  const slides = [
-    {
-      id: 0,
-      title: 'Slide 1 Title',
-      description: 'Description of Slide 1',
-      image: '/images/img_6.jpg',
-      active: currentSlide === 0,
-    },
-    {
-      id: 1,
-      title: 'Slide 2 Title',
-      description: 'Description of Slide 2',
-      image: '/images/img_1.jpeg',
-      active: currentSlide === 1,
-    },
-    {
-      id: 2,
-      title: 'Slide 3 Title',
-      description: 'Description of Slide 3',
-      image: '/images/img_5.jpg',
-      active: currentSlide === 2,
-    },
-  ]
+
 
   // Function to navigate to a specific slide
   const handleCarouselSlide = (index) => {
@@ -75,7 +53,7 @@ export const ProgramInformation = ({ data }) => {
   const handleNextSlide = () => {
     setCurrentSlide((prevSlide) => {
       const nextSlide = prevSlide + 1
-      return nextSlide % slides.length
+      return nextSlide % data.slides.length
     })
   }
 
@@ -83,7 +61,7 @@ export const ProgramInformation = ({ data }) => {
   const handlePrevSlide = () => {
     setCurrentSlide((prevSlide) => {
       const prevIndex = prevSlide - 1
-      return prevIndex < 0 ? slides.length - 1 : prevIndex
+      return prevIndex < 0 ? data.slides.length - 1 : prevIndex
     })
   }
 
@@ -93,7 +71,7 @@ export const ProgramInformation = ({ data }) => {
     }, 3000) // Change slide every 3000 milliseconds (3 seconds)
 
     return () => clearInterval(interval) // Clear interval on component unmount
-  }, [currentSlide, slides.length])
+  }, [currentSlide, data.slides.length])
 
   return (
     <section className="relative px-4 py-16 w-full sm:px-6 sm:py-24 lg:px-8 lg:py-32">

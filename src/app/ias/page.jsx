@@ -25,11 +25,12 @@ hero:
   text: Sarat Chandra IAS Academy is a premier coaching institute that provides comprehensive training for UPSC Civil Services Examination aspirants.
   video: https://www.youtube.com/embed/Rjh271wFMqA?si=FP8MkTla99NsRbPq
   action:
-    label: Enroll now
+    label: Mention the course you are interested in
     href: "#"
     icon: true
   image:
     src: "/images/sca/6.jpg"
+  form: https://forms.gle/x2RD6rnVAhTZLcBR6
 infoSection:
   headline: Unlock Your Potential
   text: Through our innovative curriculum, expert faculty, and supportive learning environment, we help students unlock their full potential and pave the way for a bright future.

@@ -22,13 +22,15 @@ hero:
   tagline: Where dreams become reality
   headline: Sarat Chandra IIT Academy
   text: Sarat Chandra IIT Academy is a premier coaching institute that provides comprehensive training for IIT JEE, EAPCET, and other competitive exams.
-  video: https://www.youtube.com/embed/rrk4ciPSPVw?si=LCRIFiHheOZ4DwbZ
+  video: https://www.youtube.com/embed/LXJ2nhsgmXs?si=QXyNsjzILiVbkM9N
+  video_2: https://www.youtube.com/embed/rrk4ciPSPVw?si=3aZuSbZwh6OOE0Ru
   action:
     label: Enroll now
     href: "#"
     icon: true
   image:
     src: "/images/sca/6.jpg"
+  form: https://forms.gle/dazdMQSYr1KWuGudA
 infoSection:
   headline: Unlock Your Potential
   text: Through our innovative curriculum, expert faculty, and supportive learning environment, we help students unlock their full potential and pave the way for a bright future.
@@ -49,6 +51,21 @@ infoSection:
       description: "Our modern facilities create the perfect learning environment for our students."
       image: "/images/sca/3.jpg"
       active: currentSlide === 2
+    - id: 3
+      title: "State-of-the-Art Facilities"
+      description: "Our modern facilities create the perfect learning environment for our students."
+      image: "/images/iit/iit.jpg"
+      active: currentSlide === 3
+    - id: 4
+      title: "State-of-the-Art Facilities"
+      description: "Our modern facilities create the perfect learning environment for our students."
+      image: "/images/iit/iit1.jpg"
+      active: currentSlide === 4
+    - id: 5
+      title: "State-of-the-Art Facilities"
+      description: "Our modern facilities create the perfect learning environment for our students."
+      image: "/images/iit/iit2.jpg"
+      active: currentSlide === 5
 descriptionSection:
   card_1: 🎓 IIT Madras alumnus as Managing Director
   card_2: 🏫 Only IIT Academy run by IIT B.Tech graduates

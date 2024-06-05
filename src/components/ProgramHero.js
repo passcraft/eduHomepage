@@ -22,7 +22,7 @@ export const ProgramHero = ({ hero }) => {
           </p>
           {/* CTA button */}
           <div className="flex justify-center mt-8">
-            <Button href={'https://forms.gle/dazdMQSYr1KWuGudA'}>
+            <Button href={hero.form} className={"text-center text-wrap"}>
               {hero.action.label}
               {hero.action.icon && (
                 <Icon
@@ -61,6 +61,22 @@ export const ProgramHero = ({ hero }) => {
             ></iframe>
           </div>
         </div>
+        {hero.video_2 && (
+          <div className="relative z-10 mt-14 sm:mt-16">
+            <div className="relative aspect-h-2 aspect-w-3 sm:aspect-h-9 sm:aspect-w-16">
+              <iframe
+                width="560"
+                height="315"
+                src={hero.video_2}
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full rounded-3xl shadow-xl"
+              ></iframe>
+            </div>
+          </div>
+        )}
       </div>
       {/* Background overlay effect */}
       <div className="hidden absolute inset-x-0 bottom-0 top-auto z-0 h-64 bg-white sm:block" />
