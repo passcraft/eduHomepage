@@ -82,7 +82,7 @@ pricingSection:
   video_end: https://www.youtube.com/embed/nlvMJI6rGY8?si=DGEr3rVjVsE7ZFod
   courses:
     - id: 1
-      name: UPSC Civil Services Coaching
+      name: UPSC Civil Services Prelims cum Mains Coaching and Personal Mentorship
       price: ₹75,000
       interval: Per Year
       shortDescription: Comprehensive coaching covering Prelims, Mains, and Interview preparation.
