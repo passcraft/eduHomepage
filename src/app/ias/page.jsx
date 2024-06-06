@@ -130,7 +130,9 @@ pricingSection:
 
   return (
     <>
-      {program?.hero && <ProgramHero hero={program.hero} />}
+      {program?.hero && (
+        <ProgramHero hero={program.hero} site="/iit" title="IIT" />
+      )}
       {program?.infoSection && (
         <ProgramInformation data={program.infoSection} />
       )}

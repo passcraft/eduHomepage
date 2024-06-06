@@ -104,7 +104,9 @@ pricingSection:
 
   return (
     <>
-      {program?.hero && <ProgramHero hero={program.hero} />}
+      {program?.hero && (
+        <ProgramHero hero={program.hero} site="/ias" title="IAS" />
+      )}
       {program?.infoSection && (
         <ProgramInformation data={program.infoSection} />
       )}
