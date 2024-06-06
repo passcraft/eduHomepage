@@ -38,7 +38,7 @@ export const CallToAction = async ({ form }) => {
                 src={highlight}
                 alt=""
               />
-              {/* <span className="relative">{data.calltoaction.spantext}</span> */}
+              <span className="relative">{data.calltoaction.spantext}</span>
             </span>
           </span>
         </h2>
