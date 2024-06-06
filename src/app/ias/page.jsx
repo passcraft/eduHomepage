@@ -123,6 +123,22 @@ pricingSection:
         label: Enroll now
         href: "#"
         icon: true
+    - id: 4
+      name: UPSC Civil Services Prelims cum Mains:Live and Recorded classes 
+      price: ₹50,000
+      interval: Per Year
+      shortDescription: With Answer Key, solutions and detailed explanation, quick evaluation, feedback, All India ranking 
+      features:
+        - feature: Daily and Weekly Mains Answer writing practice
+        - feature: Daily, weekly, monthly Current Affairs Tests 
+        - feature: Monthly Current Affairs Magazines
+        
+      action:
+        label: Enroll now
+        href: "#"
+        icon: true
+      
+    
   
 ---
 `

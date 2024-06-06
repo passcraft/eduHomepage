@@ -5,11 +5,11 @@ import { Button } from '@/components/Button'
 
 export const ProgramPricing = ({ data, form }) => {
   return (
-    <section className="relative px-4 py-16 w-full sm:px-6 sm:py-24 xl:px-8">
+    <section className="relative w-full px-4 py-16 sm:px-6 sm:py-24 xl:px-8">
       {/* Container */}
       <div className="mx-auto max-w-xl lg:max-w-screen-xl">
         <div className="relative z-10 my-14 sm:my-16">
-          <div className="relative aspect-h-2 aspect-w-3 sm:aspect-h-9 sm:aspect-w-16">
+          <div className="aspect-h-2 aspect-w-3 relative sm:aspect-h-9 sm:aspect-w-16">
             <iframe
               width="560"
               height="315"
@@ -18,7 +18,7 @@ export const ProgramPricing = ({ data, form }) => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
-              className="absolute inset-0 w-full h-full rounded-3xl shadow-xl"
+              className="absolute inset-0 h-full w-full rounded-3xl shadow-xl"
             ></iframe>
           </div>
         </div>
@@ -27,11 +27,11 @@ export const ProgramPricing = ({ data, form }) => {
 
           <div className="flex flex-col justify-center pr-10 xl:pr-0">
             <div>
-              <span className="inline-block px-4 py-2 font-medium text-purple-700 bg-purple-200 rounded-full shadow-md -rotate-1">
+              <span className="inline-block -rotate-1 rounded-full bg-purple-200 px-4 py-2 font-medium text-purple-700 shadow-md">
                 {data.tagline}
               </span>
             </div>
-            <h2 className="mt-3.5 max-w-xl text-purple-900 h2 sm:mt-4">
+            <h2 className="h2 mt-3.5 max-w-xl text-purple-900 sm:mt-4">
               {data.headline}
             </h2>
             <p className="mt-3 max-w-lg text-lg leading-relaxed text-purple-800">
@@ -46,29 +46,29 @@ export const ProgramPricing = ({ data, form }) => {
                 href={form}
                 className="group mt-1.5 flex w-[126px] max-w-full cursor-pointer items-center border-b-2 border-solid border-purple-600 bg-transparent px-0 py-0.5 text-left leading-6 text-purple-600 no-underline transition duration-300 ease-in-out hover:border-purple-400 hover:text-purple-500"
               >
-                <span className="text-base font-bold text-left">
+                <span className="text-left text-base font-bold">
                   Get in touch
                 </span>
                 <Icon
                   icon="arrowNarrowRight"
-                  className="ml-3 w-6 h-6 group-hover:animate-horizontal-bounce"
+                  className="ml-3 h-6 w-6 group-hover:animate-horizontal-bounce"
                   stroke={2}
                 />
               </a>
             </div>
           </div>
           {/* Pricing cards */}
-          <div className="flex flex-row flex-wrap gap-4 justify-center items-center">
+          <div className="flex flex-row flex-wrap items-center justify-center gap-4 ">
             {data.courses.map((e, i) => (
               <div
                 key={`pricing-card-${i}`}
                 className={clsx(
                   i == 0 ? 'bg-purple-25' : 'bg-yellow-200',
-                  'rounded-xl px-6 py-10 lg:px-5 xl:px-10 lg:max-w-[360px]',
+                  'rounded-xl px-1 py-4 text-sm lg:max-w-[260px] lg:px-1 xl:px-4',
                 )}
               >
                 <div className="relative">
-                  <div className="inline-block relative w-full text-left">
+                  <div className="relative inline-block w-full text-left">
                     <h3 className="relative text-xl font-bold tracking-normal text-purple-900">
                       {e.name}
                     </h3>
@@ -81,7 +81,7 @@ export const ProgramPricing = ({ data, form }) => {
                           {e.interval}
                         </div>
                       </div> */}
-                      <p className="block mt-6 w-full font-medium text-purple-900">
+                      <p className="mt-6 block w-full font-medium text-purple-900">
                         {e.shortDescription}
                       </p>
                     </div>
@@ -94,7 +94,7 @@ export const ProgramPricing = ({ data, form }) => {
                         >
                           <Icon
                             icon="check"
-                            className="w-5 h-5 text-purple-600"
+                            className="h-5 w-5 text-purple-600"
                             stroke={2}
                           />
 
@@ -116,7 +116,7 @@ export const ProgramPricing = ({ data, form }) => {
                       {e.action.icon && (
                         <Icon
                           icon="arrowNarrowRight"
-                          className="ml-3 w-5 h-5 group-hover:animate-horizontal-bounce"
+                          className="ml-3 h-5 w-5 group-hover:animate-horizontal-bounce"
                           stroke={2}
                         />
                       )}
@@ -128,7 +128,7 @@ export const ProgramPricing = ({ data, form }) => {
           </div>
           {data.video_end && (
             <div className="relative z-10 my-14 sm:my-16">
-              <div className="relative aspect-h-2 aspect-w-3 sm:aspect-h-9 sm:aspect-w-16">
+              <div className="aspect-h-2 aspect-w-3 relative sm:aspect-h-9 sm:aspect-w-16">
                 <iframe
                   width="560"
                   height="315"
@@ -137,7 +137,7 @@ export const ProgramPricing = ({ data, form }) => {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
-                  className="absolute inset-0 w-full h-full rounded-3xl shadow-xl"
+                  className="absolute inset-0 h-full w-full rounded-3xl shadow-xl"
                 ></iframe>
               </div>
             </div>
