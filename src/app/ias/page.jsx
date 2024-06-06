@@ -2,12 +2,12 @@ import { ProgramHero } from '@/components/ProgramHero'
 import { ProgramInformation } from '@/components/ProgramInformation'
 import { ProgramDescription } from '@/components/ProgramDescription'
 import { ProgramPricing } from '@/components/ProgramPricing'
+import { CallToAction } from '@/components/CallToAction'
 import matter from 'gray-matter'
 
 import { getItemData, getAllItems } from '@/lib/getItems'
 
 export async function generateMetadata() {
-
   return {
     title: `Sarat Chandra IAS`,
     description: `Sarat Chandra IAS is a premier coaching institute that provides comprehensive training for IAS, IIT JEE, EAPCET, and other competitive exams.`,
@@ -82,7 +82,7 @@ pricingSection:
   video_end: https://www.youtube.com/embed/nlvMJI6rGY8?si=DGEr3rVjVsE7ZFod
   courses:
     - id: 1
-      name: UPSC Civil Services Coaching
+      name: UPSC Civil Services Prelims cum Mains Coaching and Personal Mentorship
       price: ₹75,000
       interval: Per Year
       shortDescription: Comprehensive coaching covering Prelims, Mains, and Interview preparation.
@@ -123,6 +123,22 @@ pricingSection:
         label: Enroll now
         href: "#"
         icon: true
+    - id: 4
+      name: UPSC Civil Services Prelims cum Mains:Live and Recorded classes 
+      price: ₹50,000
+      interval: Per Year
+      shortDescription: With Answer Key, solutions and detailed explanation, quick evaluation, feedback, All India ranking 
+      features:
+        - feature: Daily and Weekly Mains Answer writing practice
+        - feature: Daily, weekly, monthly Current Affairs Tests 
+        - feature: Monthly Current Affairs Magazines
+        
+      action:
+        label: Enroll now
+        href: "#"
+        icon: true
+      
+    
   
 ---
 `
@@ -130,7 +146,9 @@ pricingSection:
 
   return (
     <>
-      {program?.hero && <ProgramHero hero={program.hero} />}
+      {program?.hero && (
+        <ProgramHero hero={program.hero} site="/iit" title="IIT" />
+      )}
       {program?.infoSection && (
         <ProgramInformation data={program.infoSection} />
       )}
@@ -138,8 +156,12 @@ pricingSection:
         <ProgramDescription data={program.descriptionSection} />
       )}
       {program?.pricingSection && (
-        <ProgramPricing data={program.pricingSection} />
+        <ProgramPricing
+          data={program.pricingSection}
+          form="https://forms.gle/x2RD6rnVAhTZLcBR6"
+        />
       )}
+      <CallToAction form="https://forms.gle/x2RD6rnVAhTZLcBR6" />
     </>
   )
 }

@@ -7,7 +7,7 @@ import { Fragment } from 'react'
 import { Menu, Transition, Popover } from '@headlessui/react'
 import clsx from 'clsx'
 import FooterMail from './FooterMail'
-import logo from '/public/images/bright-logo.png'
+import logo from '/public/images/logo/Image.png'
 import logo_ias from '/public/images/ias/logo_ias.jpg'
 import { Button } from '@/components/Button'
 import { Icon } from '@/components/Icon'
@@ -22,39 +22,38 @@ const navigation = [
 ]
 
 export function Navbar() {
-
   function MenuIcon({ open }) {
     return (
       <>
         <span
           className={clsx(
-            'block absolute h-1 rounded-full opacity-100 transition-all duration-300 ease-in-out transform rotate-0',
+            'absolute block h-1 rotate-0 transform rounded-full opacity-100 transition-all duration-300 ease-in-out',
             open
-              ? 'top-2 left-1/2 w-0 bg-purple-50 group-hover:bg-white'
-              : 'top-0 left-0 w-full bg-purple-900 group-hover:bg-purple-600',
+              ? 'left-1/2 top-2 w-0 bg-purple-50 group-hover:bg-white'
+              : 'left-0 top-0 w-full bg-purple-900 group-hover:bg-purple-600',
           )}
         />
         <span
           className={clsx(
-            'block absolute left-0 top-2 w-full h-1 rounded-full opacity-100 transition-all duration-300 ease-in-out transform group-hover:bg-purple-600',
+            'absolute left-0 top-2 block h-1 w-full transform rounded-full opacity-100 transition-all duration-300 ease-in-out group-hover:bg-purple-600',
             open
-              ? 'bg-purple-50 rotate-45 group-hover:bg-white'
-              : 'bg-purple-900 rotate-0 group-hover:bg-purple-600',
+              ? 'rotate-45 bg-purple-50 group-hover:bg-white'
+              : 'rotate-0 bg-purple-900 group-hover:bg-purple-600',
           )}
         />
         <span
           className={clsx(
-            'block absolute left-0 top-2 w-full h-1 rounded-full opacity-100 transition-all duration-300 ease-in-out transform group-hover:bg-purple-600',
+            'absolute left-0 top-2 block h-1 w-full transform rounded-full opacity-100 transition-all duration-300 ease-in-out group-hover:bg-purple-600',
             open
-              ? 'bg-purple-50 -rotate-45 group-hover:bg-white'
-              : 'bg-purple-900 rotate-0 group-hover:bg-purple-600',
+              ? '-rotate-45 bg-purple-50 group-hover:bg-white'
+              : 'rotate-0 bg-purple-900 group-hover:bg-purple-600',
           )}
         />
         <span
           className={clsx(
-            'block absolute h-1 rounded-full opacity-100 transition-all duration-300 ease-in-out transform rotate-0 group-hover:bg-purple-600',
+            'absolute block h-1 rotate-0 transform rounded-full opacity-100 transition-all duration-300 ease-in-out group-hover:bg-purple-600',
             open
-              ? 'top-2 left-1/2 w-0 bg-purple-50 group-hover:bg-white'
+              ? 'left-1/2 top-2 w-0 bg-purple-50 group-hover:bg-white'
               : 'left-0 top-4 w-full bg-purple-900 group-hover:bg-purple-600',
           )}
         />
@@ -67,7 +66,7 @@ export function Navbar() {
       <div className="block lg:hidden">
         <Popover>
           <Popover.Button
-            className="relative z-50 w-6 h-5 transition duration-500 ease-in-out transform rotate-0 cursor-pointer group focus:outline-none"
+            className="group relative z-50 h-5 w-6 rotate-0 transform cursor-pointer transition duration-500 ease-in-out focus:outline-none"
             aria-label="Toggle Navigation"
           >
             {({ open }) => <MenuIcon open={open} />}
@@ -84,11 +83,11 @@ export function Navbar() {
           >
             <Popover.Panel
               as="div"
-              className="overflow-y-scroll absolute inset-x-0 top-0 z-40 px-4 py-16 w-screen bg-gradient-to-tr from-purple-600 to-purple-600 sm:px-8"
+              className="absolute inset-x-0 top-0 z-40 w-screen overflow-y-scroll bg-gradient-to-tr from-purple-600 to-purple-600 px-4 py-16 sm:px-8"
             >
-              <div className="flex flex-col justify-center items-center w-full h-full">
+              <div className="flex h-full w-full flex-col items-center justify-center">
                 <div className="mx-auto w-full max-w-md">
-                  <p className="text-lg font-semibold tracking-wider text-center text-purple-200 uppercase sm:text-left">
+                  <p className="text-center text-lg font-semibold uppercase tracking-wider text-purple-200 sm:text-left">
                     Contact Details
                   </p>
                   <div className="text-center sm:text-left">
@@ -99,12 +98,12 @@ export function Navbar() {
                       Phone: 9494188688 and 9494688188
                     </p>
                     <p className="mb-4 text-base text-purple-50">
-                      Email: <FooterMail/>
+                      Email: <FooterMail />
                     </p>
                   </div>
                   <hr className="my-8 w-full border-purple-200 border-opacity-30 sm:my-10" />
                 </div>
-                <div className="flex flex-col justify-evenly items-center mx-auto space-y-6 w-full">
+                <div className="mx-auto flex w-full flex-col items-center justify-evenly space-y-6">
                   {/* {navigation.map((link) => (
                     <Fragment key={`mobile-link-${link.label}`}>
                       {link.label !== 'Programs' && (
@@ -134,19 +133,18 @@ export function Navbar() {
     )
   }
   const pathname = usePathname()
-  console.log("🚀 ~ Navbar ~ pathname:", pathname)
-
+  console.log('🚀 ~ Navbar ~ pathname:', pathname)
 
   return (
     <div className="px-4 sm:px-6">
-      <nav className="flex items-center pt-5 mx-auto max-w-screen-xl">
-        <div className="flex justify-between items-center w-full">
+      <nav className="mx-auto flex max-w-screen-xl items-center pt-5">
+        <div className="flex w-full items-center justify-between">
           {/* Main navigation menu for large screens */}
 
           {/* Call to action button */}
 
           {/* Logo on smaller screens: < lg */}
-          <div className="block flex-grow-0 flex-shrink-0 w-48 sm:w-52 lg:hidden">
+          <div className="block w-48 flex-shrink-0 flex-grow-0 sm:w-52 lg:hidden">
             <Link href="/">
               <Image
                 src={pathname === '/iit' ? logo : logo_ias}

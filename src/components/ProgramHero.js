@@ -3,12 +3,17 @@ import Image from 'next/image'
 import { Icon } from '@/components/Icon'
 import { Button } from '@/components/Button'
 
-export const ProgramHero = ({ hero }) => {
+export const ProgramHero = ({ hero, site, title }) => {
   return (
     <section className="relative px-4 pt-16 bg-gradient-to-b to-purple-50 from-purple-25 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-screen-xl">
         {/* Header */}
         <div className="relative">
+          <div className="flex justify-center">
+            <Button href={site} className="top-[-40px]">
+              Click here for {title} website
+            </Button>
+          </div>
           <div className="flex justify-center">
             <span className="inline-block px-4 py-2 font-medium text-purple-700 bg-purple-200 rounded-full shadow-md -rotate-1">
               {hero.tagline}
@@ -22,7 +27,7 @@ export const ProgramHero = ({ hero }) => {
           </p>
           {/* CTA button */}
           <div className="flex justify-center mt-8">
-            <Button href={hero.form} className={"text-center text-wrap"}>
+            <Button href={hero.form} className={'text-center text-wrap'}>
               {hero.action.label}
               {hero.action.icon && (
                 <Icon
