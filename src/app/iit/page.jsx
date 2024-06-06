@@ -4,9 +4,8 @@ import { ProgramDescription } from '@/components/ProgramDescription'
 import { ProgramPricing } from '@/components/ProgramPricing'
 import matter from 'gray-matter'
 import { getItemData, getAllItems } from '@/lib/getItems'
-
+import { CallToAction } from '@/components/CallToAction'
 export async function generateMetadata() {
-
   return {
     title: `Sarat Chandra IIT Academy`,
     description: `Sarat Chandra IIT Academy is a premier coaching institute that provides comprehensive training for IIT JEE, EAPCET, and other competitive exams.`,
@@ -101,7 +100,7 @@ pricingSection:
 ---
 `
   const program = matter(markdownWithMeta).data
-  console.log("🚀 ~ ProgramPage ~ program:", program)
+  console.log('🚀 ~ ProgramPage ~ program:', program)
 
   return (
     <>
@@ -110,12 +109,15 @@ pricingSection:
         <ProgramInformation data={program.infoSection} />
       )}
       {program?.descriptionSection && (
-        <ProgramDescription data={program.descriptionSection}
-           />
+        <ProgramDescription data={program.descriptionSection} />
       )}
       {program?.pricingSection && (
-        <ProgramPricing data={program.pricingSection} />
+        <ProgramPricing
+          data={program.pricingSection}
+          form="https://forms.gle/dazdMQSYr1KWuGudA"
+        />
       )}
+      <CallToAction form="https://forms.gle/dazdMQSYr1KWuGudA" />
     </>
   )
 }

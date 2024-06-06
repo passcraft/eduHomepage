@@ -2,12 +2,12 @@ import { ProgramHero } from '@/components/ProgramHero'
 import { ProgramInformation } from '@/components/ProgramInformation'
 import { ProgramDescription } from '@/components/ProgramDescription'
 import { ProgramPricing } from '@/components/ProgramPricing'
+import { CallToAction } from '@/components/CallToAction'
 import matter from 'gray-matter'
 
 import { getItemData, getAllItems } from '@/lib/getItems'
 
 export async function generateMetadata() {
-
   return {
     title: `Sarat Chandra IAS`,
     description: `Sarat Chandra IAS is a premier coaching institute that provides comprehensive training for IAS, IIT JEE, EAPCET, and other competitive exams.`,
@@ -138,8 +138,12 @@ pricingSection:
         <ProgramDescription data={program.descriptionSection} />
       )}
       {program?.pricingSection && (
-        <ProgramPricing data={program.pricingSection} />
+        <ProgramPricing
+          data={program.pricingSection}
+          form="https://forms.gle/x2RD6rnVAhTZLcBR6"
+        />
       )}
+      <CallToAction form="https://forms.gle/x2RD6rnVAhTZLcBR6" />
     </>
   )
 }

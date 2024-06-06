@@ -7,7 +7,7 @@ import { Button } from '@/components/Button'
 import sunrise from '/public/images/illustrations/sunrise.svg'
 import highlight from '/public/images/illustrations/underline-simple-light-purple.svg'
 
-export  const CallToAction = async () => {
+export const CallToAction = async ({ form }) => {
   const data = await basehub({
     next: { tags: ['basehub'] },
     draft: draftMode().isEnabled,
@@ -18,44 +18,43 @@ export  const CallToAction = async () => {
       title: true,
       spantext: true,
     },
-    
   })
+  // const data = []
 
   return (
-    <section className="py-24 bg-white sm:py-32">
+    <section className="bg-white py-24 sm:py-32">
       {/* Container */}
-      <div className="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
-        
+      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         {/* Sunrise image */}
         <Image className="mx-auto w-72" src={sunrise} alt="" />
         {/* Header */}
-        <h2 className="max-w-3xl mx-auto mt-6 text-center text-purple-900 h1">
+        <h2 className="h1 mx-auto mt-6 max-w-3xl text-center text-purple-900">
           <span className="block">Join us for a</span>
           {/* Underlined text */}
           <span className="relative block">
             <span className="relative">
               <Image
-                className="absolute inset-0 transform translate-y-9 sm:translate-y-11 xl:translate-y-14"
+                className="absolute inset-0 translate-y-9 transform sm:translate-y-11 xl:translate-y-14"
                 src={highlight}
                 alt=""
               />
-              <span className="relative">{data.calltoaction.spantext}</span>
+              {/* <span className="relative">{data.calltoaction.spantext}</span> */}
             </span>
           </span>
         </h2>
         {/* CTA button */}
-        <div className="flex justify-center mt-12 xl:mt-14">
-          <Button href="https://forms.gle/dazdMQSYr1KWuGudA">
+        <div className="mt-12 flex justify-center xl:mt-14">
+          <Button href={form}>
             Enroll today
             <Icon
               icon="arrowNarrowRight"
-              className="w-6 h-6 ml-3 group-hover:animate-horizontal-bounce"
+              className="ml-3 h-6 w-6 group-hover:animate-horizontal-bounce"
               stroke={2}
             />
           </Button>
         </div>
         <div className="relative z-10 my-14 sm:my-16">
-          <div className="relative aspect-h-2 aspect-w-3 sm:aspect-h-9 sm:aspect-w-16">
+          <div className="aspect-h-2 aspect-w-3 relative sm:aspect-h-9 sm:aspect-w-16">
             <iframe
               width="600"
               height="450"
@@ -64,7 +63,7 @@ export  const CallToAction = async () => {
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="absolute inset-0 w-full h-full shadow-xl rounded-3xl"
+              className="absolute inset-0 h-full w-full rounded-3xl shadow-xl"
             ></iframe>
           </div>
         </div>

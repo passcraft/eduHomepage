@@ -20,19 +20,17 @@ const roboto = Roboto_Flex({
 // }
 
 export default function RootLayout({ children }) {
-
-  
   return (
     <html lang="en">
       <body className={clsx('font-sans', roboto.variable)}>
-        <Header/>
+        <Header />
         {/* <Navbar programs={programs} /> */}
         {children}
-        <CallToAction />
-        <Footer/>
+
+        <Footer />
       </body>
-    <Script strategy="lazyOnload" id='whatsapp-script'>
-      {`
+      <Script strategy="lazyOnload" id="whatsapp-script">
+        {`
         (function() {
           var whatsappIcon = document.createElement('a');
           whatsappIcon.href = 'https://wa.me/9494188688';
@@ -49,7 +47,7 @@ export default function RootLayout({ children }) {
           document.body.appendChild(whatsappIcon);
         })();
       `}
-   </Script>
+      </Script>
     </html>
   )
 }
