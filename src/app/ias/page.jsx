@@ -82,18 +82,22 @@ pricingSection:
   video_end: https://www.youtube.com/embed/nlvMJI6rGY8?si=DGEr3rVjVsE7ZFod
   courses:
     - id: 1
-      name: UPSC Civil Services Prelims cum Mains Coaching and Personal Mentorship
+      name: Offline Courses in Hyderabad and Vijayawada 
       price: ₹75,000
       interval: Per Year
-      shortDescription: Comprehensive coaching covering Prelims, Mains, and Interview preparation.
+      shortDescription: We provide best coaching classes, Test series, Material for all subjects, Current Affairs magazines, Personal mentorship to every student. Our team consists of Expert faculty, content developers, research team guided by IAS officers, Rankers and our Managing Director Thota Sarat Chandra who is an expert of General studies and guided more than 160 UPSC Rankers.  
       features:
-        - feature: Expert faculty
-        - feature: Individual mentoring
-        - feature: Weekly tests & evaluations
-        - feature: Guest lectures by IAS officers
+        - feature: UPSC Civil Services Prelims cum Mains Coaching and Personal Mentorship
+        - feature: Test Series - UPSC Civil Services Prelim and Mains - With Answer Key, solutions and detailed explanation, quick evaluation, feedback, All India ranking 
+        - feature: Daily and Weekly Mains Answer writing practice for UPSC and Group 1 
+        - feature: Daily, weekly, monthly Current Affairs Tests – Prelims and Mains 
+        - feature: Monthly Current Affairs Magazines separately for Prelims and Mains 
+        - feature: APPSC - Group 1 and Group 2 - Prelims and Mains - Coaching, Crash course, Test series, Personal Guidance 
+        - feature: TSPSC Group 1 - Prelims and Mains - Classes, Crash Course, Test series 
+        - feature: Personal Guidance for UPSC Civils and Group 1 
       action:
         label: Enroll now
-        href: "#"
+        href: "https://rzp.io/l/PWOHXTvCHa "
         icon: true
     - id: 2
       name: Degree with IAS Coaching
@@ -124,18 +128,24 @@ pricingSection:
         href: "#"
         icon: true
     - id: 4
-      name: UPSC Civil Services Prelims cum Mains:Live and Recorded classes 
+      name: Online courses 
       price: ₹50,000
       interval: Per Year
-      shortDescription: With Answer Key, solutions and detailed explanation, quick evaluation, feedback, All India ranking 
+      shortDescription: We provide best online classes, test series, material, mentorship with expert faculty, research team, content developers, IAS officers and Rankers 
       features:
-        - feature: Daily and Weekly Mains Answer writing practice
-        - feature: Daily, weekly, monthly Current Affairs Tests 
-        - feature: Monthly Current Affairs Magazines
+        - feature: Online Coaching - UPSC Civil Services Prelims cum Mains- Live and Recorded classes 
+        - feature: Test Series - UPSC Civil Services Prelim and Mains- With Answer Key, solutions and detailed explanation, quick evaluation, feedback, All India ranking 
+        - feature: Daily and Weekly Mains Answer writing practice for UPSC and Group 1 
+        - feature: Daily, weekly, monthly Current Affairs Tests – Prelims and Mains 
+        - feature: Monthly Current Affairs Magazines separately for Prelims and Mains 
+        - feature: APPSC - Group 1 and Group 2 - Prelims and Mains - Coaching and Crash Course 
+        - feature: APPSC - Group 1 and Group 2 - Prelims and Mains - Test series 
+        - feature: TSPSC Group 1 Online Coaching - Prelims and Mains - Crash Course 
+        - feature: TSPSC Group 1 Online Test series - Prelims and Mains 
         
       action:
         label: Enroll now
-        href: "#"
+        href: "https://sarat.courses.store/?filterId=33&sortId=7 "
         icon: true
       
     

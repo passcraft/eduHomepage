@@ -64,66 +64,62 @@ export const ProgramPricing = ({ data, form }) => {
                 key={`pricing-card-${i}`}
                 className={clsx(
                   i == 0 ? 'bg-purple-25' : 'bg-yellow-200',
-                  'rounded-xl px-1 py-4 text-sm lg:max-w-[260px] lg:px-1 xl:px-4',
+                  'relative inline-block rounded-xl px-12 pt-8 text-left text-sm lg:min-h-[550px] lg:max-w-[600px] lg:px-12 xl:px-10',
                 )}
               >
-                <div className="relative">
-                  <div className="relative inline-block w-full text-left">
-                    <h3 className="relative text-xl font-bold tracking-normal text-purple-900">
-                      {e.name}
-                    </h3>
-                    <div className="mt-2">
-                      {/* <h2 className="text-purple-900 h1">
+                {/* <div className="relative">
+                  <div className="relative inline-block  text-left"> */}
+                <h3 className="relative text-xl font-bold tracking-normal text-purple-900">
+                  {e.name}
+                </h3>
+                <div className="mt-2">
+                  {/* <h2 className="text-purple-900 h1">
                         {e.price}
                       </h2> */}
-                      {/* <div className="mt-3">
+                  {/* <div className="mt-3">
                         <div className="inline-block px-3 h-6 text-sm font-medium leading-6 text-purple-700 align-top bg-purple-200 rounded-xl -rotate-1">
                           {e.interval}
                         </div>
                       </div> */}
-                      <p className="mt-6 block w-full font-medium text-purple-900">
-                        {e.shortDescription}
-                      </p>
-                    </div>
-                    {/* Features */}
-                    <ul className="mt-4 space-y-2 text-base">
-                      {e.features.map((item, index) => (
-                        <li
-                          key={`pricing-1-feature-${index}`}
-                          className="flex items-center"
-                        >
-                          <Icon
-                            icon="check"
-                            className="h-5 w-5 text-purple-600"
-                            stroke={2}
-                          />
-
-                          <span className="ml-2 text-purple-800">
-                            {item.feature}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    {/* CTA button */}
-                    <Button
-                      href={'https://rzp.io/l/IkUXWfLWyU'}
-                      className="mt-6"
-                      variant="accent"
-                      size="sm"
+                  <p className="mt-6 block w-full font-medium text-purple-900">
+                    {e.shortDescription}
+                  </p>
+                </div>
+                {/* Features */}
+                <ul className="mt-4 space-y-2 text-base">
+                  {e.features.map((item, index) => (
+                    <li
+                      key={`pricing-1-feature-${index}`}
+                      className="flex items-center"
                     >
-                      {e.action.label}
-                      {e.action.icon && (
-                        <Icon
-                          icon="arrowNarrowRight"
-                          className="ml-3 h-5 w-5 group-hover:animate-horizontal-bounce"
-                          stroke={2}
-                        />
-                      )}
-                    </Button>
-                  </div>
+                      <Icon
+                        icon="check"
+                        className="h-5 w-5 text-purple-600"
+                        stroke={2}
+                      />
+
+                      <span className="ml-2 text-sm text-purple-800">
+                        {item.feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* CTA button */}
+                <div className=" relative bottom-6 mb-2 mt-8 md:relative  md:bottom-6 md:mt-8 lg:absolute lg:bottom-8 lg:mt-2">
+                  <Button href={e.action.href} variant="accent" size="sm">
+                    {e.action.label}
+                    {e.action.icon && (
+                      <Icon
+                        icon="arrowNarrowRight"
+                        className="ml-3 h-5 w-5 group-hover:animate-horizontal-bounce"
+                        stroke={2}
+                      />
+                    )}
+                  </Button>
                 </div>
               </div>
+              // </div>
             ))}
           </div>
           {data.video_end && (
