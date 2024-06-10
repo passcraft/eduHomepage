@@ -4,7 +4,7 @@ export const GoogleTag = () => {
   return (
     <>
       {/* Global site tag (gtag.js) - Google Analytics */}
-      <Script src="https://www.googletagmanager.com/gtag/js?id=AW-345890245" />
+      <Script id='google-tag-manager' src="https://www.googletagmanager.com/gtag/js?id=AW-345890245" />
       <Script>
         {`
           window.dataLayer = window.dataLayer || [];

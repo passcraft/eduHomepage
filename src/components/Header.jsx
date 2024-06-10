@@ -12,7 +12,7 @@ export function Header() {
     <header
       className={clsx(pathname === '/parents' ? 'bg-white' : 'bg-purple-25')}
     >
-      <GoogleTag id="G-1234567890" />
+      <GoogleTag />
       <ContactHeader pathname={pathname} />
       <Navbar />
     </header>
