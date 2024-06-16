@@ -13,7 +13,7 @@ export const ProgramHero = ({ hero, site, title }) => {
 						<div className="flex justify-center">
 							<Button
 								href={
-									"https://www.dropbox.com/scl/fi/aum2dddcrjchvfobqggv8/Image-from-Next-IAS.pdf?rlkey=dog183tb98z4sln3ruwjx9mt1&st=2724qfi6&dl=0"
+									"https://www.dropbox.com/scl/fi/4k86aeuunh6snwusojzwd/UPSC-2024-Questions-Answers-with-alignment2-1.pdf?rlkey=dz5pa4lgmn1awkj8h83c9j7nq&dl=0"
 								}
 								className="top-[-40px]"
 							>
