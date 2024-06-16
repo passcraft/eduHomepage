@@ -9,22 +9,25 @@ export const ProgramHero = ({ hero, site, title }) => {
 			<div className="mx-auto max-w-screen-xl">
 				{/* Header */}
 				<div className="relative">
-					<div className="flex justify-center">
-						<Button
-							href={
-								"https://www.dropbox.com/scl/fi/aum2dddcrjchvfobqggv8/Image-from-Next-IAS.pdf?rlkey=dog183tb98z4sln3ruwjx9mt1&st=2724qfi6&dl=0"
-							}
-							className="top-[-40px]"
-						>
-							UPSC Civils 2024 Prelims Paper 1 Answer key with detailed
-							explanation
-						</Button>
+					<div className="flex justify-center flex-col gap-4">
+						<div>
+							<Button
+								href={
+									"https://www.dropbox.com/scl/fi/aum2dddcrjchvfobqggv8/Image-from-Next-IAS.pdf?rlkey=dog183tb98z4sln3ruwjx9mt1&st=2724qfi6&dl=0"
+								}
+								className="top-[-40px]"
+							>
+								UPSC Civils 2024 Prelims Paper 1 Answer key with detailed
+								explanation
+							</Button>
+						</div>
+						<div className="flex justify-center">
+							<Button href={site} className="top-[-40px]">
+								Click here for {title} website
+							</Button>
+						</div>
 					</div>
-					<div className="flex justify-center">
-						<Button href={site} className="top-[-40px]">
-							Click here for {title} website
-						</Button>
-					</div>
+
 					<div className="flex justify-center">
 						<span className="inline-block px-4 py-2 font-medium text-purple-700 bg-purple-200 rounded-full shadow-md -rotate-1">
 							{hero.tagline}
