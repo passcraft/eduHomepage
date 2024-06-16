@@ -10,7 +10,7 @@ export const ProgramHero = ({ hero, site, title }) => {
 				{/* Header */}
 				<div className="relative">
 					<div className="flex justify-center flex-col gap-4">
-						<div>
+						<div className="flex justify-center">
 							<Button
 								href={
 									"https://www.dropbox.com/scl/fi/aum2dddcrjchvfobqggv8/Image-from-Next-IAS.pdf?rlkey=dog183tb98z4sln3ruwjx9mt1&st=2724qfi6&dl=0"
