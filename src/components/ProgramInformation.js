@@ -2,7 +2,7 @@
 import clsx from 'clsx'
 import { Icon } from '@/components/Icon'
 import Image from 'next/image'
-import { useState,useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 const InfoCard = ({ icon, title, gradientColors, text }) => {
   return (
@@ -18,9 +18,9 @@ const InfoCard = ({ icon, title, gradientColors, text }) => {
           gradientColors.iconBgColor,
         )}
       >
-        <Icon icon={icon} className="w-8 h-8 text-purple-700" />
+        <Icon icon={icon} className="h-8 w-8 text-purple-700" />
       </span>
-      <h4 className="mt-4 text-xl font-semibold text-center text-purple-900">
+      <h4 className="mt-4 text-center text-xl font-semibold text-purple-900">
         {title}
       </h4>
       <div
@@ -30,15 +30,13 @@ const InfoCard = ({ icon, title, gradientColors, text }) => {
           gradientColors.endColor,
         )}
       />
-      <p className="text-lg text-center text-purple-800">{text}</p>
+      <p className="text-center text-lg text-purple-800">{text}</p>
     </div>
   )
 }
 
 export const ProgramInformation = ({ data }) => {
   const [currentSlide, setCurrentSlide] = useState(0)
-
-
 
   // Function to navigate to a specific slide
   const handleCarouselSlide = (index) => {
@@ -74,16 +72,16 @@ export const ProgramInformation = ({ data }) => {
   }, [currentSlide, data.slides.length])
 
   return (
-    <section className="relative px-4 py-16 w-full sm:px-6 sm:py-24 lg:px-8 lg:py-32">
+    <section className="relative w-full px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:pt-32">
       {/* Container */}
       <div className="mx-auto max-w-xl lg:max-w-screen-xl">
         {/* Section header text */}
 
         <div className="lg:grid lg:grid-cols-2 lg:gap-16 xl:gap-32">
           <div className="flex items-center">
-            <h2 className="max-w-4xl text-purple-900 h2">{data.headline}</h2>
+            <h2 className="h2 max-w-4xl text-purple-900">{data.headline}</h2>
           </div>
-          <div className="flex items-center mt-6 lg:mt-0">
+          <div className="mt-6 flex items-center lg:mt-0">
             <p className="text-xl leading-relaxed text-purple-800">
               {data.text}
             </p>
@@ -94,7 +92,7 @@ export const ProgramInformation = ({ data }) => {
           className="relative mt-16 w-full"
           data-carousel="slide"
         >
-          <div className="overflow-hidden relative rounded-lg aspect-h-2 aspect-w-3 sm:aspect-h-9 sm:aspect-w-16">
+          <div className="aspect-h-2 aspect-w-3 relative overflow-hidden rounded-lg sm:aspect-h-9 sm:aspect-w-16">
             {/* Carousel items */}
             {data.slides.map((slide, index) => (
               <div
@@ -109,7 +107,7 @@ export const ProgramInformation = ({ data }) => {
               >
                 <Image
                   src={slide.image}
-                  className="block object-center w-full h-full"
+                  className="block h-full w-full object-center"
                   alt={`Slide ${index + 1}`}
                   width={1000}
                   height={1000}
@@ -139,13 +137,13 @@ export const ProgramInformation = ({ data }) => {
           {/* Carousel controls */}
           <button
             type="button"
-            className="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer"
+            className="absolute left-0 top-0 z-30 flex h-full cursor-pointer items-center justify-center px-4"
             data-carousel-prev
             onClick={handlePrevSlide}
           >
-            <span className="inline-flex justify-center items-center w-10 h-10 bg-white rounded-full">
+            <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white">
               <svg
-                className="w-6 h-6 text-gray-800"
+                className="h-6 w-6 text-gray-800"
                 fill="none"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -160,13 +158,13 @@ export const ProgramInformation = ({ data }) => {
           </button>
           <button
             type="button"
-            className="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer"
+            className="absolute right-0 top-0 z-30 flex h-full cursor-pointer items-center justify-center px-4"
             data-carousel-next
             onClick={handleNextSlide}
           >
-            <span className="inline-flex justify-center items-center w-10 h-10 bg-white rounded-full">
+            <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white">
               <svg
-                className="w-6 h-6 text-gray-800"
+                className="h-6 w-6 text-gray-800"
                 fill="none"
                 strokeLinecap="round"
                 strokeLinejoin="round"

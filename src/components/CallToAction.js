@@ -7,7 +7,7 @@ import { Button } from '@/components/Button'
 import sunrise from '/public/images/illustrations/sunrise.svg'
 import highlight from '/public/images/illustrations/underline-simple-light-purple.svg'
 
-export const CallToAction = async ({ form }) => {
+export const CallToAction = async ({ title, form }) => {
   const data = await basehub({
     next: { tags: ['basehub'] },
     draft: draftMode().isEnabled,
@@ -22,7 +22,7 @@ export const CallToAction = async ({ form }) => {
   // const data = []
 
   return (
-    <section className="bg-white py-24 sm:py-32">
+    <section className="bg-white py-16 sm:py-24">
       {/* Container */}
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         {/* Sunrise image */}
@@ -45,7 +45,7 @@ export const CallToAction = async ({ form }) => {
         {/* CTA button */}
         <div className="mt-12 flex justify-center xl:mt-14">
           <Button href={form}>
-            Enroll today
+            {title}
             <Icon
               icon="arrowNarrowRight"
               className="ml-3 h-6 w-6 group-hover:animate-horizontal-bounce"

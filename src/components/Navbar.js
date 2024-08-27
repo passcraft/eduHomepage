@@ -9,6 +9,7 @@ import clsx from 'clsx'
 import FooterMail from './FooterMail'
 import logo from '/public/images/logo/Image.png'
 import logo_ias from '/public/images/ias/logo_ias.jpg'
+import logo_bank from '/public/images/banklogo.jpg'
 import { Button } from '@/components/Button'
 import { Icon } from '@/components/Icon'
 
@@ -147,7 +148,13 @@ export function Navbar() {
           <div className="block w-48 flex-shrink-0 flex-grow-0 sm:w-52 lg:hidden">
             <Link href="/">
               <Image
-                src={pathname === '/iit' ? logo : logo_ias}
+                src={
+                  pathname === '/iit'
+                    ? logo
+                    : pathname === '/ias'
+                      ? logo_ias
+                      : logo_bank
+                }
                 alt="Bright"
                 className="h-auto"
               />
