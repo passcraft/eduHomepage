@@ -76,7 +76,7 @@ export const Footer = async ({ programs, contact }) => {
             competitive exams.
           </div> */}
           {/* Social links */}
-          {/* <div className="mt-5 w-full lg:mt-6">
+          {/* <div className="w-full mt-5 lg:mt-6">
             <div className="flex justify-center space-x-4 lg:justify-start">
               <SocialLink href="#0" icon="instagram" />
               <SocialLink href="#0" icon="facebook" />
@@ -154,7 +154,7 @@ export const Footer = async ({ programs, contact }) => {
         </span>
         {/* <p className="flex items-center mt-0.5 text-purple-800/90">
           Made with
-          <Icon icon="coffee" className="mx-1 w-5 h-5" />
+          <Icon icon="coffee" className="w-5 h-5 mx-1" />
           <span>
             by{' '}
             <Link

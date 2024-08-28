@@ -1,17 +1,18 @@
-import '@/styles/tailwind.css'
-import clsx from 'clsx'
-import { Roboto_Flex } from 'next/font/google'
-import { Navbar } from '@/components/Navbar'
-import { Header } from '@/components/Header'
-import { CallToAction } from '@/components/CallToAction'
-import { Footer } from '@/components/Footer'
-import Script from 'next/script'
-import matter from 'gray-matter'
+import "@/styles/tailwind.css";
+import clsx from "clsx";
+import { Roboto_Flex } from "next/font/google";
+import { Navbar } from "@/components/Navbar";
+import { Header } from "@/components/Header";
+import { CallToAction } from "@/components/CallToAction";
+import { Footer } from "@/components/Footer";
+import Script from "next/script";
+import matter from "gray-matter";
+import { Analytics } from "@vercel/analytics/react";
 
 const roboto = Roboto_Flex({
-  subsets: ['latin'],
-  variable: '--font-roboto',
-})
+	subsets: ["latin"],
+	variable: "--font-roboto",
+});
 
 // export const metadata = {
 //   title: 'Bright School - Creating a brighter future for your child',
@@ -20,17 +21,17 @@ const roboto = Roboto_Flex({
 // }
 
 export default function RootLayout({ children }) {
-  return (
-    <html lang="en">
-      <body className={clsx('font-sans', roboto.variable)}>
-        <Header />
-        {/* <Navbar programs={programs} /> */}
-        {children}
-
-        <Footer />
-      </body>
-      <Script strategy="lazyOnload" id="whatsapp-script">
-        {`
+	return (
+		<html lang="en">
+			<body className={clsx("font-sans", roboto.variable)}>
+				<Header />
+				{/* <Navbar programs={programs} /> */}
+				{children}
+				<Analytics />
+				<Footer />
+			</body>
+			<Script strategy="lazyOnload" id="whatsapp-script">
+				{`
         (function() {
           var whatsappIcon = document.createElement('a');
           whatsappIcon.href = 'https://wa.me/9494188688';
@@ -47,7 +48,7 @@ export default function RootLayout({ children }) {
           document.body.appendChild(whatsappIcon);
         })();
       `}
-      </Script>
-    </html>
-  )
+			</Script>
+		</html>
+	);
 }

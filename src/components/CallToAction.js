@@ -1,7 +1,4 @@
 import Image from 'next/image'
-import { draftMode } from 'next/headers'
-import { basehub } from 'basehub'
-
 import { Icon } from '@/components/Icon'
 import { Button } from '@/components/Button'
 import sunrise from '/public/images/illustrations/sunrise.svg'

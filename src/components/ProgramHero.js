@@ -184,7 +184,18 @@ export const ProgramHero = ({ name, hero, site, title, site2, title2 }) => {
           <div className="mx-auto max-w-screen-xl">
             {/* Header */}
             <div className="relative">
-              <div className="mr-2 flex flex-col items-center justify-center sm:flex-row">
+              <div className="flex justify-center">
+                <Button
+                  href={
+                    'https://www.dropbox.com/scl/fi/tufrxmld1tbrlgc8kovx0/Sarath-IAS-UPSC-2024-Set-D-Key-and-explanation.pdf?rlkey=x6b09ssl08o3xqnplfqftdvnp&dl=1'
+                  }
+                  className="top-[-40px]"
+                >
+                  UPSC Civils 2024 Prelims Paper 1 Answer key with detailed
+                  explanation
+                </Button>
+              </div>
+              <div className="mr-2 mt-8 flex flex-col items-center justify-center sm:flex-row">
                 <Button
                   href={site}
                   className="top-[-40px] mb-2 sm:mb-0 sm:mr-4"
