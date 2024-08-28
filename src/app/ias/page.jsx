@@ -181,6 +181,7 @@ pricingSection:
         />
       )}
       <CallToAction
+        name="ias"
         title="Enroll Now"
         form="https://forms.gle/x2RD6rnVAhTZLcBR6"
       />

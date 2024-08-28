@@ -128,6 +128,7 @@ pricingSection:
         />
       )}
       <CallToAction
+        name="iit"
         title="Enroll Now"
         form="https://forms.gle/dazdMQSYr1KWuGudA"
       />

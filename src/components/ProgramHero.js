@@ -118,9 +118,22 @@ export const ProgramHero = ({ name, hero, site, title, site2, title2 }) => {
                 {hero.text}
               </p>
               {/* CTA button */}
-              <div className="mt-8 flex justify-center">
-                <Button href={hero.form} className={'text-wrap text-center'}>
-                  {hero.action.label}
+              <div className="mt-8 flex flex-col items-center justify-center sm:flex-row">
+                <Button
+                  href={hero.form1}
+                  className={'mb-2 text-wrap text-center sm:mb-0 sm:mr-4'}
+                >
+                  {hero.action.label1}
+                  {hero.action.icon && (
+                    <Icon
+                      icon="arrowNarrowRight"
+                      className="ml-3 h-6 w-6 group-hover:animate-horizontal-bounce"
+                      stroke={2}
+                    />
+                  )}
+                </Button>
+                <Button href={hero.form2} className={'text-wrap text-center'}>
+                  {hero.action.label2}
                   {hero.action.icon && (
                     <Icon
                       icon="arrowNarrowRight"

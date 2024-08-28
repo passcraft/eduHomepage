@@ -25,12 +25,14 @@ hero:
   text: Sarat Chandra SSC Bank Academy is a premier coaching institute that provides comprehensive training for SSC Bank Examination aspirants.
   video: https://www.youtube.com/embed/Rjh271wFMqA?si=FP8MkTla99NsRbPq
   action:
-    label: Enroll Now
+    label1: Enroll here for Online Classes
+    label2: Enroll here for Online Practice Tests
     href: "https://forms.gle/BKMLE46EaLpD7eki7"
     icon: true
   image:
     src: "/images/sca/6.jpg"
-  form: https://forms.gle/BKMLE46EaLpD7eki7
+  form1: https://sarat.courses.store/539519
+  form2: https://sarat.courses.store/543606
 infoSection:
   headline: Unlock Your Potential
   text: Through our innovative curriculum, expert faculty, and supportive learning environment, we help students unlock their full potential and pave the way for a bright future.
@@ -138,8 +140,11 @@ pricingSection:
         />
       )}
       <CallToAction
-        title="pay HERE to register"
-        form="https://rzp.io/l/hXp46HL"
+        name="bank"
+        title="Enroll here for Online Classes"
+        form="https://sarat.courses.store/539519"
+        title2="Enroll here for Online Practice Tests"
+        form2="https://sarat.courses.store/543606"
       />
     </>
   )

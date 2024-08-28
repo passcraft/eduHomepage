@@ -40,7 +40,7 @@ export const ProgramPricing = ({ name, data, form }) => {
                   {data.text}
                 </p>
                 {/* Contact link */}
-                <div className="mt-8 font-medium lg:mt-10">
+                {/* <div className="mt-8 font-medium lg:mt-10">
                   <p className="text-purple-800">
                     Want to learn more about our programs?
                   </p>
@@ -57,7 +57,7 @@ export const ProgramPricing = ({ name, data, form }) => {
                       stroke={2}
                     />
                   </a>
-                </div>
+                </div> */}
               </div>
               {/* Pricing cards */}
               <div className="flex flex-row flex-wrap items-center justify-center gap-4 ">
