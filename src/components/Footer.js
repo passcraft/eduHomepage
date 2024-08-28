@@ -6,6 +6,8 @@ import { draftMode, headers } from 'next/headers'
 import FooterMail from './FooterMail'
 import { Icon } from '@/components/Icon'
 import FooterImage from './FooterImage'
+import Address from './Address'
+import Phone from './Phone'
 const siteLinks = [
   { label: 'Home', href: '/' },
   { label: 'About us', href: '/about' },
@@ -105,7 +107,7 @@ export const Footer = async ({ programs, contact }) => {
                   Address
                 </h5>
                 <p className="mt-0.5 text-sm leading-relaxed text-purple-800 text-opacity-90">
-                  Benz Circle, Vijayawada; Ashoknagar, Hyderabad
+                  <Address />
                 </p>
               </div>
             </li>
@@ -137,7 +139,7 @@ export const Footer = async ({ programs, contact }) => {
                   Phone
                 </h5>
                 <p className="mt-0.5 text-sm leading-relaxed text-purple-800 text-opacity-90">
-                  9494188688 and 9494688188
+                  <Phone />
                 </p>
               </div>
             </li>

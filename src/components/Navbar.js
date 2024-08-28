@@ -7,6 +7,9 @@ import { Fragment } from 'react'
 import { Menu, Transition, Popover } from '@headlessui/react'
 import clsx from 'clsx'
 import FooterMail from './FooterMail'
+import Address from './Address'
+import Phone from './Phone'
+
 import logo from '/public/images/logo/Image.png'
 import logo_ias from '/public/images/ias/logo_ias.jpg'
 import logo_bank from '/public/images/banklogo.jpg'
@@ -93,10 +96,10 @@ export function Navbar() {
                   </p>
                   <div className="text-center sm:text-left">
                     <p className="mb-4 text-base text-purple-50">
-                      Benz Circle, Vijayawada; Ashoknagar, Hyderabad
+                      Address: <Address />
                     </p>
                     <p className="mb-4 text-base text-purple-50">
-                      Phone: 9494188688 and 9494688188
+                      Phone: <Phone />
                     </p>
                     <p className="mb-4 text-base text-purple-50">
                       Email: <FooterMail />
@@ -120,9 +123,9 @@ export function Navbar() {
                     </Fragment>
                   ))} */}
 
-                  <Button href="https://forms.gle/dazdMQSYr1KWuGudA">
+                  {/* <Button href="https://forms.gle/dazdMQSYr1KWuGudA">
                     Enroll today
-                  </Button>
+                  </Button> */}
                 </div>
 
                 <hr className="my-8 w-full border-purple-200 border-opacity-30 sm:my-10" />

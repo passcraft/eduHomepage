@@ -5,6 +5,8 @@ import { Icon } from '@/components/Icon'
 import logo from '/public/images/logo/Image.png'
 import logo_ias from '/public/images/ias/logo_ias.jpg'
 import logo_bank from '/public/images/banklogo.jpg'
+import Address from './Address'
+import Phone from './Phone'
 
 export function ContactHeader({ contact, pathname }) {
   return (
@@ -43,7 +45,7 @@ export function ContactHeader({ contact, pathname }) {
                   Address
                 </h5>
                 <p className="mt-0.5 text-sm leading-relaxed text-purple-800 text-opacity-90">
-                  Benz Circle, Vijayawada ; Ashoknagar, Hyderabad
+                  <Address />
                 </p>
               </div>
             </li>
@@ -79,7 +81,7 @@ export function ContactHeader({ contact, pathname }) {
                   Phone
                 </h5>
                 <p className="mt-0.5 text-sm leading-relaxed text-purple-800 text-opacity-90">
-                  9494188688 and 9494688188
+                  <Phone />
                 </p>
               </div>
             </li>

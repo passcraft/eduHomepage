@@ -33,7 +33,7 @@ export const ProgramPricing = ({ name, data, form }) => {
                     {data.tagline}
                   </span>
                 </div>
-                <h2 className="h2 mt-3.5 max-w-xl text-purple-900 sm:mt-4">
+                <h2 className="h3 mt-3.5 max-w-xl text-purple-900 sm:mt-4">
                   {data.headline}
                 </h2>
                 <p className="mt-3 max-w-lg text-lg leading-relaxed text-purple-800">

@@ -34,11 +34,16 @@ export default function FooterImage() {
             provides comprehensive training for IIT JEE, EAPCET, and other
             competitive exams.
           </p>
-        ) : (
+        ) : pathname === '/ias' ? (
           <p>
             Sarat Chandra IAS Academy is a premier coaching institute that
             provides comprehensive training for UPSC Civil Services Examination
             aspirants.
+          </p>
+        ) : (
+          <p>
+            Sarat Chandra Bank SSC RRB Academy is a premier coaching institute
+            that provides comprehensive training for all competitive exams
           </p>
         )}
       </div>

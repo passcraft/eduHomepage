@@ -56,9 +56,9 @@ infoSection:
 
 pricingSection:
   tagline: Our Courses
-  headline: A program for every aspiring civil servant
-  text: Fuel your dreams at Sarat Chandra IAS Academy! We offer a range of courses designed to cater to the diverse needs of UPSC aspirants. Our top-notch faculty and cutting-edge teaching methods create a supportive environment where you can grow, excel, and achieve your dreams.
-  video_end: https://www.youtube.com/embed/e9Zu46gnWuc?si=OLkyJ3DGtH-0BCOF
+  headline: A program for everyone who aspired to clear exams for Bank, SSC, RRB, Police etc.
+  text: Fuel your dream at Sarat Chandra Academy ! We offer a wide range of courses designed to cater to diverse needs of aspirants of SSC CGL, SBI and IBPS PO and Clerk, Police SI and constable, RRB NTPC and group D, NABARD etc. Our top notch faculty and cutting edge teaching methods create a supportive environment where you can grow, excel and achieve your dreams
+  video_end: https://www.youtube.com/embed/hlF6beRVpr4?si=6vBTpd05Vq3UmdxH
   video_end2: https://www.youtube.com/embed/qcnqUYGZo1g?si=yAVmEfVj_v0rESsR
   courses:
     - id: 1
