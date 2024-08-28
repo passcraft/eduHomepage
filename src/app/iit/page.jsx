@@ -105,7 +105,14 @@ pricingSection:
   return (
     <>
       {program?.hero && (
-        <ProgramHero hero={program.hero} site="/ias" title="IAS" />
+        <ProgramHero
+          name="iit"
+          hero={program.hero}
+          site="/ias"
+          title="IAS"
+          site2="/bankssc"
+          title2="Bank SSC"
+        />
       )}
       {program?.infoSection && (
         <ProgramInformation data={program.infoSection} />
@@ -115,11 +122,16 @@ pricingSection:
       )}
       {program?.pricingSection && (
         <ProgramPricing
+          name="iit"
           data={program.pricingSection}
           form="https://forms.gle/dazdMQSYr1KWuGudA"
         />
       )}
-      <CallToAction form="https://forms.gle/dazdMQSYr1KWuGudA" />
+      <CallToAction
+        name="iit"
+        title="Enroll Now"
+        form="https://forms.gle/dazdMQSYr1KWuGudA"
+      />
     </>
   )
 }
