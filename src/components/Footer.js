@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import clsx from 'clsx'
 import { basehub } from 'basehub'
-import { draftMode,headers } from 'next/headers'
+import { draftMode, headers } from 'next/headers'
 import FooterMail from './FooterMail'
 import { Icon } from '@/components/Icon'
 import FooterImage from './FooterImage'
@@ -18,52 +18,52 @@ function SocialLink({ className, href, icon }) {
   return (
     <Link
       className={clsx(
-        'flex justify-center items-center w-10 h-10 bg-purple-500 rounded-full duration-300 ease-in-out hover:bg-purple-600',
+        'flex h-10 w-10 items-center justify-center rounded-full bg-purple-500 duration-300 ease-in-out hover:bg-purple-600',
         className,
       )}
       href={href}
     >
-      <Icon icon={icon} className="w-5 h-5 text-white" />
+      <Icon icon={icon} className="h-5 w-5 text-white" />
     </Link>
   )
 }
 
 export const Footer = async ({ programs, contact }) => {
-  const data = await basehub({
-    next: { tags: ['basehub'] },
-    draft: draftMode().isEnabled,
-  }).query({
-    footer: {
-      _id: true,
-      _slug: true,
-      description: true,
-      logo: {
-        alt: true,
-        aspectRatio: true,
-        fileName: true,
-        fileSize: true,
-        height: true,
-        lastModified: true,
-        mimeType: true,
-        rawUrl: true,
-      },
-      address: true,
-      email: true,
-      phone: true,
-    },
-  })
+  // const data = await basehub({
+  //   next: { tags: ['basehub'] },
+  //   draft: draftMode().isEnabled,
+  // }).query({
+  //   footer: {
+  //     _id: true,
+  //     _slug: true,
+  //     description: true,
+  //     logo: {
+  //       alt: true,
+  //       aspectRatio: true,
+  //       fileName: true,
+  //       fileSize: true,
+  //       height: true,
+  //       lastModified: true,
+  //       mimeType: true,
+  //       rawUrl: true,
+  //     },
+  //     address: true,
+  //     email: true,
+  //     phone: true,
+  //   },
+  // })
   const header = headers()
   const pathname = header.get('x-invoke-path') || ''
   console.log('pathName:', pathname)
   return (
-    <footer className="px-4 pt-16 space-y-8 bg-yellow-100 divide-y divide-purple-400/20 sm:px-6 sm:pt-20 lg:px-8">
+    <footer className="space-y-8 divide-y divide-purple-400/20 bg-yellow-100 px-4 pt-16 sm:px-6 sm:pt-20 lg:px-8">
       {/* Top section: blocks */}
-      <div className="flex flex-wrap gap-8 justify-center mx-auto max-w-md sm:max-w-none lg:max-w-screen-2xl">
+      <div className="mx-auto flex max-w-md flex-wrap justify-center gap-8 sm:max-w-none lg:max-w-screen-2xl">
         {/* Block 1 */}
         <div className="flex flex-col lg:mx-auto lg:flex-1">
           {/* Logo */}
           <FooterImage />
-{/* 
+          {/* 
           <div className="flex justify-center lg:justify-start">
             <div className="w-60"></div>
           </div> */}
@@ -87,20 +87,20 @@ export const Footer = async ({ programs, contact }) => {
         {/* Block 3 */}
         {/* Block 4 */}
         <div className="flex flex-col lg:mx-auto lg:flex-1">
-          <h6 className="relative text-xl font-bold tracking-wide text-center text-purple-900 lg:text-left">
+          <h6 className="relative text-center text-xl font-bold tracking-wide text-purple-900 lg:text-left">
             <span className="relative z-20">Contact us</span>
-            <span className="absolute left-0 -bottom-1 z-10 w-12 h-1 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-lg" />
+            <span className="absolute -bottom-1 left-0 z-10 h-1 w-12 rounded-lg bg-gradient-to-r from-yellow-400 to-yellow-500" />
           </h6>
           {/* Contact information */}
-          <ul className="flex flex-col mt-6 space-y-5">
+          <ul className="mt-6 flex flex-col space-y-5">
             {/* Address */}
             <li className="flex">
               <div>
-                <span className="flex justify-center items-center w-11 h-11 bg-yellow-400 rounded-2xl">
-                  <Icon icon="mapPin" className="w-6 h-6 text-purple-700" />
+                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-yellow-400">
+                  <Icon icon="mapPin" className="h-6 w-6 text-purple-700" />
                 </span>
               </div>
-              <div className="flex-1 mt-0 ml-3 xl:ml-4">
+              <div className="ml-3 mt-0 flex-1 xl:ml-4">
                 <h5 className="flex items-center text-base font-semibold text-purple-900">
                   Address
                 </h5>
@@ -112,11 +112,11 @@ export const Footer = async ({ programs, contact }) => {
             {/* Email */}
             <li className="flex">
               <div>
-                <span className="flex justify-center items-center w-11 h-11 bg-purple-200 rounded-2xl">
-                  <Icon icon="mail" className="w-6 h-6 text-purple-700" />
+                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-purple-200">
+                  <Icon icon="mail" className="h-6 w-6 text-purple-700" />
                 </span>
               </div>
-              <div className="flex-1 ml-3 xl:ml-4">
+              <div className="ml-3 flex-1 xl:ml-4">
                 <h5 className="flex items-center text-base font-semibold text-purple-900">
                   Email
                 </h5>
@@ -128,11 +128,11 @@ export const Footer = async ({ programs, contact }) => {
             {/* Phone number */}
             <li className="flex">
               <div>
-                <span className="flex justify-center items-center w-11 h-11 bg-rose-200 rounded-2xl">
-                  <Icon icon="phone" className="w-6 h-6 text-purple-700" />
+                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-rose-200">
+                  <Icon icon="phone" className="h-6 w-6 text-purple-700" />
                 </span>
               </div>
-              <div className="flex-1 ml-3 xl:ml-4">
+              <div className="ml-3 flex-1 xl:ml-4">
                 <h5 className="flex items-center text-base font-semibold text-purple-900">
                   Phone
                 </h5>
@@ -145,7 +145,7 @@ export const Footer = async ({ programs, contact }) => {
         </div>
       </div>
       {/* Bottom section */}
-      <div className="flex flex-col justify-between py-8 mx-auto max-w-md sm:max-w-none sm:flex-row lg:max-w-screen-2xl">
+      <div className="mx-auto flex max-w-md flex-col justify-between py-8 sm:max-w-none sm:flex-row lg:max-w-screen-2xl">
         {/* Copyright note */}
         <span className="text-base text-purple-800/90">
           © {new Date().getFullYear()} SCA Academy. All rights reserved.

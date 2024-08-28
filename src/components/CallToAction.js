@@ -8,18 +8,18 @@ import sunrise from '/public/images/illustrations/sunrise.svg'
 import highlight from '/public/images/illustrations/underline-simple-light-purple.svg'
 
 export const CallToAction = async ({ title, form }) => {
-  const data = await basehub({
-    next: { tags: ['basehub'] },
-    draft: draftMode().isEnabled,
-  }).query({
-    calltoaction: {
-      _id: true,
-      _slug: true,
-      title: true,
-      spantext: true,
-    },
-  })
-  // const data = []
+  // const data = await basehub({
+  //   next: { tags: ['basehub'] },
+  //   draft: draftMode().isEnabled,
+  // }).query({
+  //   calltoaction: {
+  //     _id: true,
+  //     _slug: true,
+  //     title: true,
+  //     spantext: true,
+  //   },
+  // })
+  const data = []
 
   return (
     <section className="bg-white py-16 sm:py-24">
@@ -38,7 +38,7 @@ export const CallToAction = async ({ title, form }) => {
                 src={highlight}
                 alt=""
               />
-              <span className="relative">{data.calltoaction.spantext}</span>
+              <span className="relative">better future</span>
             </span>
           </span>
         </h2>
