@@ -43,6 +43,11 @@ export default function FooterImage() {
             provides comprehensive training for UPSC Civil Services Examination
             aspirants.
           </p>
+        ) : pathname === '/judicial' ? (
+          <p>
+            Sarat Chandra Bank Judicial Academy is a premier coaching institute
+            that provides comprehensive training for all competitive exams
+          </p>
         ) : (
           <p>
             Sarat Chandra Bank SSC RRB Academy is a premier coaching institute

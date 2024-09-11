@@ -83,72 +83,17 @@ pricingSection:
   video_end2: https://www.youtube.com/embed/dRRIwgvJaoU?si=Ls8zIPF3aDEOUEMB
   courses:
     - id: 1
-      name: Offline Courses in Hyderabad and Vijayawada 
-      price: ₹75,000
-      interval: Per Year
-      shortDescription: We provide best coaching classes, Test series, Material for all subjects, Current Affairs magazines, Personal mentorship to every student. Our team consists of Expert faculty, content developers, research team guided by IAS officers, Rankers and our Managing Director Thota Sarat Chandra who is an expert of General studies and guided more than 160 UPSC Rankers.  
+      name: Coaching for Junior civil Judge or Assistant public prosecutor 
+      shortDescription: Comprehensive coaching for Junior Civil Judge and Assistant Public Prosecutor exams, focusing on legal concepts, case law, and exam-specific strategies.
       features:
-        - feature: UPSC Civil Services Prelims cum Mains Coaching and Personal Mentorship
-        - feature: Test Series - UPSC Civil Services Prelim and Mains - With Answer Key, solutions and detailed explanation, quick evaluation, feedback, All India ranking 
-        - feature: Daily and Weekly Mains Answer writing practice for UPSC and Group 1 
-        - feature: Daily, weekly, monthly Current Affairs Tests – Prelims and Mains 
-        - feature: Monthly Current Affairs Magazines separately for Prelims and Mains 
-        - feature: APPSC - Group 1 and Group 2 - Prelims and Mains - Coaching, Crash course, Test series, Personal Guidance 
-        - feature: TSPSC Group 1 - Prelims and Mains - Classes, Crash Course, Test series 
-        - feature: Personal Guidance for UPSC Civils and Group 1 
+        - feature: Expert faculty
+        - feature: Personalised attention
+        
       action:
         label: Enroll now
         href: "https://rzp.io/l/PWOHXTvCHa "
         icon: true
-    - id: 2
-      name: Degree with IAS Coaching
-      price: ₹150,000
-      interval: Per Year
-      shortDescription: An integrated 3-year course combining undergraduate degree programs with IAS coaching.
-      features:
-        - feature: IAS coaching with degree programs
-        - feature: Current affairs & aptitude training
-        - feature: Debates & essay competitions
-        - feature: Mentorship by IAS/IPS officers
-      action:
-        label: Enroll now
-        href: "#"
-        icon: true
-    - id: 3
-      name: Inter + IAS Coaching + CLAT
-      price: ₹100,000
-      interval: Per Year
-      shortDescription: Intermediate education integrated with IAS foundation coaching and preparation for exams like CLAT.
-      features:
-        - feature: Intermediate education with IAS coaching
-        - feature: Additional classes for CLAT, IPMAT, IIT HSEE
-        - feature: Focus on current affairs, reasoning, and writing skills
-        - feature: Expert guidance & mentorship
-      action:
-        label: Enroll now
-        href: "#"
-        icon: true
-    - id: 4
-      name: Online courses 
-      price: ₹50,000
-      interval: Per Year
-      shortDescription: We provide best online classes, test series, material, mentorship with expert faculty, research team, content developers, IAS officers and Rankers 
-      features:
-        - feature: Online Coaching - UPSC Civil Services Prelims cum Mains- Live and Recorded classes 
-        - feature: Test Series - UPSC Civil Services Prelim and Mains- With Answer Key, solutions and detailed explanation, quick evaluation, feedback, All India ranking 
-        - feature: Daily and Weekly Mains Answer writing practice for UPSC and Group 1 
-        - feature: Daily, weekly, monthly Current Affairs Tests – Prelims and Mains 
-        - feature: Monthly Current Affairs Magazines separately for Prelims and Mains 
-        - feature: APPSC - Group 1 and Group 2 - Prelims and Mains - Coaching and Crash Course 
-        - feature: APPSC - Group 1 and Group 2 - Prelims and Mains - Test series 
-        - feature: TSPSC Group 1 Online Coaching - Prelims and Mains - Crash Course 
-        - feature: TSPSC Group 1 Online Test series - Prelims and Mains 
-        
-      action:
-        label: Enroll now
-        href: "https://sarat.courses.store/?filterId=33&sortId=7 "
-        icon: true
-      
+   
     
   
 ---
