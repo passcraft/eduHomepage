@@ -79,8 +79,8 @@ pricingSection:
   tagline: Our Courses
   headline: A program for every aspiring Judge and Public Prosecutor
   text: Fuel your dreams at Sarat Chandra Judicial Academy! We offer a range of courses designed to cater to the diverse needs of students. Our top-notch faculty and cutting-edge teaching methods create a supportive environment where you can grow, excel, and achieve your dreams.
-  video: https://www.youtube.com/embed/vnmhCEdPQmQ?si=dQ2G_GuFwdmKW21h
-  video_end: https://www.youtube.com/embed/nlvMJI6rGY8?si=DGEr3rVjVsE7ZFod
+  video_end: https://www.youtube.com/embed/auih982vrZU?si=3Mvr3TtxRQwZpEwq
+  video_end2: https://www.youtube.com/embed/dRRIwgvJaoU?si=Ls8zIPF3aDEOUEMB
   courses:
     - id: 1
       name: Offline Courses in Hyderabad and Vijayawada 
