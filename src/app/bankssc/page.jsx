@@ -124,6 +124,8 @@ pricingSection:
           title="IIT"
           site2="/ias"
           title2="IAS"
+          site3="/judicial"
+          title3="Judicial"
         />
       )}
       {program?.infoSection && (

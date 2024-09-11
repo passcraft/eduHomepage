@@ -3,26 +3,27 @@ import { ProgramInformation } from '@/components/ProgramInformation'
 import { ProgramDescription } from '@/components/ProgramDescription'
 import { ProgramPricing } from '@/components/ProgramPricing'
 import { CallToAction } from '@/components/CallToAction'
+
 import matter from 'gray-matter'
 
 import { getItemData, getAllItems } from '@/lib/getItems'
 
 export async function generateMetadata() {
   return {
-    title: `Sarat Chandra IAS`,
-    description: `Sarat Chandra IAS is a premier coaching institute that provides comprehensive training for IAS, IIT JEE, EAPCET, and other competitive exams.`,
+    title: `Sarat Chandra Judicial`,
+    description: `Sarat Chandra Judicial Academy is a premier coaching institute that provides comprehensive training for Junior Civil Judge and Assistant public prosecutor aspirants.  Equal focus on Prelims, Mains and Interview. Practice Tests on Prelims and writing practice for Mains as per latest syllabus and exam pattern. Interview Guidance by Judges.`,
   }
 }
 
 export default function ProgramPage() {
   const metadata = `---
-name: Sarat Chandra IAS Academy
-dropdownDescription: Premier coaching institute for UPSC Civil Services Examination and other competitive exams.
+name: Sarat Chandra Judicial Academy
+dropdownDescription: Sarat Chandra Judicial Academy is a premier coaching institute that provides comprehensive training for Junior Civil Judge and Assistant public prosecutor aspirants.  Equal focus on Prelims, Mains and Interview. Practice Tests on Prelims and writing practice for Mains as per latest syllabus and exam pattern. Interview Guidance by Judges.
 featured: true
 hero:
   tagline: Where dreams become reality
-  headline: Sarat Chandra IAS Academy
-  text: Sarat Chandra IAS Academy is a premier coaching institute that provides comprehensive training for UPSC Civil Services Examination aspirants.
+  headline: Sarat Chandra Judicial Academy
+  text: Sarat Chandra Judicial Academy is a premier coaching institute that provides comprehensive training for Junior Civil Judge and Assistant public prosecutor aspirants.  Equal focus on Prelims, Mains and Interview. Practice Tests on Prelims and writing practice for Mains as per latest syllabus and exam pattern. Interview Guidance by Judges.
   video: https://www.youtube.com/embed/Rjh271wFMqA?si=FP8MkTla99NsRbPq
   action:
     label: Mention the course you are interested in
@@ -57,12 +58,12 @@ infoSection:
       image: "/images/ias/ias_1.jpg"
       active: currentSlide === 3
 descriptionSection:
-  card_1: 🎓 Managing Director guided 160+ IAS Rankers
-  card_2: 🏫 Only IAS Academy guided by IAS and IPS officers
+  card_1: 🎓 A product of Sarat Chandra IAS Academy run by the director who produced 160+ IAS Ranks. He cleared several national exams
+  card_2: 🏫 Only Judicial Academy run by High court Advocates and retired Judges
   text: >
     ## Our unique approach to education
  
-    At Sarat Chandra IAS Academy, we follow a dynamic, interactive, and practical teaching methodology to ensure stress-free yet effective education. Our experienced faculty, including serving IAS and IPS officers, provide personalized attention to each student, focusing on high-scoring topics and fundamental concepts.
+    At Sarat Chandra Judicial Academy, we follow a dynamic, interactive, and practical teaching methodology to ensure stress-free yet effective education. Our experienced faculty, including Advocates of High Court, Retired Judges, provide personalized attention to each student, focusing on high-scoring topics and fundamental concepts.
  
     ### What sets us apart
  
@@ -76,8 +77,8 @@ descriptionSection:
   squareImage2: "/images/img_9.jpeg"
 pricingSection:
   tagline: Our Courses
-  headline: A program for every aspiring civil servant
-  text: Fuel your dreams at Sarat Chandra IAS Academy! We offer a range of courses designed to cater to the diverse needs of UPSC aspirants. Our top-notch faculty and cutting-edge teaching methods create a supportive environment where you can grow, excel, and achieve your dreams.
+  headline: A program for every aspiring Judge and Public Prosecutor
+  text: Fuel your dreams at Sarat Chandra Judicial Academy! We offer a range of courses designed to cater to the diverse needs of students. Our top-notch faculty and cutting-edge teaching methods create a supportive environment where you can grow, excel, and achieve your dreams.
   video: https://www.youtube.com/embed/vnmhCEdPQmQ?si=dQ2G_GuFwdmKW21h
   video_end: https://www.youtube.com/embed/nlvMJI6rGY8?si=DGEr3rVjVsE7ZFod
   courses:
@@ -158,14 +159,14 @@ pricingSection:
     <>
       {program?.hero && (
         <ProgramHero
-          name="ias"
+          name="judicial"
           hero={program.hero}
           site="/iit"
           title="IIT"
-          site2="/bankssc"
-          title2="Bank SSC"
-          site3="/judicial"
-          title3="Judicial"
+          site2="/ias"
+          title2="IAS"
+          site3="/bankssc"
+          title3="Bank SSC"
         />
       )}
 
@@ -176,11 +177,7 @@ pricingSection:
         <ProgramDescription data={program.descriptionSection} />
       )}
       {program?.pricingSection && (
-        <ProgramPricing
-          name="ias"
-          data={program.pricingSection}
-          form="https://forms.gle/x2RD6rnVAhTZLcBR6"
-        />
+        <ProgramPricing name="judicial" data={program.pricingSection} />
       )}
       <CallToAction
         name="ias"

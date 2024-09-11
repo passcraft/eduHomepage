@@ -5,6 +5,7 @@ import { Icon } from '@/components/Icon'
 import logo from '/public/images/logo/Image.png'
 import logo_ias from '/public/images/ias/logo_ias.jpg'
 import logo_bank from '/public/images/banklogo.jpg'
+import logo_judicial from '/public/images/logo_judicial.jpg'
 import Address from './Address'
 import Phone from './Phone'
 
@@ -24,7 +25,9 @@ export function ContactHeader({ contact, pathname }) {
                     ? logo
                     : pathname === '/ias'
                       ? logo_ias
-                      : logo_bank
+                      : pathname === '/judicial'
+                        ? logo_judicial
+                        : logo_bank
                 }
                 alt="Bright"
                 className="h-auto"

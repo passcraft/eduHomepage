@@ -6,7 +6,7 @@ import { Button } from '@/components/Button'
 export const ProgramPricing = ({ name, data, form }) => {
   return (
     <>
-      {name === 'bank' ? (
+      {name === 'bank' || name === 'judicial' ? (
         <section className="relative w-full px-4 py-16 sm:px-6 sm:py-24 xl:px-8">
           {/* Container */}
           <div className="mx-auto max-w-xl lg:max-w-screen-xl">

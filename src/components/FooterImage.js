@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import logo from '/public/images/logo/Image.png'
 import logo_ias from '/public/images/ias/logo_ias.jpg'
 import logo_bank from '/public/images/banklogo.jpg'
+import logo_judicial from '/public/images/logo_judicial.jpg'
 
 export default function FooterImage() {
   const pathname = usePathname()
@@ -19,7 +20,9 @@ export default function FooterImage() {
                   ? logo
                   : pathname === '/ias'
                     ? logo_ias
-                    : logo_bank
+                    : pathname === '/judicial'
+                      ? logo_judicial
+                      : logo_bank
               }
               alt="Bright"
               className="h-auto"

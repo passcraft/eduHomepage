@@ -3,7 +3,16 @@ import Image from 'next/image'
 import { Icon } from '@/components/Icon'
 import { Button } from '@/components/Button'
 
-export const ProgramHero = ({ name, hero, site, title, site2, title2 }) => {
+export const ProgramHero = ({
+  name,
+  hero,
+  site,
+  title,
+  site2,
+  title2,
+  site3,
+  title3,
+}) => {
   // <section className="relative bg-gradient-to-b from-purple-25 to-purple-50 px-4 pt-16 sm:px-6 lg:px-8">
   //   <div className="mx-auto max-w-screen-xl">
   //     {/* Header */}
@@ -90,7 +99,7 @@ export const ProgramHero = ({ name, hero, site, title, site2, title2 }) => {
   // </section>
   return (
     <>
-      {name === 'bank' ? (
+      {name === 'bank' || name === 'judicial' ? (
         <section className="relative bg-gradient-to-b from-purple-25 to-purple-50 px-4 pt-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-screen-xl">
             {/* Header */}
@@ -104,6 +113,9 @@ export const ProgramHero = ({ name, hero, site, title, site2, title2 }) => {
                 </Button>
                 <Button href={site2} className="top-[-40px]">
                   Click here for {title2} website
+                </Button>
+                <Button href={site3} className="top-[-40px] ml-4">
+                  Click here for {title3} website
                 </Button>
               </div>
               <div className="flex justify-center">
@@ -204,6 +216,9 @@ export const ProgramHero = ({ name, hero, site, title, site2, title2 }) => {
                 </Button>
                 <Button href={site2} className="top-[-40px]">
                   Click here for {title2} website
+                </Button>
+                <Button href={site3} className="top-[-40px] ml-4">
+                  Click here for {title3} website
                 </Button>
               </div>
               <div className="flex justify-center">

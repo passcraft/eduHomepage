@@ -9,7 +9,9 @@ export default function Address() {
         ? 'Benz Circle, Vijayawada; Ashoknagar, Hyderabad'
         : pathname === '/ias'
           ? 'Benz Circle, Vijayawada; Ashoknagar, Hyderabad'
-          : 'Benz Circle, Vijayawada'}
+          : pathname === '/judicial'
+            ? 'Benz Circle, Vijayawada; Ashoknagar, Hyderabad'
+            : 'Benz Circle, Vijayawada'}
     </>
   )
 }
