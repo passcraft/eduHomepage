@@ -26,8 +26,8 @@ hero:
   text: Sarat Chandra Judicial Academy is a premier coaching institute that provides comprehensive training for Junior Civil Judge and Assistant public prosecutor aspirants.  Equal focus on Prelims, Mains and Interview. Practice Tests on Prelims and writing practice for Mains as per latest syllabus and exam pattern. Interview Guidance by Judges.
   video: https://www.youtube.com/embed/Rjh271wFMqA?si=FP8MkTla99NsRbPq
   action:
-    label: Mention the course you are interested in
-    href: "#"
+    label1: Enroll Now
+    href: "https://wa.me/7386321500"
     icon: true
   image:
     src: "/images/sca/6.jpg"
@@ -44,7 +44,7 @@ infoSection:
       active: currentSlide === 0
     - id: 1
       title: "Expert Faculty"
-      description: "Learn from the best. Our faculty includes IIT alumni and experienced educators."
+      description: "Learn from the best. Our faculty includes experienced educators and high court advocates."
       image: "/images/ias/ias_2.jpg"
       active: currentSlide === 1
     - id: 2
@@ -54,7 +54,7 @@ infoSection:
       active: currentSlide === 2
     - id: 3
       title: "Top Rankers"
-      description: "Our top-notch faculty and mentorship program helps students excel in IAS and IPS."
+      description: "Our top-notch faculty and mentorship program helps students excel in the exams."
       image: "/images/ias/ias_1.jpg"
       active: currentSlide === 3
 descriptionSection:
@@ -67,7 +67,7 @@ descriptionSection:
  
     ### What sets us apart
  
-    - **Expert Faculty & Mentorship:** Learn from experienced educators and serving civil servants.
+    - **Expert Faculty & Mentorship:** Learn from experienced educators and high court advocates.
   
     - **Comprehensive Courses:** From integrated degree programs to specialized coaching for various competitive exams.
   
@@ -91,7 +91,7 @@ pricingSection:
         
       action:
         label: Enroll now
-        href: "https://rzp.io/l/PWOHXTvCHa "
+        href: "https://wa.me/7386321500"
         icon: true
    
     
@@ -125,9 +125,9 @@ pricingSection:
         <ProgramPricing name="judicial" data={program.pricingSection} />
       )}
       <CallToAction
-        name="ias"
+        name="judicial"
         title="Enroll Now"
-        form="https://forms.gle/x2RD6rnVAhTZLcBR6"
+        form="https://wa.me/7386321500"
       />
     </>
   )

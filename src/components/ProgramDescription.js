@@ -103,88 +103,160 @@ export const ProgramDescription = ({ data }) => {
               dangerouslySetInnerHTML={{ __html: marked.parse(data.text) }}
             ></div>
             <div className="my-8 flex flex-wrap justify-center gap-4">
-              <InfoCard
-                icon="moodKid"
-                gradientColors={{
-                  bgColor: 'bg-yellow-200',
-                  iconBgColor: 'bg-yellow-400',
-                  startColor: 'from-yellow-400',
-                  endColor: 'to-yellow-500',
-                }}
-                text={data.card_1}
-              />
+              {pathname === '/judicial' ? (
+                <>
+                  <InfoCard
+                    icon="moodKid"
+                    gradientColors={{
+                      bgColor: 'bg-yellow-200',
+                      iconBgColor: 'bg-yellow-400',
+                      startColor: 'from-yellow-400',
+                      endColor: 'to-yellow-500',
+                    }}
+                    text={data.card_1}
+                  />
 
-              <InfoCard
-                icon="calendar"
-                gradientColors={{
-                  bgColor: 'bg-purple-50',
-                  iconBgColor: 'bg-purple-200',
-                  startColor: 'from-purple-200',
-                  endColor: 'to-purple-300',
-                }}
-                text={data.card_2}
-              />
-              <InfoCard
-                icon="calendar"
-                gradientColors={{
-                  bgColor: 'bg-purple-50',
-                  iconBgColor: 'bg-purple-200',
-                  startColor: 'from-purple-200',
-                  endColor: 'to-purple-300',
-                }}
-                text={'🎯 Focus on high-scoring topics and fundamentals'}
-              />
+                  <InfoCard
+                    icon="calendar"
+                    gradientColors={{
+                      bgColor: 'bg-purple-50',
+                      iconBgColor: 'bg-purple-200',
+                      startColor: 'from-purple-200',
+                      endColor: 'to-purple-300',
+                    }}
+                    text={data.card_2}
+                  />
+                  <InfoCard
+                    icon="calendar"
+                    gradientColors={{
+                      bgColor: 'bg-purple-50',
+                      iconBgColor: 'bg-purple-200',
+                      startColor: 'from-purple-200',
+                      endColor: 'to-purple-300',
+                    }}
+                    text={
+                      '🎯 Offline classes in Vijayawada. Online classes also available.'
+                    }
+                  />
 
-              <InfoCard
-                icon="clock"
-                gradientColors={{
-                  bgColor: 'bg-rose-50',
-                  iconBgColor: 'bg-rose-200',
-                  startColor: 'from-rose-100',
-                  endColor: 'to-rose-300',
-                }}
-                text={'👨‍🏫 Experienced faculty with proven track records'}
-              />
-              {pathname === 'judicial' ? (
-                <InfoCard
-                  icon="moodKid"
-                  gradientColors={{
-                    bgColor: 'bg-yellow-200',
-                    iconBgColor: 'bg-yellow-400',
-                    startColor: 'from-yellow-400',
-                    endColor: 'to-yellow-500',
-                  }}
-                  text={
-                    '📚 Study materials, assignments, and exam papers prepared by High Court Advocates and Retired Judges'
-                  }
-                />
+                  <InfoCard
+                    icon="home"
+                    gradientColors={{
+                      bgColor: 'bg-green-50',
+                      iconBgColor: 'bg-green-200',
+                      startColor: 'from-green-100',
+                      endColor: 'to-green-300',
+                    }}
+                    text={
+                      '📚 Evening classes suitable to law students and practicing advocates.'
+                    }
+                  />
+
+                  <InfoCard
+                    icon="clock"
+                    gradientColors={{
+                      bgColor: 'bg-rose-50',
+                      iconBgColor: 'bg-rose-200',
+                      startColor: 'from-rose-100',
+                      endColor: 'to-rose-300',
+                    }}
+                    text={'👨‍🏫 Teaching as per latest syllabus and new pattern.'}
+                  />
+                  <InfoCard
+                    icon="moodKid"
+                    gradientColors={{
+                      bgColor: 'bg-yellow-200',
+                      iconBgColor: 'bg-yellow-400',
+                      startColor: 'from-yellow-400',
+                      endColor: 'to-yellow-500',
+                    }}
+                    text={
+                      '📚 Weekly exam practicefor Prelims and Mains. Interview Guidance by Judges'
+                    }
+                  />
+                  <InfoCard
+                    icon="home"
+                    gradientColors={{
+                      bgColor: 'bg-green-50',
+                      iconBgColor: 'bg-green-200',
+                      startColor: 'from-green-100',
+                      endColor: 'to-green-300',
+                    }}
+                    text={
+                      '📚 Personal mentorship and guidance to every student'
+                    }
+                  />
+                </>
               ) : (
-                <InfoCard
-                  icon="moodKid"
-                  gradientColors={{
-                    bgColor: 'bg-yellow-200',
-                    iconBgColor: 'bg-yellow-400',
-                    startColor: 'from-yellow-400',
-                    endColor: 'to-yellow-500',
-                  }}
-                  text={
-                    '📚 Study materials, assignments, and exam papers prepared by IITians'
-                  }
-                />
-              )}
+                <>
+                  <InfoCard
+                    icon="moodKid"
+                    gradientColors={{
+                      bgColor: 'bg-yellow-200',
+                      iconBgColor: 'bg-yellow-400',
+                      startColor: 'from-yellow-400',
+                      endColor: 'to-yellow-500',
+                    }}
+                    text={data.card_1}
+                  />
 
-              <InfoCard
-                icon="home"
-                gradientColors={{
-                  bgColor: 'bg-green-50',
-                  iconBgColor: 'bg-green-200',
-                  startColor: 'from-green-100',
-                  endColor: 'to-green-300',
-                }}
-                text={
-                  '🏘️ Separate campuses for boys and girls with hostels and hygienic food'
-                }
-              />
+                  <InfoCard
+                    icon="calendar"
+                    gradientColors={{
+                      bgColor: 'bg-purple-50',
+                      iconBgColor: 'bg-purple-200',
+                      startColor: 'from-purple-200',
+                      endColor: 'to-purple-300',
+                    }}
+                    text={data.card_2}
+                  />
+                  <InfoCard
+                    icon="calendar"
+                    gradientColors={{
+                      bgColor: 'bg-purple-50',
+                      iconBgColor: 'bg-purple-200',
+                      startColor: 'from-purple-200',
+                      endColor: 'to-purple-300',
+                    }}
+                    text={'🎯 Focus on high-scoring topics and fundamentals'}
+                  />
+
+                  <InfoCard
+                    icon="clock"
+                    gradientColors={{
+                      bgColor: 'bg-rose-50',
+                      iconBgColor: 'bg-rose-200',
+                      startColor: 'from-rose-100',
+                      endColor: 'to-rose-300',
+                    }}
+                    text={'👨‍🏫 Experienced faculty with proven track records'}
+                  />
+                  <InfoCard
+                    icon="moodKid"
+                    gradientColors={{
+                      bgColor: 'bg-yellow-200',
+                      iconBgColor: 'bg-yellow-400',
+                      startColor: 'from-yellow-400',
+                      endColor: 'to-yellow-500',
+                    }}
+                    text={
+                      '📚 Study materials, assignments, and exam papers prepared by IITians'
+                    }
+                  />
+                  <InfoCard
+                    icon="home"
+                    gradientColors={{
+                      bgColor: 'bg-green-50',
+                      iconBgColor: 'bg-green-200',
+                      startColor: 'from-green-100',
+                      endColor: 'to-green-300',
+                    }}
+                    text={
+                      '🏘️ Separate campuses for boys and girls with hostels and hygienic food'
+                    }
+                  />
+                </>
+              )}
             </div>
           </div>
         </div>
