@@ -45,7 +45,7 @@ export const CallToAction = async ({ name, title, form, title2, form2 }) => {
             <div className="mt-12 flex flex-col items-center justify-center sm:flex-row xl:mt-14">
               <Button
                 href={form}
-                className="mb-2 text-wrap text-center sm:mb-0 sm:mr-4"
+                className="mb-2 text-wrap text-center sm:mb-2 sm:mr-4"
               >
                 {title}
                 <Icon
@@ -54,7 +54,7 @@ export const CallToAction = async ({ name, title, form, title2, form2 }) => {
                   stroke={2}
                 />
               </Button>
-              <Button href={form2} className="text-wrap text-center sm:mt-4">
+              <Button href={form2} className="text-wrap text-center">
                 {title2}
                 <Icon
                   icon="arrowNarrowRight"
