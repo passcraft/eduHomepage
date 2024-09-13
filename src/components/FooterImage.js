@@ -45,8 +45,8 @@ export default function FooterImage() {
           </p>
         ) : pathname === '/judicial' ? (
           <p>
-            Sarat Chandra Bank Judicial Academy is a premier coaching institute
-            that provides comprehensive training for all competitive exams
+            Sarat Chandra Judicial Academy is a premier coaching institute that
+            provides comprehensive training for all competitive exams
           </p>
         ) : (
           <p>

@@ -40,23 +40,18 @@ infoSection:
     - id: 0
       title: "Empowering Future Innovators"
       description: "Discover how our tailored coaching helps students excel in competitive exams."
-      image: "/images/ias/ias_4.jpg"
+      image: "/images/judicial/img_board.jpg"
       active: currentSlide === 0
     - id: 1
       title: "Expert Faculty"
       description: "Learn from the best. Our faculty includes experienced educators and high court advocates."
-      image: "/images/ias/ias_2.jpg"
+      image: "/images/judicial/img_class.jpg"
       active: currentSlide === 1
     - id: 2
       title: "State-of-the-Art Facilities"
       description: "Our modern facilities create the perfect learning environment for our students."
-      image: "/images/ias/ias_3.jpg"
+      image: "/images/judicial/img_acad.jpg"
       active: currentSlide === 2
-    - id: 3
-      title: "Top Rankers"
-      description: "Our top-notch faculty and mentorship program helps students excel in the exams."
-      image: "/images/ias/ias_1.jpg"
-      active: currentSlide === 3
 descriptionSection:
   card_1: 🎓 A product of Sarat Chandra IAS Academy run by the director who produced 160+ IAS Ranks. He cleared several national exams
   card_2: 🏫 Only Judicial Academy run by High court Advocates and retired Judges

@@ -111,7 +111,10 @@ export const ProgramHero = ({
                 >
                   Click here for {title} website
                 </Button>
-                <Button href={site2} className="top-[-40px]">
+                <Button
+                  href={site2}
+                  className="top-[-40px] mb-2 sm:mb-0 sm:mr-4"
+                >
                   Click here for {title2} website
                 </Button>
                 <Button href={site3} className="top-[-40px] ml-4">
@@ -203,7 +206,10 @@ export const ProgramHero = ({
                 >
                   Click here for {title} website
                 </Button>
-                <Button href={site2} className="top-[-40px]">
+                <Button
+                  href={site2}
+                  className="top-[-40px] mb-2 sm:mb-0 sm:mr-4"
+                >
                   Click here for {title2} website
                 </Button>
                 <Button href={site3} className="top-[-40px] ml-4">
@@ -296,7 +302,10 @@ export const ProgramHero = ({
                 >
                   Click here for {title} website
                 </Button>
-                <Button href={site2} className="top-[-40px]">
+                <Button
+                  href={site2}
+                  className="top-[-40px] mb-2 sm:mb-0 sm:mr-4"
+                >
                   Click here for {title2} website
                 </Button>
                 <Button href={site3} className="top-[-40px] ml-4">
