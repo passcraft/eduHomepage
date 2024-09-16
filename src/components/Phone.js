@@ -9,7 +9,9 @@ export default function Address() {
         ? '9494188688 and 9494688188'
         : pathname === '/ias'
           ? '9494188688 and 9494688188'
-          : '9494188688 and 9492343086'}
+          : pathname === '/judicial'
+            ? '7386321500'
+            : '9494188688 and 9492343086'}
     </>
   )
 }

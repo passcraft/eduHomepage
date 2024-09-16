@@ -164,6 +164,8 @@ pricingSection:
           title="IIT"
           site2="/bankssc"
           title2="Bank SSC"
+          site3="/judicial"
+          title3="Judicial"
         />
       )}
 
