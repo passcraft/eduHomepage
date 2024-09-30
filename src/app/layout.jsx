@@ -37,8 +37,6 @@ export default function RootLayout({ children }) {
       whatsappIcon.href = 'https://wa.me/9494188688';
       whatsappIcon.target = '_blank';
       whatsappIcon.style.position = 'fixed';
-      whatsappIcon.style.bottom = '20px';
-      whatsappIcon.style.right = '20px';
       whatsappIcon.style.zIndex = '1000';
 
       var whatsappImg = document.createElement('img');
@@ -46,7 +44,28 @@ export default function RootLayout({ children }) {
       whatsappImg.style.width = '50px';
       whatsappImg.style.height = '50px';
       whatsappIcon.appendChild(whatsappImg);
-      
+
+      // Function to set responsive position
+      function setResponsivePosition() {
+        if (window.innerWidth >= 1024) {
+          // Large screens (desktops)
+          whatsappIcon.style.bottom = '40px';
+          whatsappIcon.style.right = '40px';
+        } else if (window.innerWidth >= 768) {
+          // Tablets
+          whatsappIcon.style.bottom = '30px';
+          whatsappIcon.style.right = '30px';
+        } else {
+          // Mobile screens
+          whatsappIcon.style.bottom = '20px';
+          whatsappIcon.style.right = '20px';
+        }
+      }
+
+      // Call setResponsivePosition on load and window resize
+      setResponsivePosition();
+      window.addEventListener('resize', setResponsivePosition);
+
       // CSS for bounce animation
       var style = document.createElement('style');
       style.innerHTML = \`
