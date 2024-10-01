@@ -43,6 +43,7 @@ export default function RootLayout({ children }) {
       whatsappImg.src = 'https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg';
       whatsappImg.style.width = '50px';
       whatsappImg.style.height = '50px';
+      whatsappImg.classList.add('whatsapp-bounce-icon'); // Add a specific class to the image
       whatsappIcon.appendChild(whatsappImg);
 
       // Function to set responsive position
@@ -80,7 +81,7 @@ export default function RootLayout({ children }) {
             transform: translateY(-10px);
           }
         }
-        a img {
+        .whatsapp-bounce-icon {
           animation: bounce 2s infinite;
         }
       \`;
